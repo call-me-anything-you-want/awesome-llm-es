@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "key": "liu2026skydiscover",
+  "paperKey": "liu2026skydiscover",
+  "bibliographyKey": "liu2026skydiscover",
+  "title": "SkyDiscover: A Flexible, Adaptive Framework for AI-Driven Scientific and Algorithmic Discovery",
+  "authors": [
+    "Liu, Shu",
+    "Cemri, Mert",
+    "Agarwal, Shubham",
+    "Krentsel, Alexander",
+    "Naren, Ashwin",
+    "Mang, Qiuyang",
+    "Li, Zhifei",
+    "Gupta, Akshat",
+    "Maheswaran, Monishwaran",
+    "Cheng, Audrey",
+    "others"
+  ],
+  "year": 2026,
+  "venue": "Proceedings of the ACM Conference on AI and Agentic Systems",
+  "publication": {
+    "venue": "Proceedings of the ACM Conference on AI and Agentic Systems",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.1145/3786335.3813221",
+    "eprint": null
+  },
+  "tags": [
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [
+        "Candidate-Generation Prompt Structures"
+      ],
+      "ch5": [],
+      "ch6": [
+        "Metadata"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "AI-driven scientific and algorithmic discovery",
+    "population": "none_clear",
+    "populationDetail": "The evidence note does not establish a stable population topology or persistent archive.",
+    "archive": "unclear",
+    "archiveDetail": "A candidate pool/archive is suggested but not confirmed by the note.",
+    "replacement": "unclear",
+    "replacementDetail": "Iterative discovery is clear, but candidate retention and survivor logic need method details.",
+    "generation": "unclear",
+    "generationDetail": "Agents iteratively propose candidate programs/experiments; relation to selected parents is not specified.",
+    "trueParentCount": "unclear",
+    "modelSetting": "unclear",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Domain objective and execution/experiment feedback are reused for later proposals.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "No parent-selection details in existing evidence note.",
+    "outOfTaxonomy": "A flexible multi-domain agent workflow with adaptive strategy control, not yet resolved to a specific mechanism taxonomy."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium-low",
+    "evidenceFile": "annotation/evidence/incoming_b/skydiscover.md",
+    "sourcePdf": "additional_papers/202605/SkyDiscover A Flexible, Adaptive Framework for AI-Driven Scientific and Algorithmic Discovery.pdf",
+    "citationWarning": "Evidence note is preliminary; adaptive strategy control does not alone prove an explicit explore/exploit policy or adaptive operator selector. Population, parents, and model orchestration need method-level verification."
+  }
+}

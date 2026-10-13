@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "key": "DBLP:journals/corr/abs-2602-06553",
+  "paperKey": "DBLP:journals/corr/abs-2602-06553",
+  "bibliographyKey": "DBLP:journals/corr/abs-2602-06553",
+  "title": "Evolving Ranking Functions for Canonical Blow-Ups in Positive Characteristic",
+  "authors": [
+    "Gergely Bérczi"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.06553"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Localized Modification"
+      ],
+      "ch5": [],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Evolutionary search for ranking functions on a toy canonical blow-up simulator in positive characteristic",
+    "population": "flat_multi",
+    "populationDetail": "AlphaEvolve retains memory of high-reward candidate scripts for subsequent exploration; the paper does not describe islands, genealogy, or the memory's exact organization.",
+    "archive": "multi_elite",
+    "archiveDetail": "A memory of high-reward candidates is updated and reused, but its size, admission rule, and any diversity criteria are unspecified.",
+    "replacement": "unclear",
+    "replacementDetail": "Candidate memory is described functionally, without database structure or survivor/replacement protocol.",
+    "generation": "localized_modification",
+    "generationDetail": "The LLM proposes edits confined to a designated evolve block in a Python script; the concrete edit granularity and parent-selection operation are not reported.",
+    "trueParentCount": "unclear",
+    "modelSetting": "unclear",
+    "evaluation": "vector_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The harness yields violation counts, stage-wise scores, worst-case scores, local increases and plateau diagnostics; high-reward candidates are retained for subsequent exploration. Explicit textual feedback reuse is not described.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "Retained candidate memory is described, but the paper does not explain how a parent candidate is sampled or whether each edit uses one parent.",
+    "outOfTaxonomy": "The optimized object is a mathematical ranking function for a domain-specific blow-up process; the blow-up center-selection rule is fixed outside the evolutionary search."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/evolving_ranking_functions.md",
+    "sourcePdf": "papers/Evolving Ranking Functions for Canonical Blow-Ups in Positive Characteristic.pdf",
+    "citationWarning": "Current survey cites the work as a mathematical application. Population/archive mapping is functional and the exact memory structure/admission and replacement are unreported. Do not infer candidate-generation model identity from ancillary AI coding tools, or infer parent count/selection from the generic edit loop. Citation under vector objective and Chapter 3/4 mechanisms is taxonomy mapping from an AlphaEvolve application description rather than a new framework paper."
+  }
+}

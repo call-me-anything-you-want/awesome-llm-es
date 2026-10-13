@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "key": "alpharesearch",
+  "paperKey": "alpharesearch",
+  "bibliographyKey": "alpharesearch",
+  "title": "AlphaResearch: Accelerating New Algorithm Discovery with Language Models",
+  "authors": [
+    "Zhaojian Yu",
+    "Kaiyue Feng",
+    "Yilun Zhao",
+    "Shilin He",
+    "Xiao-Ping Zhang",
+    "Arman Cohan"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2511.08522"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Single-Elite Archives",
+        "Incremental Insertion",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "open-ended algorithm discovery with research-proposal and program co-optimization",
+    "population": "flat_multi",
+    "populationDetail": "An undivided trajectory and candidates pool stores many idea-program-result triplets; no islands or maintained tree are described.",
+    "archive": "single_elite",
+    "archiveDetail": "The algorithm explicitly retains one best-so-far triplet (\\(i_{\\mathrm{best}}\\), \\(p_{\\mathrm{best}}\\), \\(r_{\\mathrm{best}}\\)) when execution score improves.",
+    "replacement": "hybrid",
+    "replacementDetail": "Accepted triplets are appended to an effectively growing trajectory/candidates pool, while a separate best-so-far record uses elitist comparison.",
+    "generation": "localized_modification",
+    "generationDetail": "One sampled prior program \\(p_t\\) is edited through exact SEARCH/REPLACE patches conditioned on a newly generated idea; the idea track is separate meta-guidance, not a second program parent.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The RM scalar gates idea continuation; execution verification/measurement scores are injected into future prompts when a trajectory state is sampled and stored with candidates.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "trajectory_state_sampling",
+    "parentSelectionDetail": "One sampled state supplies the true program parent plus idea/result context; no multi-parent fusion or tournament selection is specified.",
+    "outOfTaxonomy": "Joint proposal-meta-guidance and targeted program editing with a separate learned peer-review reward model; current taxonomy does not fully represent this artifact/role split."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/alpharesearch.md",
+    "sourcePdf": "papers/AlphaResearch Accelerating New Algorithm Discovery with Language Models.pdf",
+    "citationWarning": "Survey currently places AlphaResearch under Large-Scale Modification, but Appendix B requires targeted SEARCH/REPLACE edits and forbids rewriting the entire program; review that placement. Multi-model subtype is intentionally unclear because AlphaResearch-RM-7B evaluates proposals rather than generating competing candidates."
+  }
+}

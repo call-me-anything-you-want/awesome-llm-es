@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "key": "ContextEvolve",
+  "paperKey": "ContextEvolve",
+  "bibliographyKey": "ContextEvolve",
+  "title": "ContextEvolve: Multi-Agent Context Compression for Systems Code Optimization",
+  "authors": [
+    "Hongyuan Su",
+    "Yu Zheng",
+    "Yong Li"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.02597"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Semantic-similarity-based selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Systems code optimization on the ADRS benchmark",
+    "population": "flat_multi",
+    "populationDetail": "The Evolve Buffer accumulates evaluated candidates and summaries in one unpartitioned history pool; no persistent islands or genealogy tree are specified.",
+    "archive": "none",
+    "archiveDetail": "No separate elite-only archive is described; the system returns the highest-scoring solution at termination.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "Algorithm 1 unions each evaluated parent/offspring record into the Evolve Buffer; pruning or bounded survivor replacement is not specified.",
+    "generation": "large_scale_modification",
+    "generationDetail": "One selected parent code is used as the base for a full offspring generation, while Sampler-selected examples are few-shot context rather than true recombination parents.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The evaluator supplies scalar/combined task fitness alongside domain metrics; trajectory metric changes guide Navigator summaries and later generation. No separate evaluator-generated textual critique is specified.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "Algorithm 1 selects one parent from the Evolve Buffer using unspecified 'pre-defined criteria'. The Sampler separately chooses contextual references; no similarity metric or precise reference count is given.",
+    "outOfTaxonomy": "The three-way decomposition into semantic-state summarization, trajectory-derived textual direction, and relevance/diversity/outcome-based exemplar curation is a specialized context-compression architecture not directly represented by current taxonomy labels."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium_high",
+    "evidenceFile": "annotation/evidence/contextevolve.md",
+    "sourcePdf": "papers/ContextEvolve Multi-Agent Context Compression for Systems Code Optimization.pdf",
+    "citationWarning": "Current survey cites ContextEvolve in semantic-similarity-based parent/reference selection, but the paper only specifies relevance, diversity, and proven outcomes, not an explicit similarity metric. Main-parent selection is simply called pre-defined and remains unclear. Do not treat contextual examples as true parents or the claimed exploration/exploitation balance as a formal adaptive controller."
+  }
+}

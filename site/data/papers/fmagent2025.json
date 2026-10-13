@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "key": "fmagent2025",
+  "paperKey": "fmagent2025",
+  "bibliographyKey": "fmagent2025",
+  "title": "The FM Agent",
+  "authors": [
+    "Annan Li",
+    "Chufan Wu",
+    "Zengle Ge",
+    "Yee Hin Chong",
+    "Zhinan Hou",
+    "Lizhe Cao",
+    "Cheng Ju",
+    "Jianmin Wu",
+    "Huaiming Li",
+    "Haobo Zhang",
+    "Shenghao Feng",
+    "Mo Zhao",
+    "Fengzhi Qiu",
+    "Rui Yang",
+    "Mengmeng Zhang",
+    "Wenyi Zhu",
+    "Yingying Sun",
+    "Quan Sun",
+    "Shunhao Yan",
+    "Danyu Liu",
+    "Dawei Yin",
+    "Dou Shen"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2510.26144"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Multi-Elite Archives"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Localized Modification",
+        "Multi-Parent Fusion"
+      ],
+      "ch5": [],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Structure-Based Selection",
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Multi-agent evolutionary discovery and optimization across algorithms, ML workflows, GPU kernels, and mathematics",
+    "population": "island",
+    "populationDetail": "Candidates are partitioned among multiple islands that evolve mostly independently and periodically interact.",
+    "archive": "multi_elite",
+    "archiveDetail": "A curated pool retains top-performing solutions to guide later sampling and coordination; capacity and update rule are not given.",
+    "replacement": "unclear",
+    "replacementDetail": "The paper does not specify the survivor or replacement protocol for island populations or elite-pool updates.",
+    "generation": "hybrid",
+    "generationDetail": "The evolve stage uses both mutation and crossover, but the parent-offspring relation and concrete prompting protocols are not specified.",
+    "trueParentCount": "unclear",
+    "modelSetting": "unclear",
+    "evaluation": "hybrid",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Evaluation combines quantitative fitness, domain-specific multi-dimensional metrics, and LLM-judge feedback; iterative refinement uses feedback.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "other",
+    "parentSelectionDetail": "Primarily island-local evolution with periodic inter-island interaction; exact sampling formula and parent cardinality are not reported.",
+    "outOfTaxonomy": "Distributed asynchronous Ray execution, expert-guided cold-start initialization, and optional human-interactive/RAG guidance are important framework features outside the current taxonomy."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/fmagent.md",
+    "sourcePdf": "papers/The FM Agent.pdf",
+    "citationWarning": "Mutation and crossover are named but their concrete protocols and switching rule are absent; avoid confident operator subtype/parent-count labels. Gemini 2.5 Pro is a reported configuration, not proof all framework roles use one model. Sampling's exact structure-adaptive policy is only outlined qualitatively."
+  }
+}

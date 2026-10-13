@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "key": "costdriven",
+  "paperKey": "costdriven",
+  "bibliographyKey": "costdriven",
+  "title": "Cost-Driven Synthesis of Sound Abstract Interpreters",
+  "authors": [
+    "Qiuhan Gu",
+    "Avaljot Singh",
+    "Gagandeep Singh"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2511.13663"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Single-Individual Populations",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation",
+        "Localized Modification",
+        "Fixed Selection"
+      ],
+      "ch5": [],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation",
+        "Approximate Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Sound abstract-transformer synthesis for neural-network verification",
+    "population": "single",
+    "populationDetail": "One lowest-cost unsound transformer is retained between rounds; each round's candidate batch is temporary.",
+    "archive": "none",
+    "archiveDetail": "The one retained best code is the search incumbent, not a separate elite archive.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "Batch completions are compared before updating the single incumbent, and a sound completion terminates search immediately.",
+    "generation": "hybrid",
+    "generationDetail": "Initial DSL candidate is de novo; subsequent complete-code generation uses prior failed code as context, while a separate repair agent locally fixes invalid code.",
+    "trueParentCount": "unclear",
+    "modelSetting": "unclear",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "SMT soundness counterexamples and cost accompany AST/type diagnostics; the cost is the objective, not extra metadata.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "lowest_unsoundness_cost_incumbent",
+    "parentSelectionDetail": "The selected incumbent is generation context rather than an explicitly editable parent; repair acts on one invalid candidate.",
+    "outOfTaxonomy": "SMT counterexample-guided synthesis with a single cost-filtered incumbent and conditional code-repair agent."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/costdriven.md",
+    "sourcePdf": "papers/Cost-Driven Synthesis of Sound Abstract Interpreters.pdf",
+    "citationWarning": "Generation is not clearly parent-editing despite incumbent context; L1/L2 may or may not share a backbone. Existing parent-selection citation should describe feedback reference selection, not a separate counterexample retrieval policy. Practical retry limit can return unsound fallback."
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "key": "satheuristics",
+  "paperKey": "satheuristics",
+  "bibliographyKey": "satheuristics",
+  "title": "Automatically discovering heuristics in a complex SAT solver with large language models",
+  "authors": [
+    "Yiwen Sun",
+    "Furong Ye",
+    "Zhihan Chen",
+    "Ke Wei",
+    "Shaowei Cai"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2507.22876"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Single-Individual Populations",
+        "Single-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation",
+        "Approximate Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Current-Incumbent Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-guided heuristic optimization for complex SAT solvers",
+    "population": "single",
+    "populationDetail": "Algorithm 4 maintains one current solver configuration A and replaces it only with a candidate whose PAR-2 is no worse.",
+    "archive": "single_elite",
+    "archiveDetail": "The current best-so-far solver is retained as one incumbent; no separate multi-candidate archive is described.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "The incumbent is also the single best-so-far record; these are not separate data structures in the described algorithm.",
+    "generation": "localized_modification",
+    "generationDetail": "One current solver parent is edited only at selected modularized heuristic functions; selected functions may be rewritten together but all derive from the same incumbent.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "LLM evaluator returns a semantic-redundancy gate; compile/runtime error output is reused for repair, while PAR-2 drives incumbent acceptance.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "current_incumbent",
+    "parentSelectionDetail": "The parent solver is fixed to incumbent A; random selection of function indices is component selection, not parent selection.",
+    "outOfTaxonomy": "Unsupervised entropy-based automatic optimization of prompt Role/Goal/Tips and complexity-aware modularization of a large solver are central mechanisms not directly represented by the current prompt/generation taxonomy."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/satheuristics.md",
+    "sourcePdf": "papers/Automatically discovering heuristics in a complex SAT solver with large language models.pdf",
+    "citationWarning": "Evaluator/repairer prompt templates and backbone assignment are not disclosed. Keep the outer search's implicit control separate from exploration/exploitation inside generated SAT heuristics. Do not call random function-target sampling parent selection. Existing citations in Population, Evaluation, Applications, and model-family text should be audited separately from mechanism evidence."
+  }
+}

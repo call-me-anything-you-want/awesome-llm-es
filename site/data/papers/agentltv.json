@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "key": "agentltv",
+  "paperKey": "agentltv",
+  "bibliographyKey": "agentltv",
+  "title": "AgentLTV: An Agent-Based Unified Search-and-Evolution Framework for Automated Lifetime Value Prediction",
+  "authors": [
+    "Chaowei Wu",
+    "Huazhu Chen",
+    "Congde Yuan",
+    "Qirui Yang",
+    "Guoqing Song",
+    "Yue Gao",
+    "Li Luo",
+    "Frank Youhua Chen",
+    "Mengzhuo Guo"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.21634"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Tree-Structured Populations",
+        "Multi-Elite Archives",
+        "Incremental Insertion",
+        "Elitist Replacement",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "From-Scratch Generation",
+        "Large-Scale Modification",
+        "Multi-Parent Fusion",
+        "Scheduled Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control",
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Search-Statistic-Based Selection",
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Automated lifetime-value prediction pipeline discovery",
+    "population": "hybrid",
+    "populationDetail": "The first stage maintains an explicit tree of executable pipeline programs, and the second stage maintains multiple persistent island populations seeded from the best MCTS program.",
+    "archive": "multi_elite",
+    "archiveDetail": "Each EA island retains a top fitness-ranked elite subset for later reproduction and migration; no descriptor-cell archive is specified.",
+    "replacement": "hybrid",
+    "replacementDetail": "MCTS appends evaluated child nodes to a persistent tree, while EA forms each next generation from retained elites plus offspring and migrates high-fitness elites across islands.",
+    "generation": "hybrid",
+    "generationDetail": "MCTS roots are generated without a parent, MCTS expansions broadly modify one selected tree program, and EA explicitly combines multiple elite parents through crossover followed by unary mutation.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "hybrid",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Code Fixer execution/repair results and multi-metric scores are fed into MCTS priors/rewards and EA advice; repair retries are not automatically repeated evaluation of an unchanged candidate.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "search_statistic_based|score_based",
+    "parentSelectionDetail": "MCTS selects one expansion node by PUCT; EA selects high-fitness elite parents within each island, uses multiple parents for crossover and one parent for mutation, and then migrates elites across islands.",
+    "outOfTaxonomy": "A sequential MCTS-tree-to-island-EA handoff combines tree-statistic control, multi-parent crossover, and island migration in one system; current fields do not represent all stage-specific parent cardinalities or this cross-stage controller cleanly."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/agentltv.md",
+    "sourcePdf": "papers/AgentLTV An Agent-Based Unified Search-and-Evolution Framework for Automated Lifetime Value Prediction.pdf",
+    "citationWarning": "Keep tree and island placements separate; do not treat elite subsets as QD archives or advice/neighbor context as true parents. Multi-model subtype is unclear from the paper. The current survey cites AgentLTV in both state-independent and adaptive explore-exploit discussions because the fixed outer stage schedule and online PUCT control coexist. Repair retries should not be labeled repeated evaluation without stronger evidence."
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "key": "deltaevolve",
+  "paperKey": "deltaevolve",
+  "bibliographyKey": "deltaevolve",
+  "title": "DeltaEvolve: Accelerating Scientific Discovery through Momentum-Driven Evolution",
+  "authors": [
+    "Jiachen Jiang",
+    "Tianyu Ding",
+    "Zhihui Zhu"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.02919"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Dynamic Assignment",
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Scientific and algorithmic program discovery across five domains",
+    "population": "island",
+    "populationDetail": "Configuration lists three islands and a population of 40; method emphasizes a node database, but island internals are not fully specified.",
+    "archive": "unclear",
+    "archiveDetail": "Configuration lists archive size 20 and top-k elites; MAP-Elites cells select diverse prompt references, but archive admission is not described.",
+    "replacement": "unclear",
+    "replacementDetail": "Database stores program, score, delta summary, and delta plan; island and archive update semantics remain underspecified.",
+    "generation": "large_scale_modification",
+    "generationDetail": "One sampled parent program is edited, with historical semantic-delta plans supplying conceptual directions; changes may alter the overall algorithm.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Objective is scored after executable-code testing; prompt includes feedback and qualitative improved/degraded delta outcome.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "reward_weighted_stochastic",
+    "parentSelectionDetail": "One full-code parent is distinct from five rendered delta references; island-local versus global sampling is not stated.",
+    "outOfTaxonomy": "Three-level semantic-delta database and progressive disclosure of historical change plans as generation context."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/deltaevolve.md",
+    "sourcePdf": "papers/DeltaEvolve Accelerating Scientific Discovery through Momentum-Driven Evolution.pdf",
+    "citationWarning": "Island and archive update details are insufficient for confident replacement labels. SEARCH/REPLACE output looks local, but requested algorithmic changes can be broad. Fixed exploration/exploitation ratios appear in configuration without a detailed controller. Existing survey citations under broad modification and parallel evaluation are supported."
+  }
+}

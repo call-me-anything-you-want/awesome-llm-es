@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "key": "mathdiscovery",
+  "paperKey": "mathdiscovery",
+  "bibliographyKey": "mathdiscovery",
+  "title": "Mathematical exploration and discovery at scale",
+  "authors": [
+    "Bogdan Georgiev",
+    "Javier Gómez-Serrano",
+    "Terence Tao",
+    "Adam Zsolt Wagner"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2511.02864"
+  },
+  "tags": [
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Approximate Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Mathematical construction search, optimization heuristics, and generalizing formula discovery",
+    "population": "none_clear",
+    "populationDetail": "The paper describes a population and semi-independent parallel threads that communicate and share best constructions, but does not expose whether the maintained population is flat, island-partitioned, or database-organized.",
+    "archive": "unclear",
+    "archiveDetail": "Best constructions and prior best solutions are shared/reused, but this paper does not specify a separate elite archive or its retention rule.",
+    "replacement": "unclear",
+    "replacementDetail": "The overview says higher-scoring offspring form the basis of future programs, but does not state whether parent survivors are fully replaced, mixed into the next set, or admitted to a separate archive.",
+    "generation": "large_scale_modification",
+    "generationDetail": "The LLM mutates selected parent programs, and AlphaEvolve is described as evolving entire code files up to hundreds of lines rather than applying a narrowly localized patch.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Problem-specific numerical fitness results and previous strong solutions can be shown in prompts, but the paper does not define a general structured side-metadata channel beyond the objective score.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "score_based",
+    "parentSelectionDetail": "The paper establishes quality-biased parent choice at a high level but not exact parent cardinality or sampling probability.",
+    "outOfTaxonomy": "In its main search mode, the evolved program is itself a heuristic that launches an inner search for mathematical constructions under a time budget; the LLM evolves the search procedure, not the final construction directly."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/mathdiscoveryatScale.md",
+    "sourcePdf": "papers/Mathematical exploration and discovery at scale.pdf",
+    "citationWarning": "The survey currently cites this paper for Large-Scale Modification and Approximate Evaluation, both supported. The source describes model comparisons/mixed cheap and high-end calls and parallel evaluation, which could merit additional Chapter 5/6 placements. Population organization, archive/replacement logic, exact prompt template, model identities, and parent sampling are not specified at system level here; avoid importing under-specified details from another AlphaEvolve source without separate evidence."
+  }
+}

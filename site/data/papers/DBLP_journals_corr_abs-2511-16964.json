@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "key": "DBLP:journals/corr/abs-2511-16964",
+  "paperKey": "DBLP:journals/corr/abs-2511-16964",
+  "bibliographyKey": "DBLP:journals/corr/abs-2511-16964",
+  "title": "Optimizing PyTorch Inference with LLM-Based Multi-Agent Systems",
+  "authors": [
+    "Kirill Nagaitsev",
+    "Luka Grbcic",
+    "Samuel Williams",
+    "Costin Iancu"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2511.16964"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Island-Structured Populations",
+        "Multi-Elite Archives",
+        "Generational Replacement",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification",
+        "Multi-Parent Fusion",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation",
+        "Parallel Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM multi-agent optimization of PyTorch inference implementations for GPU performance",
+    "population": "hybrid",
+    "populationDetail": "PIKE-B uses a flat branching seed population with short-term solution history and no islands; default PIKE-O uses three islands with separate solution histories.",
+    "archive": "multi_elite",
+    "archiveDetail": "Default PIKE-O maintains an archive of 12 elite solutions; PIKE-B uses top-k history to seed new rounds but has no separately specified archive.",
+    "replacement": "hybrid",
+    "replacementDetail": "PIKE-B rebuilds its next seed batch by replicating the top-k valid solutions while retaining valid solution history. PIKE-O's archive/population update is inherited from OpenEvolve and its exact survivor replacement rule is not fully detailed.",
+    "generation": "hybrid",
+    "generationDetail": "PIKE-B and PIKE-O mutation variants condition a broad rewrite on one selected implementation; default PIKE-O uses crossover prompts with five or more elite solutions as inspirations.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Validity/correctness status, runtime/speedup, and compilation or tolerance errors are used for filtering, ranking, and EFA repair.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "rank_based|top_k_sampling|ratio_based",
+    "parentSelectionDetail": "Selection varies by strategy: PIKE-B has one seed per prompt from top-k; PIKE-O mutation uses one seed, while crossover uses multiple elite inspirations. Exact number across all variants is not singular.",
+    "outOfTaxonomy": "A modular multi-agent workflow separates idea brainstorming, code optimization, evaluation, and error repair; EFA is an iterative diagnostic-conditioned repair loop tightly integrated with correctness/performance evaluation."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/optimizingpytorchinference.md",
+    "sourcePdf": "papers/Optimizing PyTorch Inference with LLM-Based Multi-Agent Systems.pdf",
+    "citationWarning": "The paper is cited in the application section's KernelBench usage table, but its PIKE population, archive, prompt, generation, evaluation, and explore/exploit mechanisms are not currently covered in mechanism taxonomy prose. Distinguish PIKE-B from PIKE-O; several placements apply only to a named configuration. The PIKE-O archive replacement rule is inherited/underspecified."
+  }
+}

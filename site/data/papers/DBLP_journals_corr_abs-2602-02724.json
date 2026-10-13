@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "key": "DBLP:journals/corr/abs-2602-02724",
+  "paperKey": "DBLP:journals/corr/abs-2602-02724",
+  "bibliographyKey": "DBLP:journals/corr/abs-2602-02724",
+  "title": "Automatic Design of Optimization Test Problems with Large Language Models",
+  "authors": [
+    "Wojciech Achtelik",
+    "Hubert Guzowski",
+    "Maciej Smołka",
+    "Jacek Mańdziuk"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.02724"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "From-Scratch Generation",
+        "Large-Scale Modification",
+        "Generation Mechanism Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Repeated Evaluation"
+      ],
+      "ch7": [],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Evolutionary generation of continuous optimization benchmark functions matching target ELA features",
+    "population": "flat_multi",
+    "populationDetail": "The paper refers to multiple generated functions in population history and a save-and-reuse loop, but does not specify the pool's structure or size.",
+    "archive": "unclear",
+    "archiveDetail": "Candidate history is reused, but no separate elite archive or elite admission rule is described.",
+    "replacement": "unclear",
+    "replacementDetail": "The high-level figure shows generated candidates being saved; the paper does not report survivor filtering, archive update logic, or whether the saved history is bounded.",
+    "generation": "hybrid",
+    "generationDetail": "I1 and E1/E2 generate without an editable parent (E1/E2 use prior functions as context), while M1-M3 modify one selected parent.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "unclear",
+    "feedbackDetail": "The evaluator computes a vector of ELA features and scalar distance, but the paper does not show candidate-specific feature vectors being inserted into later prompts; scalar fitness guides candidate comparison.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "The number of true parents varies by operator: initialization/exploration have none, and mutation has one. Sampling policy for the mutation parent is unspecified.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/eotf.md",
+    "sourcePdf": "papers/Automatic Design of Optimization Test Problems with Large Language Models.pdf",
+    "citationWarning": "The paper describes the operator portfolio but not the operator-selection policy, population capacity/survival, or parent-sampling rule. The 100-sample repeated evaluation is an external robustness comparison protocol and may not apply to each search-loop evaluation. Current survey Chapters 3-7 do not cite EoTF; the placements above are recommendations based on paper mechanisms."
+  }
+}

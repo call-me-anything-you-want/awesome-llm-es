@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "key": "Magellan",
+  "paperKey": "Magellan",
+  "bibliographyKey": "Magellan",
+  "title": "Magellan: Autonomous Discovery of Novel Compiler Optimization Heuristics with AlphaEvolve",
+  "authors": [
+    "Hongzheng Chen",
+    "Alexander Novikov",
+    "Ngân Vũ",
+    "Hanna Alam",
+    "Zhiru Zhang",
+    "Aiden Grossman",
+    "Mircea Trofin",
+    "Amir Yazdanbakhsh"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2601.21096"
+  },
+  "tags": [
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Compiler optimization heuristic synthesis for LLVM and XLA",
+    "population": "none_clear",
+    "populationDetail": "Magellan delegates candidate population storage to AlphaEvolve but this paper does not describe its maintained data structure or topology.",
+    "archive": "unclear",
+    "archiveDetail": "AlphaEvolve selects promising candidates, but Magellan does not specify whether or how a separate elite archive is maintained.",
+    "replacement": "unclear",
+    "replacementDetail": "Do not import AlphaEvolve population/archive/replacement details from its separate paper; Magellan only states that promising policy candidates are selected for further evolution.",
+    "generation": "localized_modification",
+    "generationDetail": "AlphaEvolve edits the policy source within explicitly marked EVOLVE-BLOCK regions while preserving the surrounding compiler integration code.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Best score, tuning logs, profiling traces, and parameter configurations are returned to AlphaEvolve; no natural-language evaluator critique is described.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "AlphaEvolve selects promising policy candidates, but Magellan does not expose the sampling rule, source structure, or inspiration/reference construction.",
+    "outOfTaxonomy": "A coupled hierarchical search evolves symbolic policy templates with an LLM and numerically tunes parameters with an external black-box optimizer; this cross-space controller is not represented by the generation-mechanism taxonomy."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/magellan.md",
+    "sourcePdf": "papers/Magellan Autonomous Discovery of Novel Compiler Optimization Heuristics with AlphaEvolve.pdf",
+    "citationWarning": "Magellan's paper delegates population storage and parent sampling to AlphaEvolve without specifying them. Do not attribute AlphaEvolve's separate database, inspiration sampling, or replacement logic to Magellan. The Gemini model handoff is sequential, and optional proxy evaluation is not reported as used."
+  }
+}

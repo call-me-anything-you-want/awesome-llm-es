@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "key": "satlution",
+  "paperKey": "satlution",
+  "bibliographyKey": "satlution",
+  "title": "Autonomous Code Evolution Meets NP-Completeness",
+  "authors": [
+    "Cunxi Yu",
+    "Rongjian Liang",
+    "Chia-Tung Ho",
+    "Haoxing Ren"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2509.07367"
+  },
+  "tags": [
+    "Population & archives",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Single-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Rank-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "repository-scale evolutionary optimization of SAT solver code",
+    "population": "none_clear",
+    "populationDetail": "Five seed solver repositories initialize the process, but later search is described as champion-challenger code evolution without a sufficiently specified persistent population topology.",
+    "archive": "single_elite",
+    "archiveDetail": "A champion solver is retained as the incumbent and successful challengers replace it; the paper does not describe a separate ranked archive of multiple elites.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "The paper combines a five-codebase initial portfolio with a later champion/challenger loop; it is unclear whether multiple solver candidates remain jointly eligible throughout later cycles.",
+    "generation": "unclear",
+    "generationDetail": "The Coding Agent makes broad repository-scale edits, but the paper does not establish the per-cycle parent repository or how the five initial solver codebases contribute to each offspring.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The metrics driving reward change over time; PAR-2 is added after cycle 33, and verifier/evaluator/reward processing is manually authored.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "champion_challenger_rank_based",
+    "parentSelectionDetail": "The survey's parent-selection section cites SATLUTION under Rank-Based Selection, but the paper does not give a complete per-cycle parent-sampling or lineage algorithm.",
+    "outOfTaxonomy": "Repository-scale agentic evolution with co-evolving rule/compliance infrastructure and domain-specific formal correctness gates."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/satlution.md",
+    "sourcePdf": "papers/Autonomous Code Evolution Meets NP-Completeness.pdf",
+    "citationWarning": "Current survey text cites SATLUTION under rank-based parent selection only. Paper evidence also supports prompt/coordination, role-based multi-model use, champion replacement, evaluation feedback, and staged/parallel evaluation. Population topology, prompt block details, and actual parent lineage remain underspecified; keep these qualifications visible."
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "key": "MathTheory2025",
+  "paperKey": "MathTheory2025",
+  "bibliographyKey": "MathTheory2025",
+  "title": "Learning Interestingness in Automated Mathematical Theory Formation",
+  "authors": [
+    "George Tsoukalas",
+    "Rahul Saha",
+    "Amitayush Thakur",
+    "Sabrina Reguyal",
+    "Swarat Chaudhuri"
+  ],
+  "year": 2026,
+  "venue": "The Thirty-ninth Annual Conference on Neural Information Processing Systems",
+  "publication": {
+    "venue": "The Thirty-ninth Annual Conference on Neural Information Processing Systems",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.52202/085713-1298",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Parallel Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Learning programmatic interestingness measures for automated mathematical theory formation in FERMAT",
+    "population": "island",
+    "populationDetail": "EvoAbstract maintains four island populations of interestingness programs; each generation samples one island uniformly, evolves there, and periodically runs abstraction extraction across all islands.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is described; high-scoring programs are sampled from island populations for evolution and abstraction, while abstraction libraries store reusable subroutines rather than elite candidates.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "Algorithm 1 updates the sampled island as \\(P_i\\) <- \\(P_i\\) union {\\(P\\)}; no survivor pruning or separate elite archive update is specified.",
+    "generation": "large_scale_modification",
+    "generationDetail": "Lvar performs LLM-driven evolution using sampled high-performing parent programs as source material and synthesizes candidate interestingness programs through complex mutations; the prompt requests a new function rather than a localized edit.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Fitness is cumulative extrinsic reward across FERMAT episodic rollouts; scores are used to identify high-performing parent programs and samples for abstraction extraction.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "fitness_based_sampling",
+    "parentSelectionDetail": "Parents are sampled among high-performing programs within the uniformly sampled island; \\(n_p\\) is not numerically specified in the reported settings. The abstraction library supplies references but is not an additional parent pool.",
+    "outOfTaxonomy": "Periodic LLM-based abstraction extraction builds per-island reusable subroutine libraries that modify the future program search space; this auxiliary learned library is neither an elite candidate archive nor a separate generation operator."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/learning_interestingness_math_theory.md",
+    "sourcePdf": "papers/Learning Interestingness in Automated Mathematical Theory Formation.pdf",
+    "citationWarning": "Survey currently cites the paper in application.tex under mathematical theory formation. Parent count n_p is unspecified; distinguish same-backbone LLM roles from a multi-model setting; distinguish periodic abstraction learning from generation-mode selection and elite archiving."
+  }
+}

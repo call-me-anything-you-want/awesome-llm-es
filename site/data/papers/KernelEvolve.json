@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "key": "KernelEvolve",
+  "paperKey": "KernelEvolve",
+  "bibliographyKey": "KernelEvolve",
+  "title": "KernelEvolve: Scaling Agentic Kernel Coding for Heterogeneous AI Accelerators at Meta",
+  "authors": [
+    "Gang Liao",
+    "Hongsen Qin",
+    "Ying Wang",
+    "Alicia Golden",
+    "Michael Kuchnik",
+    "Yavuz Yetim",
+    "Jia Jiunn Ang",
+    "Chunli Fu",
+    "Yihan He",
+    "Samuel Hsia",
+    "Zewei Jiang",
+    "Dianshi Li",
+    "Uladzimir Pashkevich",
+    "Varna Puvvada",
+    "Feng Shi",
+    "Matt Steiner",
+    "Ruichao Xiao",
+    "Nathan Yan",
+    "Xiayu Yu",
+    "Zhou Fang",
+    "Roman Levenstein",
+    "Kunming Ho",
+    "Haishan Zhu",
+    "Alec Hammond",
+    "Richard Li",
+    "Ajit Mathews",
+    "Kaustubh Gondkar",
+    "Abdul Zainul-Abedin",
+    "Ketan Singh",
+    "Hongtao Yu",
+    "Wenyuan Chi",
+    "Barney Huang",
+    "Sean Zhang",
+    "Noah Weller",
+    "Zach Marine",
+    "Wyatt Cook",
+    "Carole-Jean Wu",
+    "Gaoxiang Liu"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2512.23236"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Tree-Structured Populations",
+        "Flat Multi-Individual Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Production-scale Triton kernel generation and optimization across NVIDIA, AMD, and Meta MTIA accelerators",
+    "population": "hybrid",
+    "populationDetail": "Kernel artifacts are stored in an explicit parent-child search graph/tree; evolutionary search configurations also maintain diverse flat candidate populations, while greedy/MCTS modes operate over tree nodes.",
+    "archive": "unclear",
+    "archiveDetail": "The paper persists candidates and retrieves high-performing ancestors but does not specify a separate elite archive or archive admission rule common across search modes.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "Candidate artifacts are persisted as graph nodes; search state may prune nodes in context-dependent ways, but there is no universal bounded survivor policy.",
+    "generation": "large_scale_modification",
+    "generationDetail": "A universal operator transforms a selected existing kernel using a current optimization context; transformations may be broad or targeted and are not limited to localized patches.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Evaluator returns correctness, speedup, compiler/runtime diagnostics, and multi-level profiling; artifacts and analysis reports are persisted and reused for subsequent tree expansion.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "planner_controlled",
+    "parentSelectionDetail": "Search policies choose nodes/subsets for expansion; persistent context memory can retrieve high-performing related kernels across prior searches. Exact parent count and default selection rule are unspecified.",
+    "outOfTaxonomy": "A production workflow combines heterogeneous model backends, persistent cross-run hardware knowledge, dynamic retrieval agents, and remote accelerator evaluation as one kernel-generation service."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/kernelevolve.md",
+    "sourcePdf": "papers/KernelEvolve Scaling Agentic Kernel Coding for Heterogeneous AI Accelerators at Meta.pdf",
+    "citationWarning": "Survey already covers tree structure, prompt context, metadata, async evaluation, scalar objective, and deployment. Clarify that greedy/MCTS/evolutionary search are supported alternatives; do not imply a single simultaneous hybrid unless a deployment configuration confirms it. Backend list does not establish dynamic model routing or collaboration. No universal elite archive policy is described."
+  }
+}

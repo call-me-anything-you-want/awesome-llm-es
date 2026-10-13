@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "key": "kasenberg2026ai",
+  "paperKey": "kasenberg2026ai",
+  "bibliographyKey": "kasenberg2026ai",
+  "title": "AI-Discovered Cognitive Models Reveal Novel Insights into Human and Animal Learning",
+  "authors": [
+    "Kasenberg, Daniel",
+    "Castro, Pablo Samuel",
+    "Eckstein, Maria K",
+    "Elteto, Noemi",
+    "Dabney, Will",
+    "Wang, Caroline L",
+    "Engelcke, Martin",
+    "Mohanta, Rishika",
+    "Dev, Aparna",
+    "Botvinick, Matthew M",
+    "others"
+  ],
+  "year": 2026,
+  "venue": "bioRxiv",
+  "publication": {
+    "venue": "bioRxiv",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.64898/2026.05.18.725921",
+    "eprint": null
+  },
+  "tags": [
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Static Assignment"
+      ],
+      "ch6": [
+        "Staged Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "One current program edited; fitness-preferred sampling, exact pool/rule unspecified"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Evolutionary discovery of interpretable cognitive learning models from behavioral data",
+    "population": "unclear",
+    "populationDetail": "DataDIVER delegates evolutionary search to AlphaEvolve and reports score-preferred program sampling, but does not describe population organization.",
+    "archive": "unclear",
+    "archiveDetail": "The paper does not specify whether AlphaEvolve maintains a separate elite archive or how programs are preserved.",
+    "replacement": "unclear",
+    "replacementDetail": "AlphaEvolve search-state and candidate replacement internals are outside the method details reported here.",
+    "generation": "localized_modification",
+    "generationDetail": "AlphaEvolve edits one current parent using exact SEARCH/REPLACE blocks limited to at most four contiguous source lines and the smallest independent change; prior programs are contextual examples.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "hybrid",
+    "feedbackReused": "unclear",
+    "feedbackDetail": "Fitness values guide AlphaEvolve's preferential sampling; objective scores themselves are not separately described as prompt feedback.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "fitness_based",
+    "parentSelectionDetail": "The prompt contains one current program; AlphaEvolve is said to preferentially sample higher-scoring programs, but its program-pool structure and sampling formula are not detailed.",
+    "outOfTaxonomy": "Sequential scientific-model search optimizes predictive fit and interpretability-related complexity under multiple fit floors, then applies a function-preserving readability refactor."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium-high",
+    "evidenceFile": "annotation/evidence/local_a/datadiver.md",
+    "sourcePdf": "additional_papers/202605/AI-Discovered Cognitive Models Reveal Novel Insights into Human and Animal Learning.pdf",
+    "citationWarning": "Population/archive/replacement and exact parent sampling are delegated to AlphaEvolve and not specified here. Gemini 2.5 Pro refactoring is post-search, not part of evolutionary generation."
+  }
+}

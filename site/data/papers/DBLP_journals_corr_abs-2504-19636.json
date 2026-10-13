@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "key": "DBLP:journals/corr/abs-2504-19636",
+  "paperKey": "DBLP:journals/corr/abs-2504-19636",
+  "bibliographyKey": "DBLP:journals/corr/abs-2504-19636",
+  "title": "Fitness Landscape of Large Language Model-Assisted Automated Algorithm Search",
+  "authors": [
+    "Fei Liu",
+    "Qingfu Zhang",
+    "Xialiang Tong",
+    "Kun Mao",
+    "Mingxuan Yuan"
+  ],
+  "year": 2025,
+  "venue": "CoRR",
+  "publication": {
+    "venue": "CoRR",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.48550/ARXIV.2504.19636",
+    "eprint": "2504.19636"
+  },
+  "tags": [
+    "Population & archives",
+    "Foundation models"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [],
+      "ch7": [],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Fitness-landscape analysis of LLM-assisted automated algorithm search across six design tasks",
+    "population": "flat_multi",
+    "populationDetail": "The EoH experiment maintains a population of 20 candidate algorithms per run; the paper also compares other configured sizes.",
+    "archive": "unclear",
+    "archiveDetail": "The paper discusses populations and returns a best algorithm but does not specify a separate elite archive or preservation logic.",
+    "replacement": "unclear",
+    "replacementDetail": "The generic LAS formulation says selected offspring are added and candidates removed, but the EoH experiment's concrete update/survivor rule is not given.",
+    "generation": "unclear",
+    "generationDetail": "E1/E2 are described as exploratory and M1/M2 as parent-refinement operators, but edit scope and exact parent-offspring operations are not detailed.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "no",
+    "feedbackDetail": "Candidate quality is task performance, such as average route length across instances; no additional evaluation metadata is reported as search feedback.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "The generic formulation says parent candidates come from the current population according to a selection strategy, but the EoH experiment does not specify that strategy or parent arity.",
+    "outOfTaxonomy": "The paper's main contribution is graph-based characterization of fitness landscapes and code-similarity measurements, rather than a search mechanism; this analysis contribution is outside the current mechanism taxonomy."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/fitness_landscape_las.md",
+    "sourcePdf": "papers/Fitness Landscape of Large Language Model-Assisted Automated Algorithm Search.pdf",
+    "citationWarning": "No current Survey/reference.bib entry or Survey/sections citation was found. Local DBLP BibTeX key is DBLP:journals/corr/abs-2504-19636. EoH operator-selection, parent-selection, and replacement mechanics are not specified; six models are separate experimental configurations, not a demonstrated routed/collaborative system."
+  }
+}

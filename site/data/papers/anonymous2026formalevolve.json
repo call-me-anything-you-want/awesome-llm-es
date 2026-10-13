@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "key": "anonymous2026formalevolve",
+  "paperKey": "anonymous2026formalevolve",
+  "bibliographyKey": "anonymous2026formalevolve",
+  "title": "FormalEvolve: Neuro-Symbolic Evolutionary Search for Diverse Autoformalization",
+  "authors": [
+    "Anonymous"
+  ],
+  "year": 2026,
+  "venue": "Submitted to ACL Rolling Review - May 2026",
+  "publication": {
+    "venue": "Submitted to ACL Rolling Review - May 2026",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": null,
+    "url": "https://openreview.net/forum?id=qJBxec7CA6"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Large-Scale Modification",
+        "Localized Modification",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Static Assignment"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Island-local weighted parent selection with usage penalty"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Budgeted Lean autoformalization search for diverse semantically faithful theorem statements",
+    "population": "island",
+    "populationDetail": "Two semi-isolated per-problem archives store unique compilation-feasible candidates; parent/context sampling is island-local with periodic migration.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is described; the main archive stores all unique compilable candidates, while top-1 migration protection is a migration rule.",
+    "replacement": "unclear",
+    "replacementDetail": "The feasible archive has configured capacity 40, but the capacity-eviction rule is not specified in the inspected description.",
+    "generation": "hybrid",
+    "generationDetail": "Full patching broadly rewrites one parent while diff patching makes localized edits; cross patching adds one optional inspiration as context rather than a mandatory second parent.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "hybrid",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Compilation is a hard gate; an LLM judge supplies a binary semantic-faithfulness label for compilable candidates.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "score_and_usage_penalized_weighted_sampling",
+    "parentSelectionDetail": "The parent weight is a robustly normalized gate score passed through a sigmoid and multiplied by an inverse parent-use discount.",
+    "outOfTaxonomy": "Compilation-gated archive search with bounded repair and generator-call-free symbolic AST diversification (EvolAST)."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium-high",
+    "evidenceFile": "annotation/evidence/local_a/formalevolve.md",
+    "sourcePdf": "additional_papers/202603/FormalEvolve Neuro-Symbolic Evolutionary Search for Diverse Autoformalization.pdf",
+    "citationWarning": "Capacity eviction behavior is not specified; cross-patch uses a contextual inspiration, not a confirmed second genealogical parent."
+  }
+}

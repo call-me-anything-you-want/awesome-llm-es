@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "key": "srscientist",
+  "paperKey": "srscientist",
+  "bibliographyKey": "srscientist",
+  "title": "SR-Scientist: Scientific Equation Discovery With Agentic AI",
+  "authors": [
+    "Shijie Xia",
+    "Yuhan Sun",
+    "Pengfei Liu"
+  ],
+  "year": 2026,
+  "venue": "The Fourteenth International Conference on Learning Representations",
+  "publication": {
+    "venue": "The Fourteenth International Conference on Learning Representations",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": "2510.11661"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback"
+      ],
+      "ch7": [],
+      "parentSelection": [
+        "Rank-Based Selection (contextual top-K retrieval; direct parent relation unconfirmed)"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-agentic scientific equation discovery / symbolic regression",
+    "population": "flat_multi",
+    "populationDetail": "A global experience buffer/ranked heap retains explored equations and scores; no islands or maintained genealogy are described.",
+    "archive": "multi_elite",
+    "archiveDetail": "The same experience buffer/ranked heap preserves multiple high-performing equations and retrieves the best K for later iterations; no separate archive apart from this main memory is identified.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "The global history grows by appending iteration outputs; top-K retrieval filters context without replacing or deleting the accumulated history.",
+    "generation": "from_scratch",
+    "generationDetail": "The agent proposes equation hypotheses during a tool-using trajectory; no direct single-parent editing or multi-parent fusion protocol is specified.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The online optimization target is MAPE; evaluator observations guide the ongoing trajectory, and historical equation scores are retrieved in later iterations. Benchmark accuracy-to-tolerance and symbolic accuracy are reporting metrics, not the online search signal.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "rank_based|top_k_sampling",
+    "parentSelectionDetail": "Record this as rank-based contextual reference retrieval, not verified genealogical parent selection. The source is the same experience structure classified as population/archive.",
+    "outOfTaxonomy": "Long-horizon tool-using autonomous scientific discovery and RL training of an agent for equation discovery are not fully represented by the current mechanism labels."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/srscientist.md",
+    "sourcePdf": "papers/SR-SCIENTIST Scientific Equation Discovery with Agentic AI.pdf",
+    "citationWarning": "Do not describe top-K examples as confirmed direct parents. The experience buffer/ranked heap is the same main accumulated search-memory structure; a separate archive is not clearly defined. GRPO's training-time exploration choice does not establish an inference-time explore-exploit controller."
+  }
+}

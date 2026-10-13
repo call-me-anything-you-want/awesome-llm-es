@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "key": "yang2023large",
+  "paperKey": "yang2023large",
+  "bibliographyKey": "yang2023large",
+  "title": "Large language models as optimizers",
+  "authors": [
+    "Yang, Chengrun",
+    "Wang, Xuezhi",
+    "Lu, Yifeng",
+    "Liu, Hanxiao",
+    "Le, Quoc V",
+    "Zhou, Denny",
+    "Chen, Xinyun"
+  ],
+  "year": 2023,
+  "venue": "The Twelfth International Conference on Learning Representations",
+  "publication": {
+    "venue": "The Twelfth International Conference on Learning Representations",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": "2309.03409"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation"
+      ],
+      "ch5": [
+        "Single-Model Setting",
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Approximate Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "General black-box optimization and natural-language prompt optimization",
+    "population": "flat_multi",
+    "populationDetail": "Maintains a score-sorted optimization trajectory of multiple solutions; prompt optimization typically exposes the best 20 within the meta-prompt.",
+    "archive": "multi_elite",
+    "archiveDetail": "The meta-prompt includes a top-scoring subset from history (best 20 in the default prompt-optimization experiments), but this is trajectory context rather than a formally named archive.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "New solution-score pairs are appended to the trajectory; context-length limits filter the prompt to top candidates. This is memory/trajectory-based optimization, not a conventional evolutionary population update.",
+    "generation": "from_scratch",
+    "generationDetail": "The optimizer is asked to generate a new solution from the task description and prior solution-score trajectory, rather than edit a selected parent.",
+    "trueParentCount": "0",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "no",
+    "feedbackDetail": "Past scalar scores are part of the primary optimization trajectory, not additional evaluator metadata.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "trajectory_conditioned_generation",
+    "parentSelectionDetail": "No true editable parent is selected; prior scored candidates are contextual examples, with a top-k subset included in prompt optimization.",
+    "outOfTaxonomy": "General trajectory-conditioned black-box optimization rather than canonical population-based evolutionary search."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/downloaded_b/OPRO.md",
+    "sourcePdf": "annotation/incoming_pdfs/OPRO.pdf",
+    "citationWarning": "Survey currently cites OPRO as a single-model example, but the original paper evaluates both same-model and distinct optimizer/scorer backbones (Table 4); role/configuration variability should be reflected. Other chapter placements describe transferable optimizer mechanisms, not evidence that OPRO is a canonical LLM-ES population method."
+  }
+}

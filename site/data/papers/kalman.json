@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "key": "kalman",
+  "paperKey": "kalman",
+  "bibliographyKey": "kalman",
+  "title": "Data-Driven Discovery of Interpretable Kalman Filter Variants through Large Language Models and Genetic Programming",
+  "authors": [
+    "Vasileios Saketos",
+    "Sebastian Kaltenbach",
+    "Sergey Litvinov",
+    "Petros Koumoutsakos"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2508.11703"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Multi-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Multi-Parent Fusion",
+        "Localized Modification",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Staged Evaluation",
+        "Approximate Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "Score-Based Selection",
+        "Population-Configuration-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "data-driven discovery of interpretable state-estimation algorithms",
+    "population": "island",
+    "populationDetail": "Each modality has four independent islands with local top-solution databases; weak islands are periodically reseeded within that modality.",
+    "archive": "multi_elite",
+    "archiveDetail": "Each island retains a database of the 200 highest-scoring candidate algorithms.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "Two distinct representation spaces run in parallel with the same scoring interface; no CGP-to-LLM candidate exchange occurs.",
+    "generation": "hybrid",
+    "generationDetail": "LLM prompts combine or mutate two sampled functions; the separate CGP branch mutates one sampled graph by changing edges or node types.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Candidate database stores scalar fitness values for softmax parent sampling; no additional per-candidate evaluator metadata or critique is described.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "fitness_softmax_sampling",
+    "parentSelectionDetail": "LLM prompts use two selected functions and CGP mutation uses one graph; both sample from local databases with fitness-softmax probabilities.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/kalman.md",
+    "sourcePdf": "papers/Data-Driven Discovery of Interpretable Kalman Filter Variants through Large Language Models and Genetic Programming.pdf",
+    "citationWarning": "Current survey cites only island population and open-source ecosystem. Paper's code footnote says URL will be added upon publication, so release claim needs external verification. Fixed temperature/island reset should not be called adaptive; shared fitness must not imply cross-modality candidate exchange. LLM mutation locality is unspecified."
+  }
+}

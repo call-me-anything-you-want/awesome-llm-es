@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "key": "zhou2026alphaapollodeepagenticreasoning",
+  "paperKey": "zhou2026alphaapollodeepagenticreasoning",
+  "bibliographyKey": "zhou2026alphaapollodeepagenticreasoning",
+  "title": "AlphaApollo: A System for Deep Agentic Reasoning",
+  "authors": [
+    "Zhanke Zhou",
+    "Chentao Cao",
+    "Xiao Feng",
+    "Xuan Li",
+    "Zongze Li",
+    "Xiangyu Lu",
+    "Jiangchao Yao",
+    "Weikai Huang",
+    "Tian Cheng",
+    "Jianghangfan Zhang",
+    "Tangyu Jiang",
+    "Linrui Xu",
+    "Yiming Zheng",
+    "Brando Miranda",
+    "Tongliang Liu",
+    "Sanmi Koyejo",
+    "Masashi Sugiyama",
+    "Bo Han"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": "10.48550/arXiv.2510.06261",
+    "eprint": "2510.06261"
+  },
+  "tags": [
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Deep agentic mathematical reasoning",
+    "population": "none_clear",
+    "populationDetail": "The paper explicitly describes test-time evolution as a free-form multi-round pipeline, not a maintained candidate population.",
+    "archive": "none",
+    "archiveDetail": "No elite archive or persistent candidate population is defined; per-round solution/judgment pairs are retained in long-term memory.",
+    "replacement": "unclear",
+    "replacementDetail": "none",
+    "generation": "unclear",
+    "generationDetail": "Later-round solutions are conditioned on memory of earlier solution/judgment pairs, but the paper does not specify direct editing/inheritance or a fixed parent relation.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "none",
+    "explorationExploitation": "explicit",
+    "parentSelection": "none",
+    "parentSelectionDetail": "none",
+    "outOfTaxonomy": "Agentic tool-use trajectories and a four-role solver/abstractor/evaluator/summarizer pipeline are coupled to test-time solution improvement."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/incoming_b/alphapollo.md",
+    "sourcePdf": "additional_papers/202603/AlphaApollo A System for Deep Agentic Reasoning.pdf",
+    "citationWarning": "The paper specifies a dual-model policy/verifier configuration in the evolution experiment, but not a fixed count of parallel solver workers or any population/parent topology."
+  }
+}

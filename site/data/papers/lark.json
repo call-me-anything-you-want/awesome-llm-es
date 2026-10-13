@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "key": "lark",
+  "paperKey": "lark",
+  "bibliographyKey": "lark",
+  "title": "Lark: Biologically Inspired Neuroevolution for Multi-Stakeholder LLM Agents",
+  "authors": [
+    "Rikhil Tanugula",
+    "Dheeraj Chintapalli",
+    "Sunkalp Chandra"
+  ],
+  "year": 2025,
+  "venue": "NeurIPS Workshop on Efficient Reasoning",
+  "publication": {
+    "venue": "NeurIPS Workshop on Efficient Reasoning",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": "2510.16978"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "From-Scratch Generation",
+        "Localized Modification",
+        "Large-Scale Modification",
+        "Scheduled Selection",
+        "Adaptive Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Preference-Based Evaluation",
+        "Metadata",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control",
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Multi-stakeholder strategy generation and decision support with LLM agents",
+    "population": "flat_multi",
+    "populationDetail": "A size-k population of strategies evolves generation by generation; the paper does not describe persistent islands or a tree-structured search population.",
+    "archive": "none",
+    "archiveDetail": "No distinct historical elite archive is described; high-quality strategies survive through top-k selection into the next population.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "The next generation is selected as the top-k from the previous population combined with matured duplicates; best solutions persist through survivor selection rather than a separate archive.",
+    "generation": "hybrid",
+    "generationDetail": "The system initializes strategies from scratch, applies unary plasticity edits that preserve the core structure, and duplicates then specializes strong strategies for stakeholder subgroups.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "preference",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Structured feedback includes stakeholder ranks/Borda scores, token counts, penalized fitness, and population efficiency; no evaluator-generated natural-language critique is reused in prompts.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "fitness_proportional",
+    "parentSelectionDetail": "The duplication probability is a sigmoid of score relative to population mean, and plasticity is unary; exact parent count is stage-dependent, with zero-parent initial sampling.",
+    "outOfTaxonomy": "Influence-weighted social-choice aggregation over heterogeneous stakeholder preferences is combined with a token-efficiency penalty; this multi-stakeholder objective construction is more specific than the current generic preference label."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/lark.md",
+    "sourcePdf": "papers/Lark Biologically Inspired Neuroevolution for Multi-Stakeholder LLM Agents.pdf",
+    "citationWarning": "Current survey citations under score-based parent selection and preference/ranking evaluation are supported. Make clear that Lark uses ordinal stakeholder ranks and Borda aggregation plus token penalty; fitness-relative duplication is sigmoid-based. Independent judges support repeated, not necessarily parallel, evaluation."
+  }
+}

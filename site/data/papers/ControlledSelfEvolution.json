@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "key": "ControlledSelfEvolution",
+  "paperKey": "ControlledSelfEvolution",
+  "bibliographyKey": "ControlledSelfEvolution",
+  "title": "Controlled Self-Evolution for Algorithmic Code Optimization",
+  "authors": [
+    "Tu Hu",
+    "Ronghao Chen",
+    "Shuo Zhang",
+    "Jianghao Yin",
+    "Mou Xiao Feng",
+    "Jingping Liu",
+    "Shaolei Zhang",
+    "Wenqi Jiang",
+    "Yuqi Fang",
+    "Sen Hu",
+    "Huacan Wang",
+    "Yi Xu"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2601.07348"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "From-Scratch Generation",
+        "Localized Modification",
+        "Multi-Parent Fusion",
+        "Scheduled Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Algorithmic code efficiency optimization on EffiBench-X",
+    "population": "flat_multi",
+    "populationDetail": "Five diverse initial programs form one candidate population, from which one or two parents are sampled each iteration; no islands or persistent genealogy are described.",
+    "archive": "none",
+    "archiveDetail": "Best-so-far is tracked for reporting, but no distinct persistent elite-code archive is defined; global memory stores distilled experiences rather than code elites.",
+    "replacement": "unclear",
+    "replacementDetail": "Algorithm 1 calls UpdatePopulation with each child but leaves its admission and survivor rule unspecified.",
+    "generation": "hybrid",
+    "generationDetail": "Initialization generates complete programs from sketches; odd iterations locally refine one parent; even iterations synthesize complementary components of two sampled parents.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Runtime/TLE/MLE failures receive zero fitness; ET/MP/MI are report metrics, while inverse raw memory-time integral is the scalar search reward.",
+    "explorationExploitation": "mixed",
+    "parentSelection": "fitness_proportional",
+    "parentSelectionDetail": "One parent is sampled for mutation and two for crossover; failed candidates have zero sampling probability.",
+    "outOfTaxonomy": "Hierarchical cross-task experience retrieval and within-task lesson compression are important search memory beyond current population/parent taxonomy."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/ControlledSelfEvolution.md",
+    "sourcePdf": "papers/Controlled Self-Evolution for Algorithmic Code Optimization.pdf",
+    "citationWarning": "Population replacement is unspecified beyond UpdatePopulation, so do not assign insertion or elitist replacement without code evidence. Current survey cites only backbone families, although separate experiments should not be read as within-run multi-model routing. Chapter 7 mapping is partly interpretive because fixed operator parity is explicit but explore/exploit labels are not assigned to operators."
+  }
+}

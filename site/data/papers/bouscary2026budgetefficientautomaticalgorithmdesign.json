@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "key": "bouscary2026budgetefficientautomaticalgorithmdesign",
+  "paperKey": "bouscary2026budgetefficientautomaticalgorithmdesign",
+  "bibliographyKey": "bouscary2026budgetefficientautomaticalgorithmdesign",
+  "title": "Budget-Efficient Automatic Algorithm Design via Code Graph",
+  "authors": [
+    "Maxime Bouscary",
+    "Manxi Wu",
+    "Saurabh Amin"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": "10.48550/arXiv.2605.10598",
+    "eprint": "2605.10598"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Single-Elite Archives",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "From-Scratch Generation",
+        "Localized Modification",
+        "Scheduled Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Budget-constrained LLM design of combinatorial optimization algorithms",
+    "population": "flat_multi",
+    "populationDetail": "Many evaluated algorithms and unevaluated algorithm paths are maintained in a correction DAG; this is not a conventional bounded survivor pool.",
+    "archive": "single_elite",
+    "archiveDetail": "The highest-fitness evaluated algorithm is retained as the reference for proposing corrections; the full evaluated set is also retained.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "Algorithms are paths over a reusable code-correction DAG, not nodes in a candidate genealogy tree.",
+    "generation": "hybrid",
+    "generationDetail": "The initial algorithm is sampled from scratch; subsequent candidates arise by applying localized add/replace/remove code corrections to compatible algorithm paths.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "A random forest predicts fitness from correction-incidence features to rank unevaluated paths; task fitness is still measured with the objective evaluator.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "score_based_best_so_far",
+    "parentSelectionDetail": "The global best evaluated algorithm is the reference for proposing corrections; corrections can then be applied to multiple compatible paths.",
+    "outOfTaxonomy": "DAG-based reusable code corrections with correction-level Shapley credit assignment; algorithm paths compose toggled corrections."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/local_b/budget_efficient_aad.md",
+    "sourcePdf": "additional_papers/202605/Budget-Efficient Automatic Algorithm Design via Code Graph.pdf",
+    "citationWarning": "Do not classify the correction DAG as a genealogy tree or correction composition as multi-parent fusion. The fixed 50/50 candidate-evaluation split is distinct from generation-operator selection."
+  }
+}

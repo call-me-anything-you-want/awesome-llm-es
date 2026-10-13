@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "key": "adadevolve",
+  "paperKey": "adadevolve",
+  "bibliographyKey": "adadevolve",
+  "title": "AdaEvolve: Adaptive LLM Driven Zeroth-Order Optimization",
+  "authors": [
+    "Mert Cemri",
+    "Shubham Agrawal",
+    "Akshat Gupta",
+    "Shu Liu",
+    "Audrey Cheng",
+    "Qiuyang Mang",
+    "Ashwin Naren",
+    "Lutfi Eren Erdogan",
+    "Koushik Sen",
+    "Matei Zaharia",
+    "Alex Dimakis",
+    "Ion Stoica"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.20133"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Multi-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Uniform Selection",
+        "Score-Based Selection",
+        "Mode-Controlled Selection-Mechanism Control",
+        "Object-Specific Selection-Mechanism Control"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-guided program evolution for mathematical optimization, systems optimization, and algorithm design",
+    "population": "island",
+    "populationDetail": "A dynamic set of asynchronous islands is maintained; each island has a local archive and islands exchange programs by ring migration.",
+    "archive": "multi_elite",
+    "archiveDetail": "Each island maintains a local archive of programs with elite replacement; diversity is used for exploration and inspiration sampling.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "A generated child is added to the island archive and the archive applies elite replacement; migration and dynamic island spawning add higher-level updates; dynamic island spawning, ring migration, UCB island scheduling, and genealogy tracking are important mechanisms beyond the basic population labels.",
+    "generation": "large_scale_modification",
+    "generationDetail": "One selected parent program is placed in an Improve-the-following-program prompt; inspirations and optional tactics guide a broad rewrite.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Fitness improvements are converted into local and global adaptive signals, island rewards, and meta-guidance triggers.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "uniform_archive_sampling|fitness_proportional",
+    "parentSelectionDetail": "The main parent is local to the selected island; UCB selects the island globally, while inspirations are selected separately.",
+    "outOfTaxonomy": "Hierarchical adaptive controller with UCB resource routing, dynamic island spawning, and meta-level solution tactics is not represented by one existing taxonomy field."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/adadevolve.md",
+    "sourcePdf": "papers/AdaEvolve Adaptive LLM Driven Zeroth-Order Optimization.pdf",
+    "citationWarning": "The survey currently places AdaEvolve under Multi-Elite Archives. Diversity-based sampling does not by itself establish a descriptor-cell quality-diversity archive; retain this as a boundary warning and review only if the paper later exposes descriptor-based admission."
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "key": "min2026revolution",
+  "paperKey": "min2026revolution",
+  "bibliographyKey": "min2026revolution",
+  "title": "Revolution: An evolutionary framework for rtl generation driven by large language models",
+  "authors": [
+    "Min, Kyungjun",
+    "Cho, Kyumin",
+    "Jang, Junhwan",
+    "Kang, Seokhyeong"
+  ],
+  "year": 2026,
+  "venue": "31st Asia and South Pacific Design Automation Conference (ASP-DAC)",
+  "publication": {
+    "venue": "31st Asia and South Pacific Design Automation Conference (ASP-DAC)",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.1109/asp-dac66049.2026.11420420",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification",
+        "Localized Modification",
+        "Multi-Parent Fusion",
+        "Adaptive Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-driven RTL generation and power-performance-area optimization",
+    "population": "flat_multi",
+    "populationDetail": "A multi-candidate population is re-divided each generation into Fail and Success groups by correctness; both groups participate in pooled survivor selection and are then re-segregated.",
+    "archive": "none",
+    "archiveDetail": "No separate archive is described; top candidates by each PPA metric are preserved within generational survivor selection.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "Fail and Success groups are correctness-stratified subpopulations rather than islands; offspring allocation is proportional to their current sizes, and their available operator menus differ.",
+    "generation": "hybrid",
+    "generationDetail": "Fix, Simplify, Explore, Refactor, and Improve use one parent, while Fusion merges two successful parents; the menu mixes unary modification and multi-parent fusion.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "hybrid",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Each individual stores natural-language Feedback alongside Thought and Code; parent Feedback is included in later evolutionary prompts.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "uniform_random_in_fail_population|fitness_proportional_in_success_population",
+    "parentSelectionDetail": "Fail parents are selected randomly because their fitnesses are identical; Success parents use roulette-wheel selection proportional to fitness. Fusion draws two successful parents, while other strategies use one.",
+    "outOfTaxonomy": "Correctness-stratified Fail/Success subpopulations receive proportional offspring allocation and have different available prompt operators; the current population taxonomy has no dedicated category for this state-dependent dual-population organization."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/revolutionrtl.md",
+    "sourcePdf": "papers/REvolution An Evolutionary Framework for RTL Generation driven by Large Language Models.pdf",
+    "citationWarning": "Already cited in the survey for adaptive prompt selection, verbalized feedback, PPA objectives, and parent selection. Treat Fail/Success groups as reclassified subpopulations, not islands. The three tested backbones are separate configurations; routing/collaboration is not described. Chapter 6 primary-signal placement remains none because that subsection covers preference-based evaluation, which this paper does not use."
+  }
+}

@@ -1,0 +1,341 @@
+{
+  "problem-formulation": {
+    "number": "01",
+    "title": "Problem Formulation",
+    "titleMain": "Problem",
+    "titleAccent": "Formulation",
+    "kicker": "SEARCH DEFINITION",
+    "lead": "Every evolutionary run is shaped by two choices made before the loop can improve anything: what counts as a better outcome, and what form a candidate is allowed to take.",
+    "noteTitle": "Two independent parts of the search problem",
+    "noteCopy": "The objective defines success; the search space defines the candidates the system can generate. They constrain one another, but they are not the same design choice.",
+    "dimensions": [
+      {
+        "title": "Optimization objective",
+        "question": "What does better mean?",
+        "options": [
+          {"name": "Single-objective", "description": "Assign each candidate one scalar score and search for the highest-scoring solution."},
+          {"name": "Multi-objective", "description": "Optimize competing criteria together; the result is often a set of trade-offs rather than one winner."},
+          {"name": "Quality-diversity", "description": "Seek high quality while also keeping solutions across distinct behavior niches."}
+        ],
+        "note": "A quality-diversity objective values both performance and coverage of behavior space."
+      },
+      {
+        "title": "Search-space representation",
+        "question": "What is being evolved?",
+        "options": [
+          {"name": "Code", "description": "Executable programs, heuristics, or algorithmic components are the candidate solutions."},
+          {"name": "Code templates + parameters", "description": "The system evolves a template while a separate procedure tunes its parameters."},
+          {"name": "Workflow structures", "description": "Candidates describe prompts, policies, workflows, or broader optimization-system designs."}
+        ],
+        "note": "The representation determines what the generator can change and what validity constraints it must obey."
+      }
+    ],
+    "flow": ["Define the objective", "Specify feasible candidates", "Search and compare"],
+    "flowNote": "Objectives score candidates; evaluation is the process that obtains those scores."
+  },
+  "population": {
+    "number": "02",
+    "title": "Population & Archives",
+    "titleMain": "Population",
+    "titleAccent": "& Archives",
+    "kicker": "SYSTEM DESIGN",
+    "lead": "The population marks the current search frontier. Archives preserve selected high-value solutions and histories for reuse.",
+    "noteTitle": "Three complementary design dimensions",
+    "noteCopy": "Structure, elite retention, and population replacement answer different questions; they are not one flat list of alternatives.",
+    "dimensions": [
+      {
+        "title": "Population structures",
+        "question": "How are candidates organized?",
+        "options": [
+          {"name": "Single-individual", "description": "One incumbent is iteratively refined; temporary candidates may still be compared."},
+          {"name": "Flat multi-individual", "description": "A shared candidate pool retains alternatives, often with score-based ordering."},
+          {"name": "Island-structured", "description": "Subpopulations evolve locally and exchange candidates through migration or reseeding."},
+          {"name": "Tree-structured", "description": "Parent-child relations preserve branching lineages and search trajectories."}
+        ],
+        "note": "Tree structure is an additional organizational layer: it can coexist with flat populations or islands."
+      },
+      {
+        "title": "Elite archives",
+        "question": "Which strong solutions are preserved?",
+        "options": [
+          {"name": "Single-elite", "description": "Keep one current best candidate as the incumbent or best-so-far solution."},
+          {"name": "Multi-elite", "description": "Retain several high-performing candidates in a ranked or bounded archive."},
+          {"name": "Quality-diversity", "description": "Preserve elites across distinct niches or descriptor-defined cells."}
+        ],
+        "note": "An elite archive is a logical structure distinct from the main population, even when implementations overlap."
+      },
+      {
+        "title": "Replacement mechanisms",
+        "question": "How does retained search history change?",
+        "options": [
+          {"name": "Incremental insertion", "description": "Add candidates or trajectory records while allowing the reusable pool to grow."},
+          {"name": "Elitist replacement", "description": "Admit stronger candidates under top-k or cell-wise archive criteria."},
+          {"name": "Generational replacement", "description": "Build a new candidate batch and replace the previous population as a generation."}
+        ],
+        "note": "Replacement governs updates over time; it does not specify the population's structure or archive type."
+      }
+    ],
+    "flow": ["Retain candidates", "Supply parents & references", "Update after evaluation"],
+    "flowNote": "A population stores reusable search state; parent selection decides which parts are exposed next."
+  },
+  "parent-selection": {
+    "number": "03",
+    "title": "Parent Selection",
+    "titleMain": "Parent",
+    "titleAccent": "Selection",
+    "kicker": "REUSE POLICY",
+    "lead": "A search history may contain many candidates, but only a few can inform the next generation step. Selection determines which prior solutions, references, or records are brought forward.",
+    "noteTitle": "Selection includes both what is reused and how the choice is controlled",
+    "noteCopy": "The selected object may be an editable parent or an auxiliary reference. A system can use different rules for these roles, or switch rules as search conditions change.",
+    "dimensions": [
+      {
+        "title": "Selection mechanisms",
+        "question": "What signal guides retrieval?",
+        "options": [
+          {"name": "Uniform", "description": "Choose without an explicit preference for candidate quality, preserving broad exploration."},
+          {"name": "Score-based", "description": "Use raw fitness or objective magnitude to favor stronger candidates."},
+          {"name": "Rank-based", "description": "Use relative ordering or elite membership without relying on score scale."},
+          {"name": "Search-statistic-based", "description": "Use uncertainty, visit history, frontier potential, or learned search utility."},
+          {"name": "Structure-based", "description": "Use lineage, tree position, island membership, or neighborhood relations."},
+          {"name": "Evaluator-metadata-based", "description": "Retrieve candidates using failures, diagnostics, counterexamples, or verifier records."},
+          {"name": "Semantic-similarity-based", "description": "Retrieve past candidates or trajectories relevant to the current query or context."}
+        ],
+        "note": "These signals can select main parents, auxiliary references, or both."
+      },
+      {
+        "title": "Selection control",
+        "question": "When does a rule apply?",
+        "options": [
+          {"name": "Mode-controlled", "description": "Switch selection rules with the search mode, such as exploration versus exploitation."},
+          {"name": "Object-specific", "description": "Assign different rules to editable parents, inspiration examples, or retrieved histories."}
+        ],
+        "note": "Control policy is separate from the selection signal itself: one describes when a mechanism is used."
+      }
+    ],
+    "flow": ["Maintain a search history", "Retrieve parents & references", "Condition the next generation"],
+    "flowNote": "Not every retrieved solution is a genealogical parent; some serve only as contextual evidence."
+  },
+  "candidate-generation": {
+    "number": "04",
+    "title": "Candidate Generation",
+    "titleMain": "Candidate",
+    "titleAccent": "Generation",
+    "kicker": "OFFSPRING DESIGN",
+    "lead": "After reusable parents are chosen, the generator determines how a new candidate relates to them: no parent, a broad rewrite, a local edit, or a synthesis across parents.",
+    "noteTitle": "Generation mechanism and mechanism selection are separate",
+    "noteCopy": "The first describes how an offspring is formed. The second describes how a system chooses among available generation mechanisms during its run.",
+    "dimensions": [
+      {
+        "title": "Generation mechanisms",
+        "question": "How is an offspring formed?",
+        "options": [
+          {"name": "From-scratch generation", "description": "Propose a candidate from task context or retrieved knowledge without editing a parent."},
+          {"name": "Large-scale modification", "description": "Use a parent as a starting point but allow broad changes to its algorithm or structure."},
+          {"name": "Localized modification", "description": "Constrain changes to patches, diffs, or explicitly marked regions of a parent."},
+          {"name": "Multi-parent fusion", "description": "Combine complementary information from multiple parents into one offspring."}
+        ],
+        "note": "The mechanism determines effective parent count and how much continuity is preserved."
+      },
+      {
+        "title": "Mechanism selection",
+        "question": "How is the operator chosen?",
+        "options": [
+          {"name": "Fixed", "description": "Use a predefined operator, probability mix, or pipeline throughout the run."},
+          {"name": "Scheduled", "description": "Assign different mechanisms to predefined stages of the search."},
+          {"name": "Adaptive", "description": "Update mechanism choice online using observed progress or operator outcomes."}
+        ],
+        "note": "Adaptive policies react to search feedback; schedules rely on stages set in advance."
+      }
+    ],
+    "flow": ["Select parent context", "Generate an offspring", "Evaluate the result"],
+    "flowNote": "Retrieved examples can guide generation without becoming genealogical parents."
+  },
+  "prompt-builder": {
+    "number": "05",
+    "title": "Prompt Builder",
+    "titleMain": "Prompt",
+    "titleAccent": "Builder",
+    "kicker": "CONTEXT ASSEMBLY",
+    "lead": "The prompt builder turns task constraints, selected candidates, references, and feedback into the input that conditions model behavior at each search step.",
+    "noteTitle": "Prompt structures reflect the role they serve",
+    "noteCopy": "Candidate generation, reflection or meta-guidance, and workflow coordination have different goals, so their prompt structures should not be collapsed into one checklist.",
+    "dimensions": [
+      {
+        "title": "Candidate-generation prompts",
+        "question": "What guides the proposed solution?",
+        "options": [
+          {"name": "Task description", "description": "State the optimization target, task role, and evaluation requirements."},
+          {"name": "Code interface & response format", "description": "Specify inputs, outputs, editable regions, and the required form of the response."},
+          {"name": "Artifact & auxiliary context", "description": "Provide the editable parent plus optional examples, histories, hardware, or profiler data."},
+          {"name": "Constraints & guidance", "description": "Add feasibility rules, permitted tools, design priorities, or directional instructions."}
+        ],
+        "note": "The current artifact is the editable target; auxiliary context informs it without necessarily being edited."
+      },
+      {
+        "title": "Reflective & meta-guidance",
+        "question": "What intermediate reasoning is requested?",
+        "options": [
+          {"name": "Target artifact", "description": "Identify the solution, comparison, or search behavior to analyze."},
+          {"name": "Evidence", "description": "Supply traces, logs, evaluation outcomes, or prior attempts that ground the analysis."},
+          {"name": "Analysis request", "description": "Ask for diagnosis of current results or guidance for future search directions."},
+          {"name": "Structured response", "description": "Constrain the output to actionable feedback, ratings, or recommendations."}
+        ],
+        "note": "Reflection diagnoses a candidate or outcome; meta-guidance recommends how search should proceed."
+      },
+      {
+        "title": "Coordination-oriented prompts",
+        "question": "How are roles and work coordinated?",
+        "options": [
+          {"name": "Routing & dispatch", "description": "Direct information or subtasks to the component responsible for the next action."},
+          {"name": "Persistent state", "description": "Carry shared progress or workflow context across specialized roles."},
+          {"name": "Interaction protocol", "description": "Organize how agents or system components exchange intermediate results."}
+        ],
+        "note": "These prompts are usually described by workflow function rather than a single reusable template."
+      }
+    ],
+    "flow": ["Assemble task & evidence", "Condition model behavior", "Constrain the returned artifact"],
+    "flowNote": "Prompt structure is the interface between search state and semantic generation."
+  },
+  "foundation-models": {
+    "number": "06",
+    "title": "Foundation Models",
+    "titleMain": "Foundation",
+    "titleAccent": "Models",
+    "kicker": "MODEL INVOCATION",
+    "lead": "Once context is assembled, the system must decide which model or models perform search tasks and whether their roles stay fixed or change as the run unfolds.",
+    "noteTitle": "Model count and model assignment answer different questions",
+    "noteCopy": "A multi-model system may use fixed role assignments or dynamically route work. The number of models alone does not describe how model calls are allocated.",
+    "dimensions": [
+      {
+        "title": "Model setting",
+        "question": "How many models participate?",
+        "options": [
+          {"name": "Single-model", "description": "Use one foundation model across the optimization pipeline, keeping behavior easier to attribute."},
+          {"name": "Multi-model", "description": "Combine models with different capability, cost, or specialization profiles."}
+        ],
+        "note": "A single model can still use different inference settings for different tasks."
+      },
+      {
+        "title": "Multi-model assignment",
+        "question": "How are model roles allocated?",
+        "options": [
+          {"name": "Static assignment", "description": "Bind models to fixed roles or a fixed probability mixture throughout the run."},
+          {"name": "Dynamic assignment", "description": "Route calls or update model usage in response to stage, uncertainty, or observed progress."}
+        ],
+        "note": "Dynamic assignment can adapt model capability or cost to the current search need, with added control complexity."
+      }
+    ],
+    "flow": ["Prepare a model call", "Generate, refine, or review", "Adjust usage if needed"],
+    "flowNote": "Model assignment governs who performs a call; prompts govern what that call is asked to do."
+  },
+  "candidate-evaluation": {
+    "number": "07",
+    "title": "Candidate Evaluation",
+    "titleMain": "Candidate",
+    "titleAccent": "Evaluation",
+    "kicker": "QUALITY & FEEDBACK",
+    "lead": "Evaluation returns evidence about a candidate's quality. That evidence may be a direct score, comparative judgment, additional diagnostics, or the result of a specialized evaluation procedure.",
+    "noteTitle": "Evaluation signal, extra feedback, and procedure are distinct",
+    "noteCopy": "The primary signal says how candidates compare or score. Extra feedback explains more about the result; procedure describes how the evaluation is carried out.",
+    "dimensions": [
+      {
+        "title": "Primary evaluation signal",
+        "question": "What is the main quality signal?",
+        "options": [
+          {"name": "Scalar objective", "description": "Return one numeric value for each candidate."},
+          {"name": "Vector objective", "description": "Return several objective values that capture competing criteria."},
+          {"name": "Preference or ranking", "description": "Compare candidates pairwise or return an ordinal ranking when absolute scoring is difficult."}
+        ],
+        "note": "Quality-diversity search can pair an objective value with a behavior descriptor to preserve niches."
+      },
+      {
+        "title": "Additional evaluation feedback",
+        "question": "What else does the evaluator return?",
+        "options": [
+          {"name": "Metadata", "description": "Attach structured outcomes such as correctness, exceptions, profiler data, or per-instance metrics."},
+          {"name": "Verbalized feedback", "description": "Summarize traces or outcomes as natural-language diagnosis that can guide revision."}
+        ],
+        "note": "Additional feedback enriches the primary signal; it does not replace it by definition."
+      },
+      {
+        "title": "Evaluation procedure",
+        "question": "How is evaluation carried out?",
+        "options": [
+          {"name": "Staged", "description": "Screen candidates cheaply before promoting survivors to more expensive tests."},
+          {"name": "Approximate", "description": "Use proxy, partial, or reduced-fidelity measurements during search."},
+          {"name": "Parallel", "description": "Distribute candidate assessments across workers, devices, or environments."},
+          {"name": "Repeated", "description": "Aggregate repeated runs or scenarios to stabilize noisy measurements."}
+        ],
+        "note": "Staged and approximate evaluation reduce cost in different ways; repetition targets measurement noise."
+      }
+    ],
+    "flow": ["Run or compare candidates", "Return quality & feedback", "Inform selection and retention"],
+    "flowNote": "The evaluation procedure determines how signals are obtained, not which candidates are retained."
+  },
+  "population-update": {
+    "number": "08",
+    "title": "Population Update",
+    "titleMain": "Population",
+    "titleAccent": "Update",
+    "kicker": "SURVIVOR POLICY",
+    "lead": "After evaluation, the system decides what enters or remains in the reusable search history. This layer concerns change over time, not the shape of the population or archive.",
+    "noteTitle": "Update policy is orthogonal to population structure",
+    "noteCopy": "The same structure can use different replacement rules, and the same replacement rule can operate on flat, island, or archive-based designs.",
+    "dimensions": [
+      {
+        "title": "Replacement mechanisms",
+        "question": "How are evaluated candidates retained?",
+        "optionLayout": "columns",
+        "options": [
+          {"name": "Incremental insertion", "description": "Add candidates or trajectory records to a growing reusable pool; retrieval happens later."},
+          {"name": "Elitist replacement", "description": "Admit candidates that satisfy a top-k, elite, or descriptor-cell improvement criterion."},
+          {"name": "Generational replacement", "description": "Construct a new candidate batch and carry it forward as the next population."}
+        ],
+        "note": "These update patterns govern temporal turnover and retention, not parent choice."
+      }
+    ],
+    "flow": ["Evaluate offspring", "Apply a survivor rule", "Advance reusable search history"],
+    "flowNote": "Population update closes one iteration by deciding what future iterations can reuse."
+  },
+  "exploration-exploitation": {
+    "number": "09",
+    "title": "Explore–Exploit Control",
+    "titleMain": "Explore–Exploit",
+    "titleAccent": "Control",
+    "kicker": "CROSS-CUTTING CONTROL",
+    "lead": "Exploration seeks new search directions; exploitation develops promising ones. In LLM-guided evolutionary search, this balance emerges from or is shaped by several coupled choices across the loop.",
+    "noteTitle": "A control perspective across the system",
+    "noteCopy": "This is not a ninth chronological step. It is a global search strategy that interacts with parent selection, generation mechanisms, model choice, archives, and feedback.",
+    "dimensions": [
+      {
+        "title": "Implicit strategies",
+        "question": "Can the balance emerge without a dedicated controller?",
+        "options": [
+          {"name": "Unified generation", "description": "Use one generation process and let stochastic proposals, archive diversity, and repeated refinement jointly produce exploratory and exploitative behavior."},
+          {"name": "Memory and sampling", "description": "Let archive structure, parent sampling, and retention distribute search pressure without an explicit explore/exploit mode switch."}
+        ],
+        "note": "Representative systems: AlphaEvolve, ThetaEvolve, and EvoSLD."
+      },
+      {
+        "title": "State-independent control",
+        "question": "Is search pressure fixed or scheduled in advance?",
+        "options": [
+          {"name": "Fixed allocation or modes", "description": "Set the proportions or rules for exploratory and exploitative actions before the run; examples include RankEvolve and MadEvolve."},
+          {"name": "Preset stage schedule", "description": "Move through a hand-designed progression, often emphasizing broader exploration early and more conservative refinement later."}
+        ],
+        "note": "Representative systems include RankEvolve, MadEvolve, and AgentLTV; the schedule is interpretable but cannot react to an individual run's trajectory."
+      },
+      {
+        "title": "Adaptive control",
+        "question": "Does observed progress change the balance online?",
+        "options": [
+          {"name": "Progress or uncertainty feedback", "description": "Adjust search intensity from recent improvement, stagnation, uncertainty, or strategy outcomes; AdaEvolve is one example."},
+          {"name": "Tree statistics or bandit rewards", "description": "Use visit statistics or reward estimates to allocate effort between broader exploration and deeper refinement."}
+        ],
+        "note": "Representative systems include AdaEvolve, AgentLTV, SEA-TS, TIDE, and ShinkaEvolve; feedback adds responsiveness as well as controller complexity."
+      }
+    ],
+    "flow": ["Shape selection and generation", "Observe progress and feedback", "Balance exploration with refinement"],
+    "flowNote": "Implicit strategies distribute this balance across system design; fixed strategies prescribe it; adaptive strategies update it during search."
+  }
+}

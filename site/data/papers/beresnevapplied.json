@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "key": "beresnevapplied",
+  "paperKey": "beresnevapplied",
+  "bibliographyKey": "beresnevapplied",
+  "title": "Applied AlphaEvolve",
+  "authors": [
+    "Beresnev, Dmitrii",
+    "Khalikov, Roman",
+    "Tolmachev, Alexander",
+    "Ulitin, Ivan",
+    "Zakirova, Ainura"
+  ],
+  "year": 2025,
+  "venue": "SMILES Summer School Projects Proceedings",
+  "publication": {
+    "venue": "SMILES Summer School Projects Proceedings",
+    "archive": "SMILES 2025",
+    "status": "published",
+    "doi": null,
+    "eprint": null,
+    "url": "https://dsomni.ru/files/applied_alphaevolve.pdf"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Quality-Diversity Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Large-Scale Modification",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Static Assignment"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Approximate Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "CAD reconstruction and n-dimensional ball partitioning via OpenEvolve",
+    "population": "island",
+    "populationDetail": "OpenEvolve maintains multiple parallel sub-populations/islands; the applied configuration uses three islands with periodic migration, while each island uses the MAP-Elites archive.",
+    "archive": "qd_archive",
+    "archiveDetail": "MAP-Elites preserves elite programs in a discretized feature space using dimensions such as program complexity and functional diversity (or task-specific descriptors).",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "The paper inherits OpenEvolve's archive and island implementation and describes it at framework level rather than providing complete archive-admission pseudocode.",
+    "generation": "hybrid",
+    "generationDetail": "One high-quality parent program is rewritten; early generations make broad structural mutations while later generations make small localized parameter refinements.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The seven component scores, validity/error signals, and evaluator feedback are reused to guide subsequent code mutations; feedback detail is partly inherited from OpenEvolve.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "other",
+    "parentSelectionDetail": "One high-quality parent is selected from an island's MAP-Elites/archive state; exact score/rank sampling and migration ordering are inherited or under-specified.",
+    "outOfTaxonomy": "An application-level combination of MAP-Elites, island migration, static small/large model mixtures, and geometry-specific approximate multi-metric evaluation; the observed structural-discovery/parametric-refinement transition is not a formal controller."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/beresnevapplied.md",
+    "sourcePdf": "papers/Applied AlphaEvolve.pdf",
+    "citationWarning": "The current survey cites Applied AlphaEvolve under Staged Evaluation, but the paper does not describe early candidate screening; it directly supports Approximate Evaluation through voxelized and sampled geometric metrics. Archive admission, parent sampling, and verbalized feedback details are partly inherited from OpenEvolve and should remain medium-confidence."
+  }
+}

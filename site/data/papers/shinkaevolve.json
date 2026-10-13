@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "key": "shinkaevolve",
+  "paperKey": "shinkaevolve",
+  "bibliographyKey": "shinkaevolve",
+  "title": "ShinkaEvolve: Towards Open-Ended and Sample-Efficient Program Evolution",
+  "authors": [
+    "Robert Tjarko Lange",
+    "Yuki Imajuku",
+    "Edoardo Cetin"
+  ],
+  "year": 2026,
+  "venue": "The Fourteenth International Conference on Learning Representations",
+  "publication": {
+    "venue": "The Fourteenth International Conference on Learning Representations",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": "2509.19349"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Multi-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Large-Scale Modification",
+        "Localized Modification",
+        "Multi-Parent Fusion",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Dynamic Assignment"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation",
+        "Approximate Evaluation",
+        "Parallel Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Open-ended program evolution across mathematical optimization, agent design, competitive programming, and LLM training design",
+    "population": "island",
+    "populationDetail": "Independent program subpopulations are seeded from a shared initial program, evolve in parallel, and occasionally migrate non-best members between islands.",
+    "archive": "multi_elite",
+    "archiveDetail": "Each island's fixed-size archive preserves multiple evaluated programs under an elite-size constraint; no descriptor-cell archive is described.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "Migration is scheduled at configured intervals and protects each island's best program; migration rates and archive sizes vary across task configurations.",
+    "generation": "hybrid",
+    "generationDetail": "Diff edits make localized changes, full rewrites broadly modify mutable code while preserving immutable blocks, and crossover combines the primary parent with an additional archive program.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "hybrid",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Scalar fitness, public metrics, and textual feedback are stored in the island archive and reused as mutation context; exact outputs vary by domain task.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "power_law_rank_sampling|performance_novelty_weighted_sampling",
+    "parentSelectionDetail": "An island is first sampled uniformly, then the primary parent is selected within that island by the configured power-law or weighted rule. Crossover adds an additional archive source program.",
+    "outOfTaxonomy": "Code-novelty rejection sampling embeds mutable code, compares it against island programs, and conditionally invokes an LLM novelty judge to reject/resample near-duplicates; this candidate-eligibility mechanism has no dedicated field in the current taxonomy."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/shinkaevolve.md",
+    "sourcePdf": "papers/ShinkaEvolve Towards Open-Ended And Sample-Efficient Program Evolution.pdf",
+    "citationWarning": "The paper is cited in current population, prompt, model, exploration, application, and framework sections. The occurrence index also names stale section paths absent from the current Survey/sections tree. Archive update details and paper-wide model count vary or are underdescribed; evaluation procedures are task-specific. Do not treat top-K/random inspiration programs as true parents outside crossover."
+  }
+}

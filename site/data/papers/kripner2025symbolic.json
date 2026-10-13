@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "key": "kripner2025symbolic",
+  "paperKey": "kripner2025symbolic",
+  "bibliographyKey": "kripner2025symbolic",
+  "title": "Symbolic World Models in Lean 4 for Reinforcement Learning",
+  "authors": [
+    "Mat\\vej Kripner"
+  ],
+  "year": 2025,
+  "venue": "Proceedings of the RLC Workshop on Programmatic Reinforcement Learning",
+  "publication": {
+    "venue": "Proceedings of the RLC Workshop on Programmatic Reinforcement Learning",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": null,
+    "url": "https://openreview.net/forum?id=CBFAMnax09"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Repeated Evaluation"
+      ],
+      "ch7": [],
+      "parentSelection": [
+        "Fitness-Proportional Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Evolutionary synthesis of symbolic Lean world models for model-based reinforcement learning",
+    "population": "flat_multi",
+    "populationDetail": "Multiple candidate world models are maintained for evolutionary search; no island or tree organization is described.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is described.",
+    "replacement": "unclear",
+    "replacementDetail": "Population size and survivor/replacement rule are not specified in the described method.",
+    "generation": "localized_modification",
+    "generationDetail": "Qwen3-4B is prompted to mutate a supplied Lean formula, returning a modification, extension, and simplification.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "no",
+    "feedbackDetail": "Fitness is scalar: planning-agent return averaged over k rollouts in the pragmatic setting, or F-score of predicted dynamics in the descriptive setting. These are separate runs/objectives.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "fitness_proportional",
+    "parentSelectionDetail": "Parents are selected by fitness-proportionate stochastic universal sampling with temperature t; count is unspecified and the mention of crossover does not establish multi-parent offspring fusion.",
+    "outOfTaxonomy": "Formal symbolic world-model representation and synthesis in Lean 4 for model-based reinforcement learning are central contribution/application dimensions outside the current Chapters 3-7 mechanism taxonomy."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/symbolicworldmodels.md",
+    "sourcePdf": "papers/Symbolic World Models in Lean 4 for Reinforcement Learning.pdf",
+    "citationWarning": "Replacement/survivor policy is not specified; the paper mentions crossover when introducing parent selection but only details LLM mutation, so do not infer multi-parent fusion. Pragmatic and descriptive fitness are alternative objectives, not a hybrid objective."
+  }
+}

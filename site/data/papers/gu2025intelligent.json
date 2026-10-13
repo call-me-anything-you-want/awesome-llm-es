@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "key": "gu2025intelligent",
+  "paperKey": "gu2025intelligent",
+  "bibliographyKey": "gu2025intelligent",
+  "title": "Intelligent Robot Path Planning Performance Optimization and Control Strategy Integrating Reinforcement Learning and AlphaEvolve",
+  "authors": [
+    "Gu, Shengji"
+  ],
+  "year": 2025,
+  "venue": "2nd International Conference on Electronic Circuits and Signaling Technologies (ICECST)",
+  "publication": {
+    "venue": "2nd International Conference on Electronic Circuits and Signaling Technologies (ICECST)",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.1109/icecst66106.2025.11307633",
+    "eprint": null
+  },
+  "tags": [],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [],
+      "ch5": [],
+      "ch6": [],
+      "ch7": [],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Robot path planning with BEV perception, PPO/LLM-DQN control, and AlphaEvolve optimization",
+    "population": "none_clear",
+    "populationDetail": "The paper says AlphaEvolve performs global optimization but does not specify what candidate set or population structure it maintains.",
+    "archive": "unclear",
+    "archiveDetail": "No archive design is described; the named AlphaEvolve module alone is insufficient evidence to infer one.",
+    "replacement": "unclear",
+    "replacementDetail": "The paper does not expose evolutionary candidate storage, admission or removal rules.",
+    "generation": "unclear",
+    "generationDetail": "AlphaEvolve is said to optimize policy parameters and path-node selection, but the parent-offspring relation and candidate-generation procedure are not described.",
+    "trueParentCount": "unclear",
+    "modelSetting": "unclear",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "unclear",
+    "feedbackDetail": "The stated AlphaEvolve objective combines weighted path cost with energy/action cost; reported simulation metrics include path length, smoothness, energy use, planning time and success rate. Their use as additional feedback in evolution is not described.",
+    "explorationExploitation": "unclear",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "No evolutionary parent-selection procedure is described.",
+    "outOfTaxonomy": "A hybrid robotics control architecture combines BEV visual perception, PPO/LLM-DQN, AlphaEvolve policy/path optimization, and heuristic A*/artificial-potential-field adjustments; the evolutionary internals are not exposed."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "low",
+    "evidenceFile": "annotation/evidence/gu2025intelligent.md",
+    "sourcePdf": "papers/Intelligent Robot Path Planning Performance Optimization and Control Strategy Integrating Reinforcement Learning and AlphaEvolve.pdf",
+    "citationWarning": "Survey/reference.bib contains matching key gu2025intelligent, but no current Survey/sections citation was found. Do not transfer AlphaEvolve's documented mechanisms from its original paper to this high-level application paper."
+  }
+}

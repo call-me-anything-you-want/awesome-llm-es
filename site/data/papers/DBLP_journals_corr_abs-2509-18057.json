@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "key": "DBLP:journals/corr/abs-2509-18057",
+  "paperKey": "DBLP:journals/corr/abs-2509-18057",
+  "bibliographyKey": "DBLP:journals/corr/abs-2509-18057",
+  "title": "Reinforced Generation of Combinatorial Structures: Hardness of Approximation",
+  "authors": [
+    "Ansh Nagda",
+    "Prabhakar Raghavan",
+    "Abhradeep Thakurta"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2509.18057"
+  },
+  "tags": [],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [
+        "Candidate-Generation Prompt Structures"
+      ],
+      "ch5": [],
+      "ch6": [],
+      "ch7": [],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-guided search for finite combinatorial constructions used in complexity-theoretic hardness proofs",
+    "population": "none_clear",
+    "populationDetail": "Appendix A says a genetic algorithm selects a high-scoring diverse subset of prior functions, but does not specify the maintained population organization.",
+    "archive": "unclear",
+    "archiveDetail": "High-scoring diverse prior functions are selected for prompting, but a distinct elite archive and its admission/eviction rules are not described.",
+    "replacement": "unclear",
+    "replacementDetail": "The shown initial code snippet retains its best-scoring structure, but the paper cautions that AlphaEvolve searches generator code and this illustrative snippet does not establish the production system's population update policy.",
+    "generation": "unclear",
+    "generationDetail": "The paper describes syntactically valid code modifications and conditions the LLM on selected historical functions, but does not establish whether edits are broad, localized, or true multi-parent fusion.",
+    "trueParentCount": "unclear",
+    "modelSetting": "unclear",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Numeric structure scores are paired with prior generator snippets and inform genetic selection and subsequent LLM proposals; invalid candidates also receive scores reflecting distance from constraint boundaries.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "Appendix A footnote 12 says not all prior functions are sent to the LLM; a genetic algorithm selects a subset by score and diversity, without specifying count or exact selection rule.",
+    "outOfTaxonomy": "LLM evolves executable generator/verifier code for finite mathematical constructions; verifier optimization itself is also performed through the search loop."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/reinforcedgeneration.md",
+    "sourcePdf": "papers/Reinforced Generation of Combinatorial Structures Hardness of Approximation.pdf",
+    "citationWarning": "Existing survey citation is an application-level Mathematical Sciences mention. The paper confirms LLM-guided code generation and score feedback, but does not expose enough implementation detail to classify population/archive, parent-offspring relation, model configuration, or explicit exploration-exploitation control; avoid inferring these from general AlphaEvolve descriptions elsewhere."
+  }
+}

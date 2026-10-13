@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "key": "lee2026metaharnessendtoendoptimizationmodel",
+  "paperKey": "lee2026metaharnessendtoendoptimizationmodel",
+  "bibliographyKey": "lee2026metaharnessendtoendoptimizationmodel",
+  "title": "Meta-Harness: End-to-End Optimization of Model Harnesses",
+  "authors": [
+    "Yoonho Lee",
+    "Roshen Nair",
+    "Qizheng Zhang",
+    "Kangwook Lee",
+    "Omar Khattab",
+    "Chelsea Finn"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": "10.48550/arXiv.2603.28052",
+    "eprint": "2603.28052"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Single-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Harness search for discovery agents",
+    "population": "flat_multi",
+    "populationDetail": "Multiple harness candidates are searched and an archive/history is retained; no islands or explicit genealogy are described.",
+    "archive": "single_elite",
+    "archiveDetail": "The evidence note reports score-based best-candidate selection; broader archive semantics are not specified.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "Full history is context for proposal generation and should not be conflated with an editable population.",
+    "generation": "large_scale_modification",
+    "generationDetail": "New harness code is proposed in an iterative loop conditioned on previous harness artifacts and complete run history; direct parent editing details are not explicit.",
+    "trueParentCount": "unclear",
+    "modelSetting": "unclear",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Expensive task scores, source, execution traces, and logs are reused as proposal context.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "fitness_based",
+    "parentSelectionDetail": "Score-based best candidate is retained, but no explicit editable-parent selection/crossover is required by the described loop.",
+    "outOfTaxonomy": "Harness code itself is the optimized discovery-agent infrastructure, with full filesystem execution history as persistent context."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/incoming_b/meta_harness.md",
+    "sourcePdf": "additional_papers/202605/Meta-Harness Harness Search for Discovery Agents under Expensive Evaluation.pdf",
+    "citationWarning": "Archive/replacement and generation-parent details are only partially described in the evidence note; treat history as contextual reference, not proven genetic parent material."
+  }
+}

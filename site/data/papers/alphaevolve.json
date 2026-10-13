@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "key": "alphaevolve",
+  "paperKey": "alphaevolve",
+  "bibliographyKey": "alphaevolve",
+  "title": "AlphaEvolve: A coding agent for scientific and algorithmic discovery",
+  "authors": [
+    "Alexander Novikov",
+    "Ngân Vũ",
+    "Marvin Eisenberger",
+    "Emilien Dupont",
+    "Po-Sen Huang",
+    "Adam Zsolt Wagner",
+    "Sergey Shirobokov",
+    "Borislav Kozlovskii",
+    "Francisco J. R. Ruiz",
+    "Abbas Mehrabian",
+    "M. Pawan Kumar",
+    "Abigail See",
+    "Swarat Chaudhuri",
+    "George Holland",
+    "Alex Davies",
+    "Sebastian Nowozin",
+    "Pushmeet Kohli",
+    "Matej Balog"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2506.13131"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Island-Structured Populations",
+        "Quality-Diversity Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Static Assignment"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Scientific and algorithmic discovery through executable-code evolution and code superoptimization",
+    "population": "hybrid",
+    "populationDetail": "A persistent evolutionary program database combines MAP-Elites-inspired diversity preservation with island-based population models, but the exact cell/island organization is not fully disclosed.",
+    "archive": "qd_archive",
+    "archiveDetail": "The program database is explicitly inspired by MAP-Elites and is intended to preserve diverse high-quality programs for later resurfacing; descriptor-cell admission details are not given.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "The database serves simultaneously as reusable population memory and diversity-preserving archive; its implementation is described at a design level rather than with complete admission pseudocode.",
+    "generation": "localized_modification",
+    "generationDetail": "One sampled parent program is directly edited through structured SEARCH/REPLACE diffs; inspiration programs are contextual references rather than additional true parents.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "vector_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Prompts include rendered programs, execution results, and metric scores; optional LLM-generated feedback and multiple score dimensions steer later evolution.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "retrieval_based",
+    "parentSelectionDetail": "Figure 2 exposes database.sample() returning one parent_program and inspirations; the detailed database sampling and global-vs-island scope are not specified.",
+    "outOfTaxonomy": "A single evolutionary database jointly combines MAP-Elites-style diversity, island-inspired organization, contextual inspiration retrieval, and static Flash/Pro model specialization."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/alphaevolve.md",
+    "sourcePdf": "papers/AlphaEvolve A coding agent for scientific and algorithmic discovery.pdf",
+    "citationWarning": "The current survey places AlphaEvolve under flat populations and quality-diversity archives, but the white paper also explicitly invokes island-based population models. Do not count inspiration programs as true parents. Archive admission/replacement and parent sampling scope are under-specified; model subtype is best read as static role-based assignment rather than dynamic routing."
+  }
+}

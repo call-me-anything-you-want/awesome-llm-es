@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "key": "ho2026polymath",
+  "paperKey": "ho2026polymath",
+  "bibliographyKey": "ho2026polymath",
+  "title": "Polymath: Self-Improving Hierarchical Workflow for Multi-Domain Problem Solving",
+  "authors": [
+    "Ho, Chia-Tung",
+    "Gong, Jing",
+    "Yang, Haoyu",
+    "Akkur, Abhishek",
+    "Ren, Haoxing"
+  ],
+  "year": 2026,
+  "venue": "Proceedings of the International Symposium on Physical Design",
+  "publication": {
+    "venue": "Proceedings of the International Symposium on Physical Design",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.1145/3764386.3779639",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Multi-Elite Archives",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Localized Modification",
+        "Large-Scale Modification",
+        "Adaptive Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Approximate Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Multi-domain problem solving workflow",
+    "population": "island",
+    "populationDetail": "The code-workflow evolutionary component is built on OpenEvolve and explicitly uses MAP-Elites with island-based populations; task-flow graph optimization is a separate hierarchical operation.",
+    "archive": "multi_elite",
+    "archiveDetail": "MAP-Elites maintains diverse high-quality workflow candidates in a program database; evolving candidates are stored for later reuse.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "Workflow evolution uses OpenEvolve MAP-Elites/islands; graph nodes are separately merged/decomposed by a multilevel V-cycle.",
+    "generation": "hybrid",
+    "generationDetail": "Task graphs are coarsened by merging adjacent nodes and relaxed by LLM-proposed decomposition; code workflows are generated/refined from prior workflow examples and feedback.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "vector_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "none",
+    "explorationExploitation": "implicit",
+    "parentSelection": "fitness_based",
+    "parentSelectionDetail": "none",
+    "outOfTaxonomy": "A dynamic task-flow graph is optimized via historical surrogate scores and multilevel coarsen/relax operations, alongside a code-workflow EA."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium-low",
+    "evidenceFile": "annotation/evidence/incoming_b/polymath.md",
+    "sourcePdf": "additional_papers/202603/Invited Polymath Self-Improving Hierarchical Workflow for Multi-Domain Problem Solving.pdf",
+    "citationWarning": "Island/MAP-Elites and archive labels apply to code-workflow evolution, not to the task-flow graph; exact operator parent count remains retrieval/context-based rather than formal crossover."
+  }
+}

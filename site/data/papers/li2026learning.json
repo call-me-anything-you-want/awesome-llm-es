@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "key": "li2026learning",
+  "paperKey": "li2026learning",
+  "bibliographyKey": "li2026learning",
+  "title": "Learning to Evolve: Scaling Open-Ended Discovery with Relative-Progress RL",
+  "authors": [
+    "Li, Xuan",
+    "Zhou, Zhanke",
+    "Li, Zongze",
+    "Yao, Jiangchao",
+    "Han, Bo"
+  ],
+  "year": 2026,
+  "venue": "ICLR Workshop on Lifelong Agents: Learning, Aligning, Evolving",
+  "publication": {
+    "venue": "ICLR Workshop on Lifelong Agents: Learning, Aligning, Evolving",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": null,
+    "url": "https://openreview.net/forum?id=WnZHbe1Gu0"
+  },
+  "tags": [
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [
+        "Reflective and Meta-Guidance Prompt Structures"
+      ],
+      "ch5": [],
+      "ch6": [
+        "Metadata",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Open-ended discovery with relative-progress RL",
+    "population": "none_clear",
+    "populationDetail": "Underlying discovery population is task-specific and not characterized in the available evidence note.",
+    "archive": "unclear",
+    "archiveDetail": "Archive policy is not described in the available evidence note.",
+    "replacement": "unclear",
+    "replacementDetail": "The learned controller is layered over an underlying discovery system whose population update is unspecified.",
+    "generation": "unclear",
+    "generationDetail": "Action selection is learned, but the concrete parent-offspring operation is not documented in available evidence.",
+    "trueParentCount": "unclear",
+    "modelSetting": "unclear",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Relative-progress reward and downstream objective scores train/control subsequent action selection.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "Underlying search's parent policy is not described in available evidence.",
+    "outOfTaxonomy": "A learned relative-progress RL controller selects search actions, extending conventional hand-designed exploration-exploitation control."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/incoming_b/learning_to_evolve.md",
+    "sourcePdf": "additional_papers/202603/Learning to Evolve Scaling Open-Ended Discovery with Relative-Progress RL.pdf",
+    "citationWarning": "Population/generation details and prompt form require method-level verification; do not attribute the learned controller to a specific operator without evidence."
+  }
+}

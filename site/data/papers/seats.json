@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "key": "seats",
+  "paperKey": "seats",
+  "bibliographyKey": "seats",
+  "title": "SEA-TS: Self-Evolving Agent for Autonomous Code Generation of Time Series Forecasting Algorithms",
+  "authors": [
+    "Longkun Xu",
+    "Xiaochun Zhang",
+    "Qiantu Tuo",
+    "Rui Li"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2603.04873"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Tree-Structured Populations",
+        "Island-Structured Populations",
+        "Quality-Diversity Archives",
+        "Incremental Insertion",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Search-Statistic-Based Selection",
+        "Structure-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Autonomous code generation and optimization for time-series forecasting models",
+    "population": "hybrid",
+    "populationDetail": "An explicit MCTS tree maintains candidate-program parent-child structure; the paper also adds an Island Model with periodic migration, but does not fully specify the tree/island organization.",
+    "archive": "qd_archive",
+    "archiveDetail": "A MAP-Elites archive indexes candidates by architecture type, feature-engineering sophistication, and training sophistication, retaining the best solution per cell.",
+    "replacement": "hybrid",
+    "replacementDetail": "New candidates are inserted as MCTS tree nodes; the separate QD archive replaces each cell's incumbent only with a better solution. Island migration is reported but underspecified.",
+    "generation": "large_scale_modification",
+    "generationDetail": "One UCT-selected parent program is the branch being expanded; the LLM is prompted to return a complete forecasting implementation, while sibling, global-best/worst, and archive candidates are contextual references.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The task metric is normalized into a historical Metric Advantage; runtime/review bug flags replace reward with -1. Review findings and global comparisons are consolidated into a running prompt used by subsequent generations.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "uct",
+    "parentSelectionDetail": "UCT traverses the search tree from its root to select one leaf for expansion; additional global and archive candidates condition generation but are not true parents.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/seats.md",
+    "sourcePdf": "papers/SEA-TS Self-Evolving Agent for Autonomous Code Generation of Time Series Forecasting Algorithms.pdf",
+    "citationWarning": "The survey currently lists SEA-TS under static role-based multi-model assignment. The paper specifies GPT-5 for generation/review and calls Qwen3-coder-plus an alternative, but does not establish fixed distinct model-to-role assignments, collaboration, or routing policy. The stated Island Model is not detailed enough to reconstruct its topology relative to the MCTS tree; the survey's tree-plus-flat-pool wording should also be checked because the paper does not clearly describe a separate flat pool."
+  }
+}

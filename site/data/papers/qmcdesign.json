@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "key": "qmcdesign",
+  "paperKey": "qmcdesign",
+  "bibliographyKey": "qmcdesign",
+  "title": "LLM-Guided Evolutionary Program Synthesis for Quasi-Monte Carlo Design",
+  "authors": [
+    "Amir Sadikov"
+  ],
+  "year": 2026,
+  "venue": "The Fourteenth International Conference on Learning Representations",
+  "publication": {
+    "venue": "The Fourteenth International Conference on Learning Representations",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": null,
+    "url": "https://openreview.net/forum?id=6L8fgclOTS"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Large-Scale Modification",
+        "Multi-Parent Fusion"
+      ],
+      "ch5": [],
+      "ch6": [
+        "Approximate Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-guided evolutionary synthesis of low-discrepancy point-set generators and Sobol direction-number programs",
+    "population": "island",
+    "populationDetail": "The experimental setup explicitly reports a population of 60 programs organized as a multi-island evolutionary system with occasional migration; island count and migration policy are not given in the accessible paper.",
+    "archive": "unclear",
+    "archiveDetail": "The setup mentions occasional archive sampling, but does not define whether it is an elite archive, its size, preservation rule, or relation to island populations.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "The general loop says each newly generated and evaluated program is added to the population; survivor pruning and archive update rules are not specified.",
+    "generation": "hybrid",
+    "generationDetail": "The LLM rewrites core program functions from a selected parent (large-scale modification) and receives additional high-performing inspirations explicitly intended to encourage crossover, although whether these are genealogical parents or contextual references is underspecified.",
+    "trueParentCount": "unclear",
+    "modelSetting": "unclear",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The parent prompt includes the parent program's fitness score, which is objective feedback rather than additional evaluator metadata or verbalized critique.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "fitness_based",
+    "parentSelectionDetail": "Parents are chosen by fitness, with occasional archive sampling. The generic method describes one focal parent plus additional high-performing inspirations; exact count, sampling distribution, and archive semantics are not provided.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/qmcdesign.md",
+    "sourcePdf": "papers/LLM-Guided Evolutionary Program Synthesis for Quasi-Monte Carlo Design.pdf",
+    "citationWarning": "Survey cites qmcdesign for manually scheduled exploration-to-exploitation and fitness-based parent selection. The PDF available here omits the referenced Appendix B, so exact LLM identity, archive design, parent/inspiration count and sampling probabilities cannot be verified. Inspirations are said to encourage crossover, but full prompt semantics are unavailable."
+  }
+}

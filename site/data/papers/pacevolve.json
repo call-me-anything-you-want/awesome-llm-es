@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "key": "pacevolve",
+  "paperKey": "pacevolve",
+  "bibliographyKey": "pacevolve",
+  "title": "PACEvolve: Enabling Long-Horizon Progress-Aware Consistent Evolution",
+  "authors": [
+    "Minghao Yan",
+    "Bo Peng",
+    "Benjamin Coleman",
+    "Ziqi Chen",
+    "Zhouhang Xie",
+    "Shuo Chen",
+    "Zhankui He",
+    "Noveen Sachdeva",
+    "Isabella Ye",
+    "Weili Wang",
+    "Chi Wang",
+    "Ed H. Chi",
+    "Fernando Pereira",
+    "Wang-Cheng Kang",
+    "Derek Zhiyuan Cheng",
+    "Beidou Wang"
+  ],
+  "year": 2026,
+  "venue": "ICLR Workshop on Lifelong Agents: Learning, Aligning, Evolving",
+  "publication": {
+    "venue": "ICLR Workshop on Lifelong Agents: Learning, Aligning, Evolving",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": "2601.10657",
+    "url": "https://openreview.net/forum?id=7qsTTBK1vU"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Island-Structured Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Large-Scale Modification",
+        "Multi-Parent Fusion",
+        "Adaptive Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Search-Statistic-Based Selection",
+        "Structure-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Long-horizon LLM-guided scientific and engineering optimization, including symbolic regression and GPU kernels",
+    "population": "hybrid",
+    "populationDetail": "PACEvolve-Single runs one trajectory/context pool, while PACEvolve-Multi uses two islands with separate search states; each context also has a hierarchical idea-to-hypothesis memory.",
+    "archive": "none",
+    "archiveDetail": "No distinct candidate elite archive is clearly specified; HCM stores ideas, hypotheses, and histories as context memory rather than a conventional elite archive.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "Evaluated hypotheses are appended to idea histories. At configured caps, histories are summarized and low-promise ideas are pruned, with failures retained in a separate global log; this is context management rather than conventional survivor replacement.",
+    "generation": "hybrid",
+    "generationDetail": "Selected ideas guide broad candidate refinement from an existing solution; in multi-island CE, crossover combines components from two parent solutions, often from different islands. Backtracking restores an earlier trajectory state.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Task score/metrics drive progress tracking and idea selection; summarized histories provide LLM-readable context. Exact boundary between evaluator output and post-evaluation LLM summary is not fully specified.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "planner_controlled",
+    "parentSelectionDetail": "Backtracking selects one ancestral search state; crossover combines two island solutions. These mechanisms have different cardinalities and are chosen adaptively after stagnation.",
+    "outOfTaxonomy": "Hierarchical conceptual-idea and experimental-hypothesis memory with LLM classification, summarization, pruning, and persistent failure logging is a context-management structure not captured by conventional candidate population/archive fields."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/pacevolve.md",
+    "sourcePdf": "papers/PACEvolve Enabling Long-Horizon Progress-Aware Consistent Evolution.pdf",
+    "citationWarning": "Current evaluation feedback and parent-selection citations are supported. Distinguish PACEvolve-Single from PACEvolve-Multi: cross-island CE/crossover applies only to multi-island mode. Do not infer a PACEvolve Flash model from the generic secondary-model statement; Gemini 2.5 Pro is the confirmed base model."
+  }
+}

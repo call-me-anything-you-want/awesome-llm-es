@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "key": "fela",
+  "paperKey": "fela",
+  "bibliographyKey": "fela",
+  "title": "FELA: A Multi-Agent Evolutionary System for Feature Engineering of Industrial Event Log Data",
+  "authors": [
+    "Kun Ouyang",
+    "Haoyu Wang",
+    "Dong Fang"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2510.25223"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "From-Scratch Generation",
+        "Multi-Parent Fusion"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Search-Statistic-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Evolutionary feature engineering for industrial event-log data",
+    "population": "island",
+    "populationDetail": "Each idea is treated as an island containing associated feature implementations; the maintained hierarchy is concept/feature-centric rather than a conventional pool of executable programs.",
+    "archive": "none",
+    "archiveDetail": "No separate bounded elite archive is described; all generated features/code are accumulated and a best solution is selected from the accumulated sets.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "Algorithm 1 appends newly evaluated features and code to F and C; idea-feature knowledge is updated, while best-so-far selection is not described as a distinct archive.",
+    "generation": "hybrid",
+    "generationDetail": "Feature Proposer generates implementations conditioned on an existing idea, Idea Creator makes new ideas, and Idea Synthesizer explicitly combines existing ideas; these operate at concept/feature level rather than by editing a selected code parent.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The online search reward is relative AUC improvement; other reported metrics and critic rejection/correction feedback should not be mistaken for preference-based evaluation.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "search_statistic_based",
+    "parentSelectionDetail": "UCB chooses an idea in the shared knowledge base for feature evolution; this is a concept-level trajectory choice rather than selection of an executable parent program. Idea synthesis takes existing ideas as sources, with no fixed parent count.",
+    "outOfTaxonomy": "Evolution occurs over a hierarchical idea-feature knowledge base, with UCB selecting concept trajectories and memory distilling cross-trajectory feedback; this is not fully represented by candidate-program population and parent-selection labels."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/fela.md",
+    "sourcePdf": "papers/FELA A Multi-Agent Evolutionary System for Feature Engineering of Industrial Event Log Data.pdf",
+    "citationWarning": "FELA is currently cited in parent-selection search-statistic discussion, but UCB selects ideas rather than executable parent code. Add caveats if extending citations to island population, multi-parent fusion, or explore-exploit sections; generation-action selection remains unclear. Paper version/year differs between local text and survey BibTeX."
+  }
+}

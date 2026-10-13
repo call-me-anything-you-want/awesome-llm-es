@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "key": "alonso2025evoagents",
+  "paperKey": "alonso2025evoagents",
+  "bibliographyKey": "alonso2025evoagents",
+  "title": "EvoAgents: Generative AI for Rapid Architecture Search in Cell Nuclei Detection",
+  "authors": [
+    "Alonso, Samantha",
+    "Bauer, Andr\\'e"
+  ],
+  "year": 2025,
+  "venue": "IEEE International Conference on eScience (eScience)",
+  "publication": {
+    "venue": "IEEE International Conference on eScience (eScience)",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.1109/escience65000.2025.00061",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation",
+        "Localized Modification",
+        "Multi-Parent Fusion"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Approximate Evaluation"
+      ],
+      "ch7": [],
+      "parentSelection": [
+        "Rank-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "CNN architecture search for cell nuclei segmentation",
+    "population": "flat_multi",
+    "populationDetail": "A population of three CNN programs is maintained per generation for ten generations, with no stated island or tree structure.",
+    "archive": "none",
+    "archiveDetail": "The top two models become parents, but a separate persistent elite archive is not described.",
+    "replacement": "unclear",
+    "replacementDetail": "The text says per-generation population of three and parent selection, but omits the exact survivor/replacement operation; Figure 2's program database is not specified as an archive.",
+    "generation": "hybrid",
+    "generationDetail": "Initial CNN code is generated from the task; subsequent GA crossover combines two parent architectures and mutation changes a parent parameter or structure.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "hybrid",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Validation loss, Dice, and IoU are recorded; the paper calls them multi-objective fitness yet also says fitness is validation cross-entropy loss.",
+    "explorationExploitation": "unclear",
+    "parentSelection": "top_two_per_generation",
+    "parentSelectionDetail": "Crossover uses both selected parents; mutation uses one; the exact simulated-annealing effect on selecting the top two is not specified.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/alonso2025evoagents.md",
+    "sourcePdf": "papers/EvoAgents Generative AI for Rapid Architecture Search in Cell Nuclei Detection.pdf",
+    "citationWarning": "Short paper: exact survivor update, elite archive, prompt templates, GA operator-selection policy, annealing schedule, and LLM usage after initialization are not specified. Evaluation is called multi-objective but also defined by validation loss; avoid asserting an unambiguous vector objective. Current survey cites this work only under biomedical imaging."
+  }
+}

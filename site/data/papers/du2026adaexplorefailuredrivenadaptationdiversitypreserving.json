@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "key": "du2026adaexplorefailuredrivenadaptationdiversitypreserving",
+  "paperKey": "du2026adaexplorefailuredrivenadaptationdiversitypreserving",
+  "bibliographyKey": "du2026adaexplorefailuredrivenadaptationdiversitypreserving",
+  "title": "AdaExplore: Failure-Driven Adaptation and Diversity-Preserving Search for Efficient Kernel Generation",
+  "authors": [
+    "Weihua Du",
+    "Jingming Zhuo",
+    "Yixin Dong",
+    "Andre Wang He",
+    "Weiwei Sun",
+    "Zeyu Zheng",
+    "Manupa Karunaratne",
+    "Ivan Fox",
+    "Tim Dettmers",
+    "Tianqi Chen",
+    "Yiming Yang",
+    "Sean Welleck"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": "10.48550/arXiv.2604.16625",
+    "eprint": "2604.16625"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Tree-Structured Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Localized Modification",
+        "Large-Scale Modification",
+        "Adaptive Selection"
+      ],
+      "ch5": [],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Efficient kernel generation",
+    "population": "tree",
+    "populationDetail": "Each kernel candidate is a node in an explicit search tree; UCT selects nodes for expansion.",
+    "archive": "none",
+    "archiveDetail": "The tree search and representative-kernel context do not establish a distinct elite archive.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "none",
+    "generation": "hybrid",
+    "generationDetail": "Tree expansion alternates between localized patch refinement and large structural regeneration.",
+    "trueParentCount": "1",
+    "modelSetting": "unclear",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "none",
+    "explorationExploitation": "explicit",
+    "parentSelection": "fitness_based",
+    "parentSelectionDetail": "none",
+    "outOfTaxonomy": "Failure-derived natural-language constraints are clustered and promoted into cross-task memory; diversity is maintained over tree search."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium-high",
+    "evidenceFile": "annotation/evidence/incoming_b/adaexplore.md",
+    "sourcePdf": "additional_papers/202604/AdaExplore Failure-Driven Adaptation and Diversity-Preserving Search for Efficient Kernel Generation.pdf",
+    "citationWarning": "Parent-selection rule is mapped to UCT-guided tree-branch selection; representative kernels are references, not additional parents."
+  }
+}

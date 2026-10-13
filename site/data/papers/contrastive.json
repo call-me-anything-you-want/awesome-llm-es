@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "key": "contrastive",
+  "paperKey": "contrastive",
+  "bibliographyKey": "contrastive",
+  "title": "Contrastive Concept-Tree Search for LLM-Assisted Algorithm Discovery",
+  "authors": [
+    "Timothee Leleu",
+    "Sudeera Gunathilaka",
+    "Federico Ghimenti",
+    "Surya Ganguli"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.03132"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Verbalized Evaluation Feedback"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control",
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Uniform Selection",
+        "Search-Statistic-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-assisted algorithm discovery for Erdős-style combinatorics problems",
+    "population": "flat_multi",
+    "populationDetail": "The archive accumulates previously evaluated programs; Appendix Table 2 sets parallel islands K=1, and the semantic feature tree is separate from population organization.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is described; good/bad score partitions are temporary model-fitting subsets of the archive.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "The archive update adds each evaluated child to the history used by subsequent parent sampling; no survivor replacement or bounded elite store is specified.",
+    "generation": "localized_modification",
+    "generationDetail": "One selected archive program is the parent; CCTS performs LLM-based local semantic mutation and injects a selected concept as a directive, but does not specify a code-level patch boundary.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "LLM-extracted concept vectors are search descriptors, not metadata returned by the objective evaluator.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "uniform_or_contrastive_likelihood_ratio_weighted",
+    "parentSelectionDetail": "The exploitation branch weights archive candidates by concept-feature likelihood ratios fitted on good and bad score subsets; uniform sampling is the exploration branch.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/contrastive.md",
+    "sourcePdf": "papers/Contrastive Concept-Tree Search for LLM-Assisted Algorithm Discovery.pdf",
+    "citationWarning": "Currently cited only in Parent Selection (Uniform Selection and Search-Statistic-Based Selection). Prompt details and code-edit locality are under-specified; the four backbones are separate experimental alternatives rather than collaborative or routed invocation. Distinguish fixed outer parent-mixture probability from novelty-count-adaptive concept edits; Ch. 7 placements are mechanism-supported but not currently cited."
+  }
+}

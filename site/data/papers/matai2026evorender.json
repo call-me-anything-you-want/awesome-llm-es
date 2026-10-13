@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "key": "matai2026evorender",
+  "paperKey": "matai2026evorender",
+  "bibliographyKey": "matai2026evorender",
+  "title": "EvoRender: An Agentic AI-Neural Rendering Algorithm Discovery",
+  "authors": [
+    "Matai, Janarbek",
+    "Harada, Takahiro"
+  ],
+  "year": 2026,
+  "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+  "publication": {
+    "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": null,
+    "url": "https://openaccess.thecvf.com/content/CVPR2026W/LoViF/html/Matai_EvoRender_An_Agentic_AI_-_Neural_Rendering_Algorithm_Discovery_CVPRW_2026_paper.html"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Multi-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-guided discovery of neural texture compression decoder algorithms",
+    "population": "island",
+    "populationDetail": "Four independent islands maintain decoder-program subpopulations for diversity; the initial decoder library includes 15 implementations.",
+    "archive": "multi_elite",
+    "archiveDetail": "Each island samples parents from its top 20% by score and retains a bounded population of high-fitness programs.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "The method follows OpenEvolve's island-based population update; candidates must pass syntax and forward-pass checks before fitness comparison.",
+    "generation": "large_scale_modification",
+    "generationDetail": "One selected decoder program is mutated within its editable code block; activation, initialization, scaling, gating, skip connections, and forward arithmetic can change.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Composite fitness uses normalized PSNR, numerical stability, and a parameter-count penalty; score controls elite sampling and replacement.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "score_based_top_k",
+    "parentSelectionDetail": "One parent is sampled from the top 20% by score within the selected island.",
+    "outOfTaxonomy": "Search is constrained to neural texture decoder code with a fixed network interface, optimizing a quality/complexity trade-off."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/local_b/evorender.md",
+    "sourcePdf": "additional_papers/202606/EvoRender An Agentic AI - Neural Rendering Algorithm Discovery.pdf",
+    "citationWarning": "The local source is the CVPR Workshop open-access version; confirm no fuller proceedings version supersedes it. Related-work discussion of MAP-Elites describes AlphaEvolve/OpenEvolve and is not direct evidence that EvoRender uses a QD archive."
+  }
+}

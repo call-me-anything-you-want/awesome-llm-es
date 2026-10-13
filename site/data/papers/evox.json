@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "key": "evox",
+  "paperKey": "evox",
+  "bibliographyKey": "evox",
+  "title": "EvoX: Meta-Evolution for Automated Discovery",
+  "authors": [
+    "Shu Liu",
+    "Shubham Agarwal",
+    "Monishwaran Maheswaran",
+    "Mert Cemri",
+    "Zhifei Li",
+    "Qiuyang Mang",
+    "Ashwin Naren",
+    "Ethan Boneh",
+    "Audrey Cheng",
+    "Melissa Z. Pan",
+    "Alexander Du",
+    "Kurt Keutzer",
+    "Alvin Cheung",
+    "Alexandros G. Dimakis",
+    "Koushik Sen",
+    "Matei Zaharia",
+    "Ion Stoica"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.23413"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Localized Modification",
+        "Large-Scale Modification",
+        "Adaptive Selection"
+      ],
+      "ch5": [],
+      "ch6": [
+        "Metadata"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Open-ended optimization of programs, algorithms, and systems by jointly evolving candidate solutions and the search strategies that generate them",
+    "population": "flat_multi",
+    "populationDetail": "The solution database \\(D_t\\) accumulates every evaluated candidate without an explicit island, tree, or partitioned population structure. The separate strategy database H stores historical search strategies and their contextual performance.",
+    "archive": "none",
+    "archiveDetail": "No separate bounded elite archive is specified; best-score queries are computed over the accumulated solution database.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "New evaluated solutions are appended permanently to \\(D_t\\). A valid new strategy replaces the active strategy, but this is strategy-level replacement rather than candidate-population replacement.",
+    "generation": "hybrid",
+    "generationDetail": "The active strategy chooses among local refinement, structural variation, and free-form variation of candidate solution(s). The paper also describes combining complementary parent/inspiration ideas in a case study, but does not consistently distinguish true parents from contextual inspirations.",
+    "trueParentCount": "unclear",
+    "modelSetting": "unclear",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Evaluator returns scalar score and auxiliary artifacts; search strategy uses score statistics, frontier/population descriptors, progress since improvement, and parent-selection frequency. The precise auxiliary artifacts passed to solution-generation prompts are task-dependent and not fully specified.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "strategy_dependent_selection_from_global_solution_database; can include greedy, stratified_multiobjective, random, or UCB policies; exact general arity unspecified",
+    "parentSelectionDetail": "The formal context permits one or more candidate parents; inspirations are separate in notation but the case study sometimes describes blending their ideas. Outer-loop strategy-parent selection is score-biased over strategy history H, with inspirations informed by historical performance and population-state similarity.",
+    "outOfTaxonomy": "The outer loop evolves search strategies as first-class objects using a strategy-history population, state-conditioned strategy performance, and LLM mutation; this meta-evolution layer is not directly represented by the current candidate-focused taxonomy."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/evox.md",
+    "sourcePdf": "papers/EvoX Meta-Evolution for Automated Discovery.pdf",
+    "citationWarning": "Survey currently cites EvoX in the introduction and application overview only. Proposed mechanism placements are not current citations. Multi-Parent Fusion is not assigned because true candidate ancestry versus inspiration is underspecified; per-run model setting is also unclear."
+  }
+}

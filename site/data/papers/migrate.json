@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "key": "migrate",
+  "paperKey": "MIGRATE",
+  "bibliographyKey": "migrate",
+  "title": "MiGrATe: Mixed-Policy GRPO for Adaptation at Test-Time",
+  "authors": [
+    "Peter Phan",
+    "Dhruv Agarwal",
+    "Kavitha Srinivas",
+    "Horst Samulowitz",
+    "Pavan Kapanipathi",
+    "Andrew McCallum"
+  ],
+  "year": 2025,
+  "venue": "CoRR",
+  "publication": {
+    "venue": "CoRR",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.48550/ARXIV.2508.08641",
+    "eprint": "2508.08641"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Island-Structured Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation",
+        "Large-Scale Modification",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Online test-time GRPO search for word discovery, molecular optimization, and ARC program induction",
+    "population": "flat_multi",
+    "populationDetail": "The core algorithm accumulates generated completions in a common database D; Appendix B.1 separately describes an alternative island-based solution organization.",
+    "archive": "none",
+    "archiveDetail": "The core top-k greedy examples are queried from the full historical database; no separate bounded elite archive is maintained.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "Core algorithm appends new on-policy and neighborhood samples to D. Appendix B.1's optional island alternative maintains isolated island solution sets and periodically migrates top solutions on a ring.",
+    "generation": "hybrid",
+    "generationDetail": "The mixed-policy group uses task-prompt on-policy candidates generated from scratch and neighborhood-sampling candidates conditioned on selected high-reward examples; greedy historical candidates are replayed directly into the GRPO group rather than newly generated.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Numeric rewards guide GRPO updates and top-k historical selection. Dockstring invalid molecules and ARC timeouts receive zero reward; no separate evaluator metadata is described.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "top_k_sampling",
+    "parentSelectionDetail": "Core top-k examples are selected from historical database D for replay and NS prompting, not classical evolutionary parents. Appendix B.1 alternative uses island-local exploration/exploitation selection and periodic ring migration.",
+    "outOfTaxonomy": "The core contribution is mixed-policy online GRPO/test-time policy adaptation using on-policy, replayed off-policy, and neighborhood-generated samples; it is not a conventional evolutionary population loop. Appendix B.1 adds an optional island migration alternative."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/migrate.md",
+    "sourcePdf": "papers/MIGRATE Mixed-Policy GRPO for Adaptation at Test-Time.pdf",
+    "citationWarning": "No MIGRATE BibTeX entry or citation was found in the current Survey sources. The optional island-based alternative in Appendix B.1 supports a qualified migration/population mention, but should not be presented as the core algorithm's default. Core top-k selection is prompt/reference selection for GRPO rather than unequivocal evolutionary parent selection."
+  }
+}

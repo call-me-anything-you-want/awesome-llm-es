@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "key": "DBLP:journals/corr/abs-2601-05930",
+  "paperKey": "DBLP:journals/corr/abs-2601-05930",
+  "bibliographyKey": "DBLP:journals/corr/abs-2601-05930",
+  "title": "Can We Predict Before Executing Machine Learning Agents?",
+  "authors": [
+    "Jingsheng Zheng",
+    "Jintian Zhang",
+    "Yujie Luo",
+    "Yuren Mao",
+    "Yunjun Gao",
+    "Lun Du",
+    "Huajun Chen",
+    "Ningyu Zhang"
+  ],
+  "year": 2026,
+  "venue": "ICLR Workshop on Lifelong Agents: Learning, Aligning, Evolving",
+  "publication": {
+    "venue": "ICLR Workshop on Lifelong Agents: Learning, Aligning, Evolving",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": "2601.05930",
+    "url": "https://openreview.net/forum?id=N1e47EZFDJ"
+  },
+  "tags": [
+    "Foundation models",
+    "Evaluation & feedback"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [],
+      "ch5": [
+        "Static Assignment",
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Preference-Based Evaluation",
+        "Additional Evaluation Feedback",
+        "Approximate Evaluation",
+        "Staged Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [],
+      "parentSelection": []
+    }
+  },
+  "mechanism": {
+    "domainTask": "Pre-execution pairwise preference prediction for ML-agent solutions",
+    "population": "unclear",
+    "populationDetail": "FOREAGENT adopts AIDE's tree-search backbone, but this paper does not specify a maintained evolutionary population or enough tree state to classify it under the survey population taxonomy.",
+    "archive": "unclear",
+    "archiveDetail": "No elite archive policy is described for FOREAGENT.",
+    "replacement": "unclear",
+    "replacementDetail": "AIDE tree search is inherited as a backbone; no population/archive maintenance or replacement rule is given here.",
+    "generation": "unclear",
+    "generationDetail": "AIDE proposes candidate ML solutions in parallel, but the paper does not specify a parent-child relation or variation operator.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "preference",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Predicted winner and confidence gate the Top-1 candidate; actual execution then verifies it and returns trajectory feedback.",
+    "explorationExploitation": "unclear",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "Inherited AIDE tree-search parent/node selection is not specified in this paper.",
+    "outOfTaxonomy": "A confidence-calibrated, pre-execution pairwise solution preference model is integrated into an ML-agent search loop to gate physical verification; this is evaluation acceleration, not evolutionary search."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/predictbeforeexecute.md",
+    "sourcePdf": "papers/Can We Predict Before Executing Machine Learning Agents？.pdf",
+    "citationWarning": "Adjacent to but outside evolutionary-search scope. Chapter 5 placement assumes foundation-model roles include the coding backbone and the separate evaluator; omit if the chapter only covers evolutionary candidate generation."
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "key": "selfevolvingrec",
+  "paperKey": "selfevolvingrec",
+  "bibliographyKey": "selfevolvingrec",
+  "title": "Self-Evolving Recommendation System: End-To-End Autonomous Model Optimization With LLM Agents",
+  "authors": [
+    "Haochen Wang",
+    "Yi Wu",
+    "Daryl Chang",
+    "Li Wei",
+    "Lukasz Heldt"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.10226"
+  },
+  "tags": [
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Autonomous optimization of large-scale video recommendation models, including optimizers, architectures, and reward definitions",
+    "population": "none_clear",
+    "populationDetail": "The system generates multiple candidate configurations and stores experiment history in a journal, but does not describe a maintained evolutionary population or survivor pool.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is described; offline winners are promoted to online testing and historical trials are retained in the Experiment Journal.",
+    "replacement": "unclear",
+    "replacementDetail": "The Online Agent has a proposal queue and Experiment Journal, but these are orchestration/history structures rather than a specified evolutionary population.",
+    "generation": "localized_modification",
+    "generationDetail": "The LLM proposes changes as diffs against the current production configuration; delta-based edits are reported to be more reliable than regenerating the full configuration.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "hybrid",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Offline/online metrics, proposal diffs, and completion statuses are serialized into the Experiment Journal and used as context for future proposals; metric values themselves are primary evaluation signals.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "current_baseline_configuration",
+    "parentSelectionDetail": "The current model configuration is the edit base and past trials are contextual references; offline ranking selects which candidates advance to online testing, not which multiple parents are recombined.",
+    "outOfTaxonomy": "Dual-loop production recommendation optimization combines code/configuration generation, offline model training or signal analytics, deployment safety orchestration, and delayed online A/B feedback."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/selfevolvingrecommendation.md",
+    "sourcePdf": "papers/Self-Evolving Recommendation System End-To-End Autonomous Model Optimization With LLM Agents.pdf",
+    "citationWarning": "The current survey describes this paper as scheduling broad exploration earlier and conservative exploitation later, but the source prompt instead requests X/Y/Z exploration, exploitation, and innovation proposals within each batch and reports no temporal schedule. Recheck placement under state-independent fixed control. The linter role is also distinct from the core candidate-generation prompt."
+  }
+}

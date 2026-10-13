@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "key": "expertsoftware",
+  "paperKey": "expertsoftware",
+  "bibliographyKey": "expertsoftware",
+  "title": "An AI system to help scientists write expert-level empirical software",
+  "authors": [
+    "Eser Aygün",
+    "Anastasiya Belyaeva",
+    "Gheorghe Comanici",
+    "Marc Coram",
+    "Hao Cui",
+    "Jake Garrison",
+    "Renee Johnston Anton Kast",
+    "Cory Y. McLean",
+    "Peter Norgaard",
+    "Zahra Shamsi",
+    "David Smalling",
+    "James Thompson",
+    "Subhashini Venugopalan",
+    "Brian P. Williams",
+    "Chujun He",
+    "Sarah Martinson",
+    "Martyna Plomecka",
+    "Lai Wei",
+    "Yuchen Zhou",
+    "Qian-Ze Zhu",
+    "Matthew Abraham",
+    "Erica Brand",
+    "Anna Bulanova",
+    "Jeffrey A. Cardille",
+    "Chris Co",
+    "Scott Ellsworth",
+    "Grace Joseph",
+    "Malcolm Kane",
+    "Ryan Krueger",
+    "Johan Kartiwa",
+    "Dan Liebling",
+    "Jan-Matthis Lueckmann",
+    "Paul Raccuglia",
+    "Xuefei",
+    "Wang",
+    "Katherine Chou",
+    "James Manyika",
+    "Yossi Matias",
+    "John C. Platt",
+    "Lizzie Dorfman",
+    "Shibl Mourad",
+    "Michael P. Brenner"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2509.06503"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Tree-Structured Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Static Assignment"
+      ],
+      "ch6": [
+        "Metadata"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-guided generation and optimization of executable scientific software for scorable tasks",
+    "population": "tree",
+    "populationDetail": "An explicit PUCT search tree stores executable candidate programs as nodes with parent-child lineage and visit statistics.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is described; the best-scoring node is selected from the maintained search tree at the end.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "The tree is both the candidate population and the search-control structure; nodes are appended and selection pressure is applied through PUCT revisitation rather than deletion.",
+    "generation": "large_scale_modification",
+    "generationDetail": "One PUCT-selected parent/trial is broadly rewritten by the LLM into a complete executable code candidate; research ideas and prior method summaries are contextual references.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Sandbox execution scores, output logs, rank-normalized scores, and task-specific submetrics inform node ranking and later PUCT selection.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "planner_controlled",
+    "parentSelectionDetail": "At each iteration, PUCT selects one node from the full tree candidate set using rank score, visit count, prior, and exploration constant; the child is then generated from that node.",
+    "outOfTaxonomy": "PUCT tree statistics jointly serve as maintained population structure and parent-selection controller, while external research-idea injection and pairwise recombination operate as workflow-level guidance."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/expertsoftware.md",
+    "sourcePdf": "papers/An AI system to help scientists write expert-level empirical software.pdf",
+    "citationWarning": "The current survey cites this paper primarily as a tree-structured population example and also describes a flat-population overlay; direct paper evidence supports tree structure, incremental insertion, broad unary rewriting, metadata feedback, adaptive PUCT control, and role-based multi-model use. Auxiliary Gemini calls should not be misread as same-step collaborative code generation."
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "key": "simplebaselines",
+  "paperKey": "simplebaselines",
+  "bibliographyKey": "simplebaselines",
+  "title": "Simple Baselines are Competitive with Code Evolution",
+  "authors": [
+    "Yonatan Gideoni",
+    "Sebastian Risi",
+    "Yarin Gal"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.16805"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation"
+      ],
+      "ch5": [],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-based program search baselines evaluated on mathematical bounds, algorithm discovery, scaffold search, and MLE-Bench",
+    "population": "flat_multi",
+    "populationDetail": "IID RS evaluates an independent temporary candidate batch, while SCS labels successive batches as generations; neither maintains an explicitly partitioned population.",
+    "archive": "none",
+    "archiveDetail": "The baselines select strong results for reporting, but do not describe a separate persistent elite archive.",
+    "replacement": "unclear",
+    "replacementDetail": "SCS conditions each new batch on sampled runnable programs from the previous batch, but does not specify a survivor replacement rule or persistent population update.",
+    "generation": "from_scratch",
+    "generationDetail": "Both baselines generate complete programs from a task prompt; SCS conditions generation on prior runnable examples rather than asking the model to edit a selected parent.",
+    "trueParentCount": "0",
+    "modelSetting": "unclear",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "SCS reuses prior runnable programs and their task scores as conditioning examples; ordinary task metrics also rank candidates for final selection.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "other",
+    "parentSelectionDetail": "Neither IID RS nor SCS selects an editable parent. The previous-generation examples in SCS are reference context only; the paper explicitly distinguishes these baselines from fitness-based parent-selection evolutionary methods.",
+    "outOfTaxonomy": "Sequential conditioning on uniformly sampled prior successful solutions without treating them as editable parents or maintaining a conventional survivor population."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium-high",
+    "evidenceFile": "annotation/evidence/simplebaselines.md",
+    "sourcePdf": "papers/Simple Baselines are Competitive with Code Evolution.pdf",
+    "citationWarning": "The survey currently cites this paper under uniform single-parent selection, but the paper describes no editable parent selection. SCS uniformly samples three successful prior-generation programs as contextual references in its mathematical setup; recast the citation as reference-context selection or remove it from parent selection. Population/replacement labels are provisional because batches do not imply a maintained evolutionary population. Model configurations vary across distinct experiments and methods. Staged and repeated evaluation labels apply specifically to scaffold search."
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "key": "gigaevo",
+  "paperKey": "gigaevo",
+  "bibliographyKey": "gigaevo",
+  "title": "GigaEvo: An Open Source Optimization Framework Powered By LLMs And Evolution Algorithms",
+  "authors": [
+    "Valentin Khrulkov",
+    "Andrey Galichin",
+    "Denis Bashkirov",
+    "Dmitry Vinichenko",
+    "Oleg Travkin",
+    "Roman Alferov",
+    "Andrey Kuznetsov",
+    "Ivan Oseledets"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2511.17592"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Quality-Diversity Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Open-source LLM-guided optimization framework for mathematical and algorithmic discovery",
+    "population": "island",
+    "populationDetail": "The framework supports multiple independent MAP-Elites islands with periodic migration, although all reported experiments use a single-island setup.",
+    "archive": "qd_archive",
+    "archiveDetail": "MAP-Elites maps programs into behavior-space cells (fitness and validity, or alternative dimensions) and preserves the best occupant in each cell.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "Redis persists program records and lineage, but the evolutionary archive updates cell incumbents by within-cell fitness comparison; lineage persistence is not a tree population.",
+    "generation": "localized_modification",
+    "generationDetail": "The mutation operator conditions on one selected parent program and emits either a diff or a complete rewrite explicitly prompted to localize changes.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Validity, complexity, objective metrics, and execution exceptions are stored as structured metadata; insights and lineage descriptions are generated textual feedback.",
+    "explorationExploitation": "mixed",
+    "parentSelection": "fitness_proportional",
+    "parentSelectionDetail": "Elites are sampled by fitness-proportional selection from the active MAP-Elites archive; multi-island mode scopes the pool to an island, while single-island experiments use one archive. Exact number of selected parent programs is not specified.",
+    "outOfTaxonomy": "Bidirectional ancestor-and-descendant lineage analysis is assembled into mutation context, allowing guidance from both prior and later descendants; this lineage-guided framework capability is not fully captured by current contextual-reference labels."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/gigaevo.md",
+    "sourcePdf": "papers/GIGAEVO An Open Source Optimization Framework Powered by LLMs and Evolution Algorithms.pdf",
+    "citationWarning": "Current survey placements for localized modification and score-based parent selection are supported. Multi-island is a framework capability while all reported experiments are single-island; model assignments vary across tasks, and the explicit small/large exploration-refinement schedule is bin-packing-specific. MAP-Elites uses descriptors but retains scalar fitness as the primary objective."
+  }
+}

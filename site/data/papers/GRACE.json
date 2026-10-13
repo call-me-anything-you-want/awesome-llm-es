@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "key": "GRACE",
+  "paperKey": "GRACE",
+  "bibliographyKey": "GRACE",
+  "title": "GRACE: A Language Model Framework for Explainable Inverse Reinforcement Learning",
+  "authors": [
+    "Silvia Sapora",
+    "Devon Hjelm",
+    "Alexander Toshev",
+    "Omar Attia",
+    "Bogdan Mazoure"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2510.02180"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation",
+        "Large-Scale Modification",
+        "Scheduled Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Recovering interpretable executable reward functions from expert and negative trajectories for inverse reinforcement learning",
+    "population": "flat_multi",
+    "populationDetail": "The initial reward functions form a flat population R; no island or tree organization is reported.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is described; the bounded reward population itself retains the top-P candidates.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "Each iteration takes the top P reward functions from the union of the current population and newly mutated candidates.",
+    "generation": "hybrid",
+    "generationDetail": "The first reward population is generated from scratch from demonstrations; later candidates broadly modify one selected reward program using its code and failure examples.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Sampled low-fitness states and the reward values assigned to them are embedded into the next mutation prompt; optional debug output can add state-level diagnostics.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "fitness_proportional_softmax",
+    "parentSelectionDetail": "The single parent reward is sampled proportional to exp(fitness); low-fitness states are separately sampled as debugging context, not as parents.",
+    "outOfTaxonomy": "A reward population is improved through an outer active data-collection loop: PPO trained on the current best reward generates trajectories that are added as negative examples for subsequent reward refinement."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/grace.md",
+    "sourcePdf": "papers/GRACE A Language Model Framework for Explainable Inverse Reinforcement Learning.pdf",
+    "citationWarning": "Survey already cites GRACE under application and parent selection. Add mechanism coverage for flat population, top-P replacement, initialization/mutation prompts, model usage, evaluator metadata, and implicit exploration/exploitation. The optional goal-cleaning/debug prompts are auxiliary and should not be confused with separate evolutionary operators."
+  }
+}

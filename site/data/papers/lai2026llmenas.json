@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "key": "lai2026llmenas",
+  "paperKey": "lai2026llmenas",
+  "bibliographyKey": "lai2026llmenas",
+  "title": "LLMENAS: Evolutionary Neural Architecture Search via Large Language Model Guidance",
+  "authors": [
+    "Lai, Yutao",
+    "Cai, Zicheng",
+    "Chen, Lei",
+    "Ling, Tongtao",
+    "Liu, Hai-Lin"
+  ],
+  "year": 2026,
+  "venue": "IEEE Transactions on Evolutionary Computation",
+  "publication": {
+    "venue": "IEEE Transactions on Evolutionary Computation",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.1109/tevc.2026.3670336",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Generational Replacement",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "From-Scratch Generation",
+        "Large-Scale Modification",
+        "Localized Modification",
+        "Scheduled Selection",
+        "Adaptive Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control",
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Fitness-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Neural architecture search for image classification",
+    "population": "flat_multi",
+    "populationDetail": "CMA-ES samples a flat population of architecture vectors (lambda=25 on CIFAR and 50 on ImageNet) from an evolving Gaussian distribution.",
+    "archive": "multi_elite",
+    "archiveDetail": "The best architecture from each evolutionary generation is recorded in D; the final search path is selected from this temporal sequence. D is not a bounded top-k or quality-diversity archive.",
+    "replacement": "hybrid",
+    "replacementDetail": "CMA-ES refreshes sampled candidate populations generation by generation and updates its distribution from top-mu candidates; D separately accumulates each generation's best candidate for later path selection.",
+    "generation": "hybrid",
+    "generationDetail": "Relative to the LLM-generated fitness-function artifact, initialization designs from trajectory context, reflection proposes a novel strategy after stagnation, and refinement retains core logic while tuning coefficients.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The explicit trigger is structured validation-loss change and trajectory metrics. Natural-language analysis/directive is produced by the same LLM fitness designer, not by a separate architecture evaluator.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "fitness_based",
+    "parentSelectionDetail": "Parent-selection label describes CMA-ES distribution update over architecture candidates. It is separate from the LLM's one prior-code context in refinement; the two search levels should not be conflated.",
+    "outOfTaxonomy": "The LLM operates at a meta-optimization level: it generates and self-improves the evolutionary fitness function/controller, while CMA-ES rather than the LLM generates architecture candidates."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/llmenas.md",
+    "sourcePdf": "papers/LLMENAS Evolutionary Neural Architecture Search via Large Language Model Guidance.pdf",
+    "citationWarning": "Currently cited only as a public NAS implementation in benchmark_code.tex, with no mechanism placement in Chapters 3-7. Chapter 4 generation labels and Chapter 6 verbalized feedback describe the LLM-generated fitness-function/controller layer, not architecture generation or evaluator-produced score explanations. Supplied article references supplementary prompts S-1 to S-4, but the supplement is unavailable, so prompt template details remain incomplete."
+  }
+}

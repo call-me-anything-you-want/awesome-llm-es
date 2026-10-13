@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "key": "asap",
+  "paperKey": "asap",
+  "bibliographyKey": "asap",
+  "title": "ASAP: an Agentic Solution to Auto-optimize Performance of Large-Scale LLM Training",
+  "authors": [
+    "Yuran Ding",
+    "Xinwei Chen",
+    "Xiaofan Zhang",
+    "Zongwei Zhou"
+  ],
+  "year": 2025,
+  "venue": "Machine Learning for Systems",
+  "publication": {
+    "venue": "Machine Learning for Systems",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": "2511.03844"
+  },
+  "tags": [
+    "Candidate generation",
+    "Foundation models",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "From-Scratch Generation"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [],
+      "ch7": [],
+      "parentSelection": [
+        "Semantic-Similarity-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Distributed LLM-training sharding configuration optimization",
+    "population": "none_clear",
+    "populationDetail": "The system starts from one baseline experiment and stores worklog/history context, but does not maintain an explicit evolving population of candidate configurations.",
+    "archive": "none",
+    "archiveDetail": "The past-optimization database and Sharding Memory provide retrieval and traceability context, not a current elite archive with archive admission.",
+    "replacement": "unclear",
+    "replacementDetail": "Three proposals are generated for human or hardware review; an Evaluator Agent and closed feedback/reinforcement loop are future work, so no current survivor or replacement rule is defined.",
+    "generation": "from_scratch",
+    "generationDetail": "The Proposal Agent generates new sharding configurations from task/profiling/analyzer/retrieval context without directly editing a selected parent candidate.",
+    "trueParentCount": "0",
+    "modelSetting": "single_model",
+    "evaluation": "unclear",
+    "feedbackReused": "no",
+    "feedbackDetail": "Profiler metadata and Analyzer diagnosis guide proposal generation but are not described as feedback returned alongside an evaluated candidate's score; closed-loop evaluation is future work.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "other",
+    "parentSelectionDetail": "No true evolutionary parent is selected. The baseline experiment/configuration conditions the prompt, while similar historical optimization records are retrieved as contextual references.",
+    "outOfTaxonomy": "Agentic RAG recommendation over system configurations with persistent worklog and external historical retrieval, but without an explicit evolving candidate population, evaluator, or replacement loop."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/asap.md",
+    "sourcePdf": "papers/ASAP an Agentic Solution to Auto-optimize Performance of Large-Scale LLM Training.pdf",
+    "citationWarning": "Do not infer an elite archive, replacement mechanism, true parent, or explicit adaptive explore-exploit policy from the historical database, Sharding Memory, or three proposed alternatives. The survey cites ASAP for memory-only population, prompt context/roles, zero-parent generation, and semantic-similarity reference reuse; evaluator-feedback and explore-exploit placement should remain absent unless the taxonomy is intentionally broadened."
+  }
+}

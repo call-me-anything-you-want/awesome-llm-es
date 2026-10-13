@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "key": "yu2026evolutionaryensembleagents",
+  "paperKey": "yu2026evolutionaryensembleagents",
+  "bibliographyKey": "yu2026evolutionaryensembleagents",
+  "title": "Evolutionary Ensemble of Agents",
+  "authors": [
+    "Zongmin Yu",
+    "Liu Yang"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": "10.48550/arXiv.2605.09018",
+    "eprint": "2605.09018"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Localized Modification",
+        "Large-Scale Modification",
+        "Adaptive Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Evolution of agent ensembles",
+    "population": "flat_multi",
+    "populationDetail": "EvE explicitly maintains two co-evolving flat populations: functional solver candidates and scored agent-guidance states.",
+    "archive": "multi_elite",
+    "archiveDetail": "High-performing reference solvers and Elo-ranked agent guidance are sampled with rank bias; all new candidates are also inserted into expanding populations.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "The agent population expands with revised guidance plus session logs; solver candidates are accumulated. Synchronous races compare candidates from identical reference sets.",
+    "generation": "hybrid",
+    "generationDetail": "Working agents produce modified solver code and may revise guidance/skills through scoped filesystem edits; exact edit locality/operator templates are not fixed.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "none",
+    "explorationExploitation": "explicit",
+    "parentSelection": "fitness_based",
+    "parentSelectionDetail": "none",
+    "outOfTaxonomy": "Two populations co-evolve, with guidance-agent fitness credited only through downstream solver improvement in synchronous Elo races."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/incoming_b/evolutionary_ensemble.md",
+    "sourcePdf": "additional_papers/202605/Evolutionary Ensemble of Agents.pdf",
+    "citationWarning": "Population labels approximate growing scored sets as multi-elite archives; agent Elo determines sampling but exact parent inheritance/cardinality is not formalized."
+  }
+}

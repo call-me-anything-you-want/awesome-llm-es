@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "key": "funsearch2023",
+  "paperKey": "funsearch2023",
+  "bibliographyKey": "funsearch2023",
+  "title": "Mathematical discoveries from program search with large language models",
+  "authors": [
+    "Romera-Paredes, Bernardino",
+    "Barekatain, Mohammadamin",
+    "Novikov, Alexander",
+    "Balog, Matej",
+    "Kumar, M Pawan",
+    "Dupont, Emilien",
+    "Ruiz, Francisco JR",
+    "Ellenberg, Jordan S",
+    "Wang, Pengming",
+    "Fawzi, Omar",
+    "others"
+  ],
+  "year": 2024,
+  "venue": "Nature",
+  "publication": {
+    "venue": "Nature",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.1038/s41586-023-06924-6",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Incremental Insertion",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Multi-Parent Fusion"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-guided executable program search for mathematical and combinatorial discovery",
+    "population": "island",
+    "populationDetail": "Correct programs are held in m persistent islands; each island evolves separately and participates in periodic cross-island reseeding.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is described; signature clusters organize the island populations and are not reported as one-elite-per-cell archive storage.",
+    "replacement": "hybrid",
+    "replacementDetail": "Correct programs are incrementally inserted into their source island, while every four hours the lowest-scoring half of islands are cleared and each is reseeded from a highest-scoring program in a uniformly chosen surviving island.",
+    "generation": "multi_parent_fusion",
+    "generationDetail": "The prompt samples two programs from one island and explicitly aims for the LLM to merge their ideas while completing the critical function in a fixed program skeleton.",
+    "trueParentCount": "2",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Per-input score signatures form clusters and aggregate cluster scores drive Boltzmann sampling; invalid or resource-failing programs are not stored.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "uniform_island_then_score_biased_cluster_sampling",
+    "parentSelectionDetail": "First choose an island uniformly, then choose a score-biased signature cluster, then a shorter-program-biased member; the selected two programs are used jointly.",
+    "outOfTaxonomy": "Within-island score-signature clustering with score-biased cluster sampling and shorter-program preference combines diversity-aware selection with island-level periodic reset/reseeding."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/downloaded_c/funsearch.md",
+    "sourcePdf": "annotation/incoming_pdfs/FunSearch_Nature.pdf",
+    "citationWarning": "Do not equate within-island score-signature clustering with a separate quality-diversity elite archive: the paper describes clustered population storage but does not specify one elite per niche. Replacement mixes incremental insertion with periodic island reset/reseed. Exploration is explicitly motivated but lacks an explicit E/E controller."
+  }
+}

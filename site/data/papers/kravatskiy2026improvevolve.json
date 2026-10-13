@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "key": "kravatskiy2026improvevolve",
+  "paperKey": "kravatskiy2026improvevolve",
+  "bibliographyKey": "kravatskiy2026improvevolve",
+  "title": "ImprovEvolve: Ask AlphaEvolve to Improve the Input Solution and Then Improvise",
+  "authors": [
+    "Alexey Kravatskiy",
+    "Valentin Khrulkov",
+    "Ivan Oseledets"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.10233"
+  },
+  "tags": [
+    "Population & archives",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Quality-Diversity Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Approximate Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Evolving modular initialization, local-improvement, and perturbation code for challenging continuous/global optimization problems",
+    "population": "flat_multi",
+    "populationDetail": "Outer candidate optimizer programs are maintained in a single-island GigaEvo MAP-Elites population/archive; no multi-island or tree structure is used.",
+    "archive": "qd_archive",
+    "archiveDetail": "The adopted GigaEvo setup uses MAP-Elites with fitness as a single descriptor discretized into 150 bins.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "The outer archive is inherited from GigaEvo; inner solution states in basin-hopping are not the evolutionary population of candidate programs.",
+    "generation": "unclear",
+    "generationDetail": "The outer LLM produces a mutated offspring program from two selected parent programs, but the paper does not specify whether both are fused or one is the primary editable base and the other context.",
+    "trueParentCount": "2",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The GigaEvo context pipeline and parent-associated metrics are inherited infrastructure, not a new feedback module proposed by ImprovEvolve.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "fitness_proportional_then_uniform_from_elites",
+    "parentSelectionDetail": "Six elites are first sampled from the archive proportional to fitness; two parent programs are then sampled uniformly from that elite set.",
+    "outOfTaxonomy": "The evolved candidate is a modular optimizer program whose evaluation executes a nested basin-hopping procedure over problem solutions, separating optimizer-program evolution from solution-space optimization."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/improvevolve.md",
+    "sourcePdf": "papers/ImprovEvolve Ask AlphaEvolve to Improve the Input Solution and Then Improvise.pdf",
+    "citationWarning": "Survey currently cites ImprovEvolve as a QD and parent-selection example. Those outer-loop mechanisms are inherited from GigaEvo. The explicit fixed exploration/refinement schedule is inside candidate execution (basin-hopping), not the outer LLM operator selector. The relationship between two selected parent programs and offspring is not specified enough to assign multi-parent fusion."
+  }
+}

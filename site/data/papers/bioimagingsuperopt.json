@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "key": "bioimagingsuperopt",
+  "paperKey": "bioimagingsuperopt",
+  "bibliographyKey": "bioimagingsuperopt",
+  "title": "Agentic Superoptimization of Bioimaging Analysis Workflows",
+  "authors": [
+    "Wang, Xuefei",
+    "Chen, Jonathan",
+    "Farhang, Alexander R.",
+    "Stiles, Sophia",
+    "Horstmann, Kai A.",
+    "Sehgal, Atharva",
+    "Light, Jonathan",
+    "Van Valen, David",
+    "Yue, Yisong",
+    "Sun, Jennifer J."
+  ],
+  "year": 2025,
+  "venue": "LLM for Scientific Discovery: Reasoning, Assistance, and Collaboration",
+  "publication": {
+    "venue": "LLM for Scientific Discovery: Reasoning, Assistance, and Collaboration",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": null,
+    "url": "https://openreview.net/forum?id=ozFyM0IVh1"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Bioimaging preprocessing-function search for Polaris, Cellpose, and MedSAM workflows",
+    "population": "flat_multi",
+    "populationDetail": "An undivided function bank stores many generated preprocessing functions and scores; no islands or tree are maintained.",
+    "archive": "none",
+    "archiveDetail": "No separate in-loop elite archive is specified; top-K validation selection is downstream reporting.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "The function bank is append-only and apparently unbounded; top-K filtering is applied after rollouts for test evaluation.",
+    "generation": "from_scratch",
+    "generationDetail": "The coding agent independently proposes new preprocessing functions; historical functions are contextual examples rather than editable parents.",
+    "trueParentCount": "0",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Execution feedback and numerical workflow scores are returned to the coding agent and stored with functions; exact failure payload is under-specified.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "other",
+    "parentSelectionDetail": "No true parent is selected; bank samples are contextual references.",
+    "outOfTaxonomy": "Append-only function-bank memory with top-and-bottom contextual sampling combined with independent batch generation and a fixed explore/refine phase schedule."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/bioimagingsuperopt.md",
+    "sourcePdf": "papers/Agentic Superoptimization of Bioimaging Analysis Workflows.pdf",
+    "citationWarning": "Current survey appears to omit flat-bank/incremental-insertion and from-scratch-generation placements; do not treat contextual bank samples as true parents or as a multi-elite archive. Metadata feedback is medium confidence because the exact execution-feedback payload is not fully exposed."
+  }
+}

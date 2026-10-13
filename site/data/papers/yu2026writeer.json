@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "key": "yu2026writeer",
+  "paperKey": "yu2026writeer",
+  "bibliographyKey": "yu2026writeer",
+  "title": "WRitEer: A Multi-Objective, Preference-Driven Multi-Agent Framework for Human-Like Advanced Text Generation",
+  "authors": [
+    "Junchuan Yu",
+    "Yuyang Sun"
+  ],
+  "year": 2026,
+  "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+  "publication": {
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.1609/aaai.v40i35.40232",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Localized Modification",
+        "Multi-Parent Fusion",
+        "Scheduled Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Static Assignment"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation",
+        "Repeated Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Fitness-based prompt crossover with local dimension mutation"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Human-like advanced text generation with evolutionary prompt optimization and preference fine-tuning",
+    "population": "flat_multi",
+    "populationDetail": "The Editor initializes five prompt combinations and evolves a current prompt through a three-round sequence; no island or tree structure is described.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is described; the method selects the highest-fitness prompt from its current population.",
+    "replacement": "unclear",
+    "replacementDetail": "The paper specifies best-individual selection and sequential operators but does not state a population-wide survivor replacement policy.",
+    "generation": "hybrid",
+    "generationDetail": "Crossover fuses prompt dimensions from the current candidate and a highest-fitness population member; mutation locally regenerates only subprompts for the worst dynamic-metric dimensions.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "hybrid",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Static/dynamic metrics drive prompt fitness and output choice; chosen/rejected output pairs are accumulated for periodic DPO updates.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "fitness_based",
+    "parentSelectionDetail": "Crossover combines the current prompt with the highest-fitness population member (two parents); mutation edits only the current prompt. Selection is not a uniform parent rule across operators.",
+    "outOfTaxonomy": "Preference triples from evaluated text pairs periodically fine-tune the Writer with DPO, coupling test-time evolutionary prompt search with online model adaptation."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/local_a/writeer.md",
+    "sourcePdf": "additional_papers/202603/WRitEer A Multi-Objective, Preference-Driven Multi-Agent Framework for Human-Like Advanced Text Generation.pdf",
+    "citationWarning": "Population replacement and Editor backbone are unspecified; natural-language evaluator justifications are mentioned but their use in the search loop is unclear."
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "key": "evodr",
+  "paperKey": "LLM4DRD",
+  "bibliographyKey": "evodr",
+  "title": "LLM-Assisted Automatic Dispatching Rule Design for Dynamic Flexible Assembly Flow Shop Scheduling",
+  "authors": [
+    "Junhao Qiu",
+    "Haoyang Zhuang",
+    "Fei Liu",
+    "Jianjun Liu",
+    "Qingfu Zhang"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2601.15738"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification",
+        "Multi-Parent Fusion",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "Tournament Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Dynamic flexible assembly flow-shop scheduling and dispatching-rule design",
+    "population": "flat_multi",
+    "populationDetail": "A single flat population of dispatching rules is maintained; reported population size is 4-6, with no island or tree organization.",
+    "archive": "none",
+    "archiveDetail": "The best rule is tracked as the output incumbent, but no separate maintained elite archive is defined.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "Each iteration builds an offspring set by processing all prompt-neighborhood strategies, then assigns the population to that offspring set; invalid offspring are omitted.",
+    "generation": "hybrid",
+    "generationDetail": "The system uses explicit two-parent dominance-fusion, broad exploratory rewriting of parent code, and single-parent directed or parameter-focused modification; no edit region is prescribed.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Scalar tardiness/objective values remain the quantitative fitness; evaluator-generated semantic advice is reused in later prompts. Best/worst rules provide comparison context, not pairwise preference as the primary signal.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "tournament",
+    "parentSelectionDetail": "C1 requires two true parents; Algorithm 2 sets parent count by strategy, so there is no single global parent count.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/llm4drd.md",
+    "sourcePdf": "papers/LLM-Assisted Automatic Dispatching Rule Design for Dynamic Flexible Assembly Flow Shop Scheduling.pdf",
+    "citationWarning": "The supplied PDF title uses LLM4DRD while the matching bibliography entry uses EvoDR; authors and arXiv:2601.15738 match, so this is one work and should not be duplicated. Current survey coverage in Chapters 3-7 does not cite its specific mechanisms; it is presently mentioned only as a manufacturing application."
+  }
+}

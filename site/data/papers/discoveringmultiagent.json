@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "key": "discoveringmultiagent",
+  "paperKey": "discoveringmultiagent",
+  "bibliographyKey": "discoveringmultiagent",
+  "title": "Discovering Multiagent Learning Algorithms with Large Language Models",
+  "authors": [
+    "Zun Li",
+    "John Schultz",
+    "Daniel Hennes",
+    "Marc Lanctot"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.16928"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Automated discovery of CFR and PSRO algorithms for imperfect-information games",
+    "population": "flat_multi",
+    "populationDetail": "The outer search maintains one unpartitioned population P of baseline and valid evolved algorithm programs.",
+    "archive": "none",
+    "archiveDetail": "No separate best-so-far or elite archive is described for the outer search.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "The discovered PSRO solver also maintains policy populations, but those are inside evaluated candidates and are not the evolutionary search population.",
+    "generation": "localized_modification",
+    "generationDetail": "One selected current program is changed through SEARCH/REPLACE patches whose search chunks are limited to four lines; multiple patches may alter algorithmic behavior broadly.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "vector_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Per-game negative exploitability and their average are the defined fitness objectives; one objective is sampled for fitness-biased parent selection.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "fitness_biased_after_random_objective_choice",
+    "parentSelectionDetail": "A fitness objective is randomly selected when multiple per-game and aggregate scores exist; sampling then favors high values on that objective.",
+    "outOfTaxonomy": "The object evolved is a game-learning algorithm; one discovered PSRO algorithm has its own policy population and exploration schedule, distinct from the outer evolutionary search."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/discoveringmultiagent.md",
+    "sourcePdf": "papers/Discovering Multiagent Learning Algorithms with Large Language Models.pdf",
+    "citationWarning": "Current survey cites this paper only under applications. Outer AlphaEvolve search supports additional mechanism placements. Do not classify SHOR-PSRO's scheduled internal policy as outer search control; archive and reference retrieval rules are unspecified."
+  }
+}

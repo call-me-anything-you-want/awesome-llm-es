@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "key": "archagent",
+  "paperKey": "archagent",
+  "bibliographyKey": "archagent",
+  "title": "ArchAgent: Agentic AI-driven Computer Architecture Discovery",
+  "authors": [
+    "Raghav Gupta",
+    "Akanksha Jain",
+    "Abraham Gonzalez",
+    "Alexander Novikov",
+    "Po-Sen Huang",
+    "Matej Balog",
+    "Marvin Eisenberger",
+    "Sergey Shirobokov",
+    "Ngân Vũ",
+    "Martin Dixon",
+    "Borivoje Nikolić",
+    "Parthasarathy Ranganathan",
+    "Sagar Karandikar"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.22425"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Static Assignment"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Rank-Based Selection",
+        "Evaluator-Metadata-Based Selection",
+        "Object-Specific Selection-Mechanism Control"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-guided discovery of cache replacement policies in a ChampSim microarchitectural simulator",
+    "population": "flat_multi",
+    "populationDetail": "An evolutionary database stores multiple evaluated policy programs and metadata for later sampling; the paper does not establish an ArchAgent-specific island or tree population.",
+    "archive": "multi_elite",
+    "archiveDetail": "The ranked evolutionary database preserves multiple high-performing prior policies for later reuse, but its capacity and exact survivor rule are not specified.",
+    "replacement": "unclear",
+    "replacementDetail": "The paper says candidates are ranked and fed into an evolutionary database, but does not expose bounded capacity, eviction, migration, or MAP-Elites cell admission for the ArchAgent run.",
+    "generation": "large_scale_modification",
+    "generationDetail": "The LLM is asked to iteratively improve an existing ChampSim cache-policy code artifact, with sampled prior policies and metadata used as context; the paper does not expose a separate crossover operator.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "IPC speedup values, workload/configuration results, code-length measurements, simulator-validity outcomes, and prior-run metadata are reused in later prompts; no separate natural-language evaluator critique is exposed.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "rank_based|evaluator_metadata_based",
+    "parentSelectionDetail": "Higher-ranked prior policies are preferred for reuse, while previous solutions and evaluator metadata are sampled into prompts; exact probability and parent cardinality are not reported.",
+    "outOfTaxonomy": "The paper combines an incompletely specified AlphaEvolve-style evolutionary database, simulator-backed hard-constraint gates, and a two-model ensemble whose call-level invocation protocol is not exposed."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/archagent.md",
+    "sourcePdf": "papers/ArchAgent Agentic AI-driven Computer Architecture Discovery.pdf",
+    "citationWarning": "Do not infer island/MAP-Elites structure from the background discussion; database capacity/admission and true parent count are underspecified. The Gemini ensemble is clearly multi-model but routed-versus-collaborative behavior is unresolved. Placement under elitist replacement and static assignment is a cautious survey mapping rather than fully explicit paper evidence."
+  }
+}

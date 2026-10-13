@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "key": "DUEL-EVOLVE",
+  "paperKey": "DUEL-EVOLVE",
+  "bibliographyKey": "DUEL-EVOLVE",
+  "title": "Duel-Evolve: Reward-Free Test-Time Scaling via LLM Self-Preferences",
+  "authors": [
+    "Sweta Karlekar",
+    "Carolina Zheng",
+    "Magnus Saebo",
+    "Nicolas Beltran-Velez",
+    "Shuyang Yu",
+    "John Bowlan",
+    "Michal Kucer",
+    "David Blei"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.21585"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation",
+        "Multi-Parent Fusion",
+        "Scheduled Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Preference-Based Evaluation",
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Parallel Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Test-time mathematical reasoning and competitive-programming code generation",
+    "population": "flat_multi",
+    "populationDetail": "An evaluated candidate pool and confidence-pruned survivor subset are maintained for each problem, with no islands or tree backbone.",
+    "archive": "none",
+    "archiveDetail": "The confidence survivor subset filters active candidates but is not a separate elite archive.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "Batched children enter the pool; appendix caps it at 200 and applies confidence pruning while comparison history remains available.",
+    "generation": "hybrid",
+    "generationDetail": "Each evolved response synthesizes improvements from five or six scored parent solutions; initial candidates are generated from the problem alone.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "preference",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Code public-test traces are coarse prompt context, whereas pairwise self-preference remains the primary optimization signal.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "thompson_sampled_top_scorers_mixed_with_recent_uncertain_candidates",
+    "parentSelectionDetail": "Five parents for code and six for math; selection operates on confidence-pruned survivor pool.",
+    "outOfTaxonomy": "Preference-duel posterior with confidence pruning and mixed parent selection; its inferred scalar utilities are not external reward scores."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/duel_evolve.md",
+    "sourcePdf": "papers/DUEL-EVOLVE REWARD-FREE TEST-TIME SCALING VIA LLM SELF-PREFERENCES.pdf",
+    "citationWarning": "Survey currently cites preference evaluation and Gemma use; method also supports population, multi-parent prompting, repeated/parallel evaluation, and posterior-adaptive control. Pool cap/pruning qualifies incremental insertion. Verbal feedback reuse is explicit for code but not math."
+  }
+}

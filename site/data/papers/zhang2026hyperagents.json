@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "key": "zhang2026hyperagents",
+  "paperKey": "zhang2026hyperagents",
+  "bibliographyKey": "zhang2026hyperagents",
+  "title": "Hyperagents",
+  "authors": [
+    "Jenny Zhang",
+    "Bingchen Zhao",
+    "Wannan Yang",
+    "Jakob Foerster",
+    "Jeff Clune",
+    "Minqi Jiang",
+    "Sam Devlin",
+    "Tatiana Shavrina"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": "10.48550/arXiv.2603.19461",
+    "eprint": "2603.19461"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification",
+        "Adaptive Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Self-referential self-improving agents",
+    "population": "flat_multi",
+    "populationDetail": "DGM-H retains a growing archive of self-modified agent variants; no island partition or maintained genealogy tree is stated in the note.",
+    "archive": "multi_elite",
+    "archiveDetail": "Multiple stepping-stone variants are retained based on task score and open-ended exploration.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "none",
+    "generation": "large_scale_modification",
+    "generationDetail": "A selected archived hyperagent is self-modified into a child; the editable task/meta program can alter both task-solving and future self-modification logic.",
+    "trueParentCount": "1",
+    "modelSetting": "unclear",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "none",
+    "explorationExploitation": "implicit",
+    "parentSelection": "fitness_based",
+    "parentSelectionDetail": "none",
+    "outOfTaxonomy": "The system can self-modify its own search/improvement procedure as well as the task-solving agent."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/incoming_b/hyperagents.md",
+    "sourcePdf": "additional_papers/202603/Hyperagents.pdf",
+    "citationWarning": "Do not infer a fixed generation operator, parent arity, or multi-model backbone from the names “task agent” and “meta agent.”"
+  }
+}

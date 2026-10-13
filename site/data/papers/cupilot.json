@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "key": "cupilot",
+  "paperKey": "cupilot",
+  "bibliographyKey": "cupilot",
+  "title": "cuPilot: A Strategy-Coordinated Multi-agent Framework for CUDA Kernel Evolution",
+  "authors": [
+    "Jinwu Chen",
+    "Qidie Wu",
+    "Bin Li",
+    "Lin Ma",
+    "Xin Si",
+    "Yang Hu",
+    "Shouyi Yin",
+    "Jun Yang"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2512.16465"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "From-Scratch Generation",
+        "Multi-Parent Fusion",
+        "Localized Modification",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Score-Based Selection",
+        "Evaluator-Metadata-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "CUDA kernel evolution and performance optimization",
+    "population": "flat_multi",
+    "populationDetail": "One population P contains multiple kernel-strategy individuals, with no persistent island partition or migration.",
+    "archive": "none",
+    "archiveDetail": "Top-kernel historical pairs are stored in an external RAG database for later task initialization, not a distinct same-task elite survivor archive.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "Generation-level tournament elitism and kernel-strategy crossover are described, but Algorithm 1 writes P union offspring, leaving pruning of old individuals unclear.",
+    "generation": "hybrid",
+    "generationDetail": "Vanilla kernel/strategy initialization is followed by selected kernel plus selected strategy crossover, then kernel revision aligned back to strategy.",
+    "trueParentCount": "2",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Roofline position and NCU hardware utilization guide strategy prompts and enter parent tournament criteria; details of error-message handoff are not exposed.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "tournament",
+    "parentSelectionDetail": "Tournament selects kernel and strategy components separately; hardware utilization also contributes to the criterion, and the exact tournament size is not specified.",
+    "outOfTaxonomy": "Kernel-strategy cross-product recombination uses a separately selected strategy as a semantic parent and stores cross-task historical pairs in RAG memory."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/cupilot.md",
+    "sourcePdf": "papers/cuPilot A Strategy-Coordinated Multi-agent Framework for CUDA Kernel Evolution.pdf",
+    "citationWarning": "Survey population text incorrectly groups cuPilot with island/migration systems; original paper describes one P. Exact old-population deletion is unclear because Algorithm 1 uses union despite prose calling the next population generational. Two models are used only across separate experiments; the strategy source is not guaranteed to be an independent code lineage."
+  }
+}

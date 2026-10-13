@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "key": "wheretosearch_2510_14846",
+  "paperKey": "wheretosearch_2510_14846",
+  "bibliographyKey": "wheretosearch_2510_14846",
+  "title": "Where to Search: Measure the Prior-Structured Search Space of LLM Agents",
+  "authors": [
+    "Zhuo-Yang Song"
+  ],
+  "year": 2025,
+  "venue": "CoRR",
+  "publication": {
+    "venue": "CoRR",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.48550/ARXIV.2510.14846",
+    "eprint": "2510.14846"
+  },
+  "tags": [],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [],
+      "ch5": [],
+      "ch6": [],
+      "ch7": [],
+      "parentSelection": []
+    }
+  },
+  "mechanism": {
+    "domainTask": "Formal measurement of safety-constrained reachability in iterative LLM-agent search spaces",
+    "population": "none_clear",
+    "populationDetail": "No maintained candidate population is proposed; a transition graph over states is an analysis object, not a survivor pool.",
+    "archive": "none",
+    "archiveDetail": "No elite archive or elite-preservation mechanism is proposed.",
+    "replacement": "unclear",
+    "replacementDetail": "The IdeaSearchFitter experiment observes transitions retained by an external framework, but this paper does not specify its population or replacement mechanism; graph thresholding is analysis preprocessing, not population replacement.",
+    "generation": "unclear",
+    "generationDetail": "The grid instantiation asks an LLM for a next state, while the IdeaSearch instantiation observes an external framework's next-expression transitions; neither is presented as this paper's parent-relative evolutionary offspring operator.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "unclear",
+    "feedbackReused": "no",
+    "feedbackDetail": "The paper analyzes reachability and graph structure. IdeaSearchFitter uses external constraints and scoring filters, but the paper does not specify these as its own evaluator-feedback mechanism.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "other",
+    "parentSelectionDetail": "A transition's source state f is the measured agent's current input, not a parent selected from an evolutionary population. The paper proposes no parent-selection procedure.",
+    "outOfTaxonomy": "Formalizes fuzzy input-output relations, crisp safety envelopes, path-coverage generating functions, reachability critical parameters and indices, and graph-geometric search difficulty; this is a measurement/formalization contribution rather than an evolutionary mechanism."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/wheretosearch.md",
+    "sourcePdf": "papers/Where to Search Measure the Prior-Structured Search Space of LLM Agents.pdf",
+    "citationWarning": "No matching BibTeX entry or citation exists in the current survey files. The experimental grid prompt and IdeaSearchFitter dynamics are measurement instantiations, not evidence of a new evolutionary search system. Do not map continuation parameter p or graph frequency threshold p0 to explore-exploit control."
+  }
+}

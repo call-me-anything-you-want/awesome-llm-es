@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "key": "DBLP:journals/corr/abs-2509-25626",
+  "paperKey": "DBLP:journals/corr/abs-2509-25626",
+  "bibliographyKey": "DBLP:journals/corr/abs-2509-25626",
+  "title": "LLM-Powered Code Analysis and Optimization for Gaussian Splatting Kernels",
+  "authors": [
+    "Yi Hu",
+    "Huiyang Zhou"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2509.25626"
+  },
+  "tags": [
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Static Assignment"
+      ],
+      "ch6": [
+        "Metadata",
+        "Approximate Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-assisted profiling-guided correctness-preserving optimization of CUDA Gaussian-splatting rendering kernels",
+    "population": "unclear",
+    "populationDetail": "The paper uses the OpenEvolve evolutionary-search framework but does not describe the maintained population organization, island structure, or genealogy.",
+    "archive": "unclear",
+    "archiveDetail": "The paper mentions quality-diversity evaluation and tracking the best candidate, but does not specify a separate archive structure, descriptor cells, or elite preservation rule.",
+    "replacement": "unclear",
+    "replacementDetail": "Evolution runs over candidates in OpenEvolve and records the best candidate over iterations, but offspring insertion and survivor replacement are not described.",
+    "generation": "localized_modification",
+    "generationDetail": "The prompt explicitly restricts edits to the marked EVOLVE-BLOCK in one provided source program and asks for the full code with markers preserved.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The combined scalar score is based on accuracy and latency; Nsight system/workload profiling is provided to the planner to prune suggestions. GPT-5 also supplies a functional-equivalence check for generated code.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "The example prompt contains one program with an editable EVOLVE-BLOCK, but the paper does not specify how OpenEvolve samples that parent from its search state.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/gaussiansplatting.md",
+    "sourcePdf": "papers/LLM-Powered Code Analysis and Optimization for Gaussian Splatting Kernels.pdf",
+    "citationWarning": "Survey currently cites this paper in application.tex. OpenEvolve population/archive/replacement details are not reported in this paper and should not be inferred from the framework. Distinguish GPT-5 planning/checking plus Deepseek evolutionary generation from separate one-shot model comparisons; profiler data is external metadata reused to prune search guidance."
+  }
+}

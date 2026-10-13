@@ -1,0 +1,550 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-30T01:55:03.603Z",
+  "records": [
+    {
+      "key": "adadevolve",
+      "file": "adadevolve.json"
+    },
+    {
+      "key": "adaptevolve",
+      "file": "adaptevolve.json"
+    },
+    {
+      "key": "agentltv",
+      "file": "agentltv.json"
+    },
+    {
+      "key": "alonso2025evoagents",
+      "file": "alonso2025evoagents.json"
+    },
+    {
+      "key": "alphaevolve",
+      "file": "alphaevolve.json"
+    },
+    {
+      "key": "alpharesearch",
+      "file": "alpharesearch.json"
+    },
+    {
+      "key": "alzubi2026evoskill",
+      "file": "alzubi2026evoskill.json"
+    },
+    {
+      "key": "anonymous2026formalevolve",
+      "file": "anonymous2026formalevolve.json"
+    },
+    {
+      "key": "archagent",
+      "file": "archagent.json"
+    },
+    {
+      "key": "asap",
+      "file": "asap.json"
+    },
+    {
+      "key": "barbariansgate",
+      "file": "barbariansgate.json"
+    },
+    {
+      "key": "beresnevapplied",
+      "file": "beresnevapplied.json"
+    },
+    {
+      "key": "bioacoustic",
+      "file": "bioacoustic.json"
+    },
+    {
+      "key": "bioimagingsuperopt",
+      "file": "bioimagingsuperopt.json"
+    },
+    {
+      "key": "bouscary2026budgetefficientautomaticalgorithmdesign",
+      "file": "bouscary2026budgetefficientautomaticalgorithmdesign.json"
+    },
+    {
+      "key": "causalevolve",
+      "file": "causalevolve.json"
+    },
+    {
+      "key": "cen2025beyond",
+      "file": "cen2025beyond.json"
+    },
+    {
+      "key": "cheng2026harnessing",
+      "file": "cheng2026harnessing.json"
+    },
+    {
+      "key": "cibse",
+      "file": "cibse.json"
+    },
+    {
+      "key": "codeevolve",
+      "file": "codeevolve.json"
+    },
+    {
+      "key": "cognitivealpha",
+      "file": "cognitivealpha.json"
+    },
+    {
+      "key": "ContextEvolve",
+      "file": "ContextEvolve.json"
+    },
+    {
+      "key": "contrastive",
+      "file": "contrastive.json"
+    },
+    {
+      "key": "ControlledSelfEvolution",
+      "file": "ControlledSelfEvolution.json"
+    },
+    {
+      "key": "costdriven",
+      "file": "costdriven.json"
+    },
+    {
+      "key": "cudal1",
+      "file": "cudal1.json"
+    },
+    {
+      "key": "cupilot",
+      "file": "cupilot.json"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-2504-19636",
+      "file": "DBLP_journals_corr_abs-2504-19636.json"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-2507-10614",
+      "file": "DBLP_journals_corr_abs-2507-10614.json"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-2509-18057",
+      "file": "DBLP_journals_corr_abs-2509-18057.json"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-2509-22255",
+      "file": "DBLP_journals_corr_abs-2509-22255.json"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-2509-25626",
+      "file": "DBLP_journals_corr_abs-2509-25626.json"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-2510-14825",
+      "file": "DBLP_journals_corr_abs-2510-14825.json"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-2511-16964",
+      "file": "DBLP_journals_corr_abs-2511-16964.json"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-2601-05930",
+      "file": "DBLP_journals_corr_abs-2601-05930.json"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-2601-21877",
+      "file": "DBLP_journals_corr_abs-2601-21877.json"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-2601-22896",
+      "file": "DBLP_journals_corr_abs-2601-22896.json"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-2602-02724",
+      "file": "DBLP_journals_corr_abs-2602-02724.json"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-2602-03545",
+      "file": "DBLP_journals_corr_abs-2602-03545.json"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-2602-06553",
+      "file": "DBLP_journals_corr_abs-2602-06553.json"
+    },
+    {
+      "key": "deltaevolve",
+      "file": "deltaevolve.json"
+    },
+    {
+      "key": "discoveringmultiagent",
+      "file": "discoveringmultiagent.json"
+    },
+    {
+      "key": "du2025evosyn",
+      "file": "du2025evosyn.json"
+    },
+    {
+      "key": "du2026adaexplorefailuredrivenadaptationdiversitypreserving",
+      "file": "du2026adaexplorefailuredrivenadaptationdiversitypreserving.json"
+    },
+    {
+      "key": "du2026cvevolveautonomousalgorithmdiscovery",
+      "file": "du2026cvevolveautonomousalgorithmdiscovery.json"
+    },
+    {
+      "key": "du2026mlevolveselfevolvingframeworkautomated",
+      "file": "du2026mlevolveselfevolvingframeworkautomated.json"
+    },
+    {
+      "key": "DUEL-EVOLVE",
+      "file": "DUEL-EVOLVE.json"
+    },
+    {
+      "key": "E2OC2025",
+      "file": "E2OC2025.json"
+    },
+    {
+      "key": "ease",
+      "file": "ease.json"
+    },
+    {
+      "key": "eoh",
+      "file": "eoh.json"
+    },
+    {
+      "key": "evodr",
+      "file": "evodr.json"
+    },
+    {
+      "key": "evolve",
+      "file": "evolve.json"
+    },
+    {
+      "key": "evolvesignal",
+      "file": "evolvesignal.json"
+    },
+    {
+      "key": "evolvingexcellence",
+      "file": "evolvingexcellence.json"
+    },
+    {
+      "key": "evorisk",
+      "file": "evorisk.json"
+    },
+    {
+      "key": "evox",
+      "file": "evox.json"
+    },
+    {
+      "key": "expertsoftware",
+      "file": "expertsoftware.json"
+    },
+    {
+      "key": "fan2026cyberevolver",
+      "file": "fan2026cyberevolver.json"
+    },
+    {
+      "key": "fela",
+      "file": "fela.json"
+    },
+    {
+      "key": "fmagent2025",
+      "file": "fmagent2025.json"
+    },
+    {
+      "key": "funsearch2023",
+      "file": "funsearch2023.json"
+    },
+    {
+      "key": "gepa",
+      "file": "gepa.json"
+    },
+    {
+      "key": "gigaevo",
+      "file": "gigaevo.json"
+    },
+    {
+      "key": "GRACE",
+      "file": "GRACE.json"
+    },
+    {
+      "key": "gu2025intelligent",
+      "file": "gu2025intelligent.json"
+    },
+    {
+      "key": "ho2026polymath",
+      "file": "ho2026polymath.json"
+    },
+    {
+      "key": "hsevo",
+      "file": "hsevo.json"
+    },
+    {
+      "key": "jiang2025aide",
+      "file": "jiang2025aide.json"
+    },
+    {
+      "key": "jiang2026smcevolveprincipledscientificdiscovery",
+      "file": "jiang2026smcevolveprincipledscientificdiscovery.json"
+    },
+    {
+      "key": "kalman",
+      "file": "kalman.json"
+    },
+    {
+      "key": "kasenberg2026ai",
+      "file": "kasenberg2026ai.json"
+    },
+    {
+      "key": "KernelEvolve",
+      "file": "KernelEvolve.json"
+    },
+    {
+      "key": "kravatskiy2026improvevolve",
+      "file": "kravatskiy2026improvevolve.json"
+    },
+    {
+      "key": "kripner2025symbolic",
+      "file": "kripner2025symbolic.json"
+    },
+    {
+      "key": "ksearch",
+      "file": "ksearch.json"
+    },
+    {
+      "key": "lai2026llmenas",
+      "file": "lai2026llmenas.json"
+    },
+    {
+      "key": "lark",
+      "file": "lark.json"
+    },
+    {
+      "key": "lee2026metaharnessendtoendoptimizationmodel",
+      "file": "lee2026metaharnessendtoendoptimizationmodel.json"
+    },
+    {
+      "key": "lei2026automatic",
+      "file": "lei2026automatic.json"
+    },
+    {
+      "key": "li2026learning",
+      "file": "li2026learning.json"
+    },
+    {
+      "key": "liu2026skydiscover",
+      "file": "liu2026skydiscover.json"
+    },
+    {
+      "key": "loongflow",
+      "file": "loongflow.json"
+    },
+    {
+      "key": "lu2024ai",
+      "file": "lu2024ai.json"
+    },
+    {
+      "key": "ma2023eureka",
+      "file": "ma2023eureka.json"
+    },
+    {
+      "key": "madevolve",
+      "file": "madevolve.json"
+    },
+    {
+      "key": "Magellan",
+      "file": "Magellan.json"
+    },
+    {
+      "key": "MakingDatabasesFaster",
+      "file": "MakingDatabasesFaster.json"
+    },
+    {
+      "key": "matai2026evorender",
+      "file": "matai2026evorender.json"
+    },
+    {
+      "key": "mathdiscovery",
+      "file": "mathdiscovery.json"
+    },
+    {
+      "key": "MathTheory2025",
+      "file": "MathTheory2025.json"
+    },
+    {
+      "key": "MCCE",
+      "file": "MCCE.json"
+    },
+    {
+      "key": "migrate",
+      "file": "migrate.json"
+    },
+    {
+      "key": "min2026revolution",
+      "file": "min2026revolution.json"
+    },
+    {
+      "key": "nikoleit2025adversarial",
+      "file": "nikoleit2025adversarial.json"
+    },
+    {
+      "key": "ondiscovering",
+      "file": "ondiscovering.json"
+    },
+    {
+      "key": "optagent",
+      "file": "optagent.json"
+    },
+    {
+      "key": "oragent",
+      "file": "oragent.json"
+    },
+    {
+      "key": "pacevolve",
+      "file": "pacevolve.json"
+    },
+    {
+      "key": "paretogrid",
+      "file": "paretogrid.json"
+    },
+    {
+      "key": "phyloevolve",
+      "file": "phyloevolve.json"
+    },
+    {
+      "key": "policysmith",
+      "file": "policysmith.json"
+    },
+    {
+      "key": "populationevolve",
+      "file": "populationevolve.json"
+    },
+    {
+      "key": "preintner2025evocad",
+      "file": "preintner2025evocad.json"
+    },
+    {
+      "key": "promptbridge",
+      "file": "promptbridge.json"
+    },
+    {
+      "key": "qmcdesign",
+      "file": "qmcdesign.json"
+    },
+    {
+      "key": "quantevolve",
+      "file": "quantevolve.json"
+    },
+    {
+      "key": "quantum_geometry_echoes",
+      "file": "quantum_geometry_echoes.json"
+    },
+    {
+      "key": "rankevolve",
+      "file": "rankevolve.json"
+    },
+    {
+      "key": "reevo",
+      "file": "reevo.json"
+    },
+    {
+      "key": "rsa",
+      "file": "rsa.json"
+    },
+    {
+      "key": "satheuristics",
+      "file": "satheuristics.json"
+    },
+    {
+      "key": "satlution",
+      "file": "satlution.json"
+    },
+    {
+      "key": "scalinglaws",
+      "file": "scalinglaws.json"
+    },
+    {
+      "key": "seats",
+      "file": "seats.json"
+    },
+    {
+      "key": "selfevolvingrec",
+      "file": "selfevolvingrec.json"
+    },
+    {
+      "key": "shinkaevolve",
+      "file": "shinkaevolve.json"
+    },
+    {
+      "key": "sidiffagent",
+      "file": "sidiffagent.json"
+    },
+    {
+      "key": "simplebaselines",
+      "file": "simplebaselines.json"
+    },
+    {
+      "key": "srscientist",
+      "file": "srscientist.json"
+    },
+    {
+      "key": "statefulsearch",
+      "file": "statefulsearch.json"
+    },
+    {
+      "key": "strategicsearch",
+      "file": "strategicsearch.json"
+    },
+    {
+      "key": "SymbolicRegression2025",
+      "file": "SymbolicRegression2025.json"
+    },
+    {
+      "key": "textbfgs",
+      "file": "textbfgs.json"
+    },
+    {
+      "key": "thetaevolve",
+      "file": "thetaevolve.json"
+    },
+    {
+      "key": "tide",
+      "file": "tide.json"
+    },
+    {
+      "key": "vrpagent",
+      "file": "vrpagent.json"
+    },
+    {
+      "key": "wheretosearch_2510_14846",
+      "file": "wheretosearch_2510_14846.json"
+    },
+    {
+      "key": "whyllmsarentscientistsyet",
+      "file": "whyllmsarentscientistsyet.json"
+    },
+    {
+      "key": "xevolve",
+      "file": "xevolve.json"
+    },
+    {
+      "key": "xiang2026beambilevelmemoryadaptivealgorithmic",
+      "file": "xiang2026beambilevelmemoryadaptivealgorithmic.json"
+    },
+    {
+      "key": "yang2023large",
+      "file": "yang2023large.json"
+    },
+    {
+      "key": "yu2026evolutionaryensembleagents",
+      "file": "yu2026evolutionaryensembleagents.json"
+    },
+    {
+      "key": "yu2026writeer",
+      "file": "yu2026writeer.json"
+    },
+    {
+      "key": "zhang2026hyperagents",
+      "file": "zhang2026hyperagents.json"
+    },
+    {
+      "key": "zhou2026alphaapollodeepagenticreasoning",
+      "file": "zhou2026alphaapollodeepagenticreasoning.json"
+    },
+    {
+      "key": "zong2026theorydriven",
+      "file": "zong2026theorydriven.json"
+    }
+  ]
+}

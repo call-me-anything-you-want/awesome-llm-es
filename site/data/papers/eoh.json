@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "key": "eoh",
+  "paperKey": "eoh",
+  "bibliographyKey": "eoh",
+  "title": "Evolution of Heuristics: Towards Efficient Automatic Algorithm Design Using Large Language Model",
+  "authors": [
+    "Fei Liu",
+    "Xialiang Tong",
+    "Mingxuan Yuan",
+    "Xi Lin",
+    "Fei Luo",
+    "Zhichao Wang",
+    "Zhicong Lu",
+    "Qingfu Zhang"
+  ],
+  "year": 2024,
+  "venue": "Proceedings of the 41st International Conference on Machine Learning",
+  "publication": {
+    "venue": "Proceedings of the 41st International Conference on Machine Learning",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": "2401.02051"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation",
+        "Localized Modification",
+        "Multi-Parent Fusion",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-based evolution of combinatorial optimization heuristics",
+    "population": "flat_multi",
+    "populationDetail": "Maintains a flat population of N heuristic individuals, each represented by natural-language thought, executable code, and fitness.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is described; fitness-ranked survivors form the next population.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "Up to 5N feasible offspring are incrementally added to the current pool, after which the top N individuals are selected as the next generation.",
+    "generation": "hybrid",
+    "generationDetail": "Initialization is from scratch; E1/E2 generate using multiple selected parents (E2 explicitly synthesizes their common idea), while M1/M2/M3 modify one parent heuristic.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Fitness aggregates task performance over instances and drives rank-biased parent sampling and top-N survivor selection.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "rank_biased_random_sampling",
+    "parentSelectionDetail": "Experiments rank the current population by fitness and sample individual i with probability proportional to 1/(\\(rank_i\\)+N). E1/E2 use \\(p=5\\) parents in the online bin-packing setup; M1-M3 use one.",
+    "outOfTaxonomy": "The evolved individual is a coupled dual representation: a natural-language thought and executable heuristic code are co-evolved and jointly evaluated."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/downloaded_a/eoh.md",
+    "sourcePdf": "annotation/incoming_pdfs/EoH.pdf",
+    "citationWarning": "EoH is genuinely hybrid across multi-parent E1/E2 and unary M1-M3 operators; E1/E2 parent count is p=5 in the reported bin-packing setting, while M operators use one. The paper calls E strategies exploration and M strategies modification, so mapping M to exploitation is a survey-level interpretation. Fitness-ranked survivor selection is generational, not a separate elite archive."
+  }
+}

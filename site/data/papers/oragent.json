@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "key": "oragent",
+  "paperKey": "oragent",
+  "bibliographyKey": "oragent",
+  "title": "OR-Agent: Bridging Evolutionary Search and Structured Research for Automated Algorithm Discovery",
+  "authors": [
+    "Qi Liu",
+    "Ruochen Hao",
+    "Can Li",
+    "Wanjing Ma"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.13769"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Tree-Structured Populations",
+        "Multi-Elite Archives",
+        "Incremental Insertion",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Localized Modification",
+        "Multi-Parent Fusion"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Repeated Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control",
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Uniform Selection",
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Multi-agent algorithm discovery for combinatorial optimization and cooperative-driving simulation",
+    "population": "hybrid",
+    "populationDetail": "A shared cross-round solution database coexists with explicit per-Lead-Agent research trees whose nodes retain hypotheses, implementations, and evidence.",
+    "archive": "unclear",
+    "archiveDetail": "The persistent database stores evaluated solutions and can return current elites, but archive admission, pruning, and whether it is a separate bounded elite set are unspecified.",
+    "replacement": "hybrid",
+    "replacementDetail": "Database persistence/insertion is combined with local tree expansion that retains only children improving on their parent; database maintenance details are omitted.",
+    "generation": "hybrid",
+    "generationDetail": "LLM-driven idea variation and crossover-like recombination create tree children, followed by iterative localized code/parameter refinement within each candidate's experiment loop.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Evaluators provide metrics, logs, errors, and traces; callbacks can expose additional simulation state. Both structured outcomes and generated summaries are reused by Experiment, Lead, and Idea Agents.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "uniform_sampling|elite_biased_temperature_sampling",
+    "parentSelectionDetail": "One or more parent solutions are retrieved from the shared solution database. The paper describes stochastic sampling versus elite-biased selection with temperature interpolation but not exact probabilities or cardinality; best-leaf selection chooses an expansion node, not another solution parent.",
+    "outOfTaxonomy": "A research-agent workflow combines shared persistent memory, tree-structured hypothesis expansion, coordinated sibling idea generation, iterative environment instrumentation, and hierarchical reflection; current fields do not fully capture this cross-level architecture."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/oragent.md",
+    "sourcePdf": "papers/OR-Agent Bridging Evolutionary Search and Structured Research for Automated Algorithm Discovery.pdf",
+    "citationWarning": "Existing survey coverage is limited to the tree, coordinator role, and application table. Consider missing feedback, evaluation, model, exploration-control, and parent-selection placements. Do not infer fixed parent count, archive admission, exact prompt template, or a complete operator-selection policy. Parallel evaluation is medium confidence."
+  }
+}

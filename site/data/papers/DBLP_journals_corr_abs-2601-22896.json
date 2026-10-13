@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "key": "DBLP:journals/corr/abs-2601-22896",
+  "paperKey": "DBLP:journals/corr/abs-2601-22896",
+  "bibliographyKey": "DBLP:journals/corr/abs-2601-22896",
+  "title": "Game-Theoretic Co-Evolution for LLM-Based Heuristic Discovery",
+  "authors": [
+    "Xinyi Ke",
+    "Kai Li",
+    "Junliang Xing",
+    "Yifan Zhang",
+    "Jian Cheng"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2601.22896"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Incremental Insertion",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation",
+        "Large-Scale Modification",
+        "Localized Modification",
+        "Multi-Parent Fusion",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Game-theoretic co-evolution of heuristic solver programs and instance-generator programs for combinatorial optimization",
+    "population": "flat_multi",
+    "populationDetail": "ASRO maintains growing flat strategy pools for solvers and generators, while each best-response oracle also has a bounded flat population; no islands or tree organization are described.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is specified; persistent strategy pools and inner TOP-K populations are the maintained search structures.",
+    "replacement": "hybrid",
+    "replacementDetail": "Outer solver/generator pools expand by insertion, while inner oracle populations retain the TOP-K from parents plus offspring.",
+    "generation": "hybrid",
+    "generationDetail": "I1 generates from scratch; E1 makes broad divergent variants; E2 recombines ideas from multiple parents; M1 semantically refines, M2 locally tunes parameters, and M3 simplifies one parent.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Per-opponent payoff estimates are weighted by the opponent meta-strategy and used in the payoff matrix, meta-game solution, and candidate fitness-based selection.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "fitness_based",
+    "parentSelectionDetail": "A parent set of user-defined size p is sampled from the current inner population according to fitness and diversity; exact p and sampling distribution are not specified.",
+    "outOfTaxonomy": "A second evolving population consists of executable instance-generator programs, creating a zero-sum meta-game and self-generated evaluation curriculum alongside solver evolution."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/asro.md",
+    "sourcePdf": "papers/Game-Theoretic Co-Evolution for LLM-Based Heuristic Discovery.pdf",
+    "citationWarning": "The current survey cites ASRO only in Survey/sections/application.tex as a heuristic-discovery application. Consider mechanism coverage across population, mixed replacement, prompt/operator portfolio, metadata, parallel evaluation, and adaptive explore-exploit. Exact p and parent sampling details remain unspecified."
+  }
+}

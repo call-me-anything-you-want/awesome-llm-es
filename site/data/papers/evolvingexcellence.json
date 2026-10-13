@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "key": "evolvingexcellence",
+  "paperKey": "evolvingexcellence",
+  "bibliographyKey": "evolvingexcellence",
+  "title": "Evolving Excellence: Automated Optimization of LLM-based Agents",
+  "authors": [
+    "Paul Brookes",
+    "Vardan Voskanyan",
+    "Rafail Giavrimis",
+    "Matthew Truscott",
+    "Mina Ilieva",
+    "Chrystalla Pavlou",
+    "Alexandru Staicu",
+    "Manal Adham",
+    "Will Evers-Hood",
+    "Jingzhi Gong",
+    "Kejia Zhang",
+    "Matvey Fedoseev",
+    "Vishal Sharma",
+    "Roman Bauer",
+    "Zheng Wang",
+    "Hema Nair",
+    "Wei Jie",
+    "Tianhua Xu",
+    "Aurora Constantin",
+    "Leslie Kanthan",
+    "Michail Basios"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2512.09108"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Tree-Structured Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Large-Scale Modification",
+        "Multi-Parent Fusion"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation",
+        "Approximate Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Optimization of LLM-agent prompts, tools, model assignments and settings across coding and math benchmarks",
+    "population": "hybrid",
+    "populationDetail": "A multi-candidate configuration population is evolved in generations; Figure 2 describes an evolving search tree and the UI exposes lineage, but the tree's operational role is unclear.",
+    "archive": "unclear",
+    "archiveDetail": "No distinct elite archive, admission rule or size is specified despite discussion of successful candidates.",
+    "replacement": "unclear",
+    "replacementDetail": "Generations and small population sizes are reported, but the exact survivor/replacement protocol and tree maintenance are not stated.",
+    "generation": "hybrid",
+    "generationDetail": "LLM semantic mutation creates a new version of a source component, while crossover merges successful elements from different candidates; mutation scope and crossover arity are unspecified.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "hybrid",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Benchmark outcomes and execution logs inform optimization, but the exact feedback packet supplied to each operator is not specified.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "Mutation is unary and crossover merges different candidates, but parent choice, crossover arity and tree use are not stated.",
+    "outOfTaxonomy": "Local semantic GA and global Bayesian combination search coexist as platform strategies; a maintained lineage tree is described without a clear control role."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/evolvingexcellence.md",
+    "sourcePdf": "papers/Evolving Excellence Automated Optimization of LLM-based Agents.pdf",
+    "citationWarning": "Current survey cites the paper only for workflow/application, not Chapters 3-7. Tree structure, survivor rules, archive logic, operator selection, model-ensemble invocation and parent selection require qualification; large-scale mutation is only an approximate section fit because edit scope is unstated."
+  }
+}

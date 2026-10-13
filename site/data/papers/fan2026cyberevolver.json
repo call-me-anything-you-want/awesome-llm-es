@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "key": "fan2026cyberevolver",
+  "paperKey": "fan2026cyberevolver",
+  "bibliographyKey": "fan2026cyberevolver",
+  "title": "CyberEvolver: Structured Self-Evolution for Cybersecurity Agents On the Fly",
+  "authors": [
+    "Yihe Fan",
+    "Changyi Li",
+    "Lichen Xu",
+    "Xudong Pan",
+    "Jiarun Dai",
+    "Hong Geng",
+    "Min Yang"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": "10.48550/arXiv.2605.26195",
+    "eprint": "2605.26195"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "On-policy self-evolution of LLM cybersecurity agents for CTF, penetration testing, and vulnerability exploitation",
+    "population": "flat_multi",
+    "populationDetail": "A per-target beam maintains multiple agent variants; parent IDs are recorded in a global evolution tree, but beam membership is flat per generation.",
+    "archive": "multi_elite",
+    "archiveDetail": "The top-K variants by within-generation progress score are selected as parents; no separate archive outside the beam is described.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "Invalid children are discarded; valid children generated from selected parents form the next beam generation.",
+    "generation": "large_scale_modification",
+    "generationDetail": "One selected parent scaffold is revised through sequential strategy, interface, domain-knowledge, and perception-layer mutation calls; each child can change multiple layers.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Executable success verification is supplemented by a diagnosis-derived 0-100 relative progress score used to compare variants and condition mutations.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "score_based_top_k",
+    "parentSelectionDetail": "Top-K agents are selected by relative progress score; each selected parent independently produces multiple children.",
+    "outOfTaxonomy": "Layer-attributed diagnosis of long execution trajectories produces counterfactual mutation signals for on-policy cybersecurity scaffold evolution."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/local_b/cyberevolver.md",
+    "sourcePdf": "additional_papers/202605/CyberEvolver Structured Self-Evolution for Cybersecurity Agents On the Fly.pdf",
+    "citationWarning": "Four backbones are benchmarked separately, not combined in one search run. The progress score is a relative signal within a generation, not an absolute distance-to-success objective."
+  }
+}

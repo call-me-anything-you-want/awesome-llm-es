@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "key": "hsevo",
+  "paperKey": "hsevo",
+  "bibliographyKey": "hsevo",
+  "title": "Hsevo: Elevating Automatic Heuristic Design with Diversity-Driven Harmony Search and Genetic Algorithm Using LLMs",
+  "authors": [
+    "Pham Vu Tuan Dat",
+    "Long Doan",
+    "Huynh Thi Thanh Binh"
+  ],
+  "year": 2025,
+  "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+  "publication": {
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.1609/aaai.v39i25.34898",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "From-Scratch Generation",
+        "Large-Scale Modification",
+        "Localized Modification",
+        "Multi-Parent Fusion",
+        "Scheduled Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Verbalized Evaluation Feedback"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-based heuristic design for online bin packing, TSP, and orienteering",
+    "population": "flat_multi",
+    "populationDetail": "Maintains a flat heuristic population; reported size is 30 at initialization and 10 in other stages.",
+    "archive": "none",
+    "archiveDetail": "An elite heuristic is selected from within the population, but no separate search archive is described; the historical diversity archive stores all candidates for analysis.",
+    "replacement": "unclear",
+    "replacementDetail": "Population size is stage-dependent and the paper does not specify which individuals are removed or replaced when the pool is bounded.",
+    "generation": "hybrid",
+    "generationDetail": "Initialization revises a trivial seed; crossover fuses two parents, elitist mutation broadly revises one best heuristic, and Harmony Search locally tunes its parameters.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Feedback is LLM-generated from objective rankings, not a direct textual output of the objective evaluator; diversity indices are analysis metrics, not search feedback.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "uniform_population_sampling",
+    "parentSelectionDetail": "Two random population members are true crossover parents; the elite is selected for unary mutation and Harmony Search.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/downloaded_b/HSEvo.md",
+    "sourcePdf": "annotation/incoming_pdfs/HSEvo.pdf",
+    "citationWarning": "Replacement/survivor policy is not specified; the all-candidate diversity archive is for analysis, not an elite archive. Parent count varies by operator."
+  }
+}

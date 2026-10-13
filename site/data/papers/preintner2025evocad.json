@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "key": "preintner2025evocad",
+  "paperKey": "preintner2025evocad",
+  "bibliographyKey": "preintner2025evocad",
+  "title": "EvoCAD: Evolutionary CAD Code Generation with Vision Language Models",
+  "authors": [
+    "Preintner, Tobias",
+    "Yuan, Weixuan",
+    "K\\\"onig, Adrian",
+    "B\\\"ack, Thomas",
+    "Raponi, Elena",
+    "Van Stein, Niki"
+  ],
+  "year": 2025,
+  "venue": "IEEE 37th International Conference on Tools with Artificial Intelligence (ICTAI)",
+  "publication": {
+    "venue": "IEEE 37th International Conference on Tools with Artificial Intelligence (ICTAI)",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.1109/ictai66417.2025.00075",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Single-Elite Archives",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation",
+        "Multi-Parent Fusion",
+        "Large-Scale Modification",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Static Assignment"
+      ],
+      "ch6": [
+        "Preference-Based Evaluation",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Text-to-CADQuery code generation for 3D objects",
+    "population": "flat_multi",
+    "populationDetail": "One population of six CAD codes is evolved for four generations without islands or genealogy structure.",
+    "archive": "single_elite",
+    "archiveDetail": "The best-fitness object is copied unchanged into the next generation; no separate archive data structure is shown.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "Generational update includes one unchanged elite; Algorithm 1 leaves other survivor-allocation details inside update().",
+    "generation": "hybrid",
+    "generationDetail": "Independent code initialization precedes two-parent CAD-code fusion; selected crossover offspring receive unary refinement.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "preference",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Compile errors trigger one self-debugging attempt; geometric and topology metrics require unavailable ground truth and are used for reporting, not search fitness.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "rank_weighted_pair_sampling",
+    "parentSelectionDetail": "Crossover selects two code parents by exponentiated average rank; optional mutation edits their one offspring.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/evocad.md",
+    "sourcePdf": "papers/EvoCAD Evolutionary CAD Code Generation with Vision Language Models.pdf",
+    "citationWarning": "Survey currently cites EvoCAD under Single-Model Setting, but each run also invokes o3-mini as ranking RLM alongside GPT-4V or GPT-4o. Full prompt templates and detailed update() survivor rule are not exposed. Fixed exploration/exploitation is simultaneous variation and selection, not a discrete mode controller."
+  }
+}

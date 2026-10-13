@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="A research atlas of LLM-guided evolutionary search systems, methods, applications, and tools.">
+  <title>Awesome LLM-ES</title>
+  <link rel="stylesheet" href="styles.css?v=applications-claims-7">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="nav-inner shell">
+      <a class="brand" href="#top" aria-label="Awesome LLM-ES home">
+        <span class="brand-mark">E</span>
+        <span class="brand-copy"><strong>Awesome LLM-ES</strong><small>Research Atlas</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#system-map">System Map</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#applications">Applications</a>
+        <a href="#resources">Resources</a>
+        <a href="#papers">Papers</a>
+        <a href="#challenges">Open Questions</a>
+      </div>
+      <a class="nav-button" href="https://www.preprints.org/manuscript/202610.1122/v1" target="_blank" rel="noreferrer">Read Survey <i class="button-icon" data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="hero-grid shell">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> LLM-GUIDED EVOLUTIONARY SEARCH</p>
+          <h1>Evolutionary search,<br><em>guided by language.</em></h1>
+          <p class="hero-summary">A system-level map of how large language models generate, evaluate, preserve, and evolve structured solutions through long-horizon search.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#system-map">Explore the System Map <i class="button-icon" data-lucide="arrow-down" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" data-delay="1" aria-label="Five-stage LLM-guided evolutionary search loop">
+          <div class="visual-grid" aria-hidden="true"></div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="core">
+            <span class="core-kicker">03</span>
+            <strong>Candidate<br>Generation</strong>
+            <small>Create new candidates</small>
+          </div>
+          <div class="loop-node node-population"><b>01</b><span>Population</span><small>Retain search state</small></div>
+          <div class="loop-node node-selection"><b>02</b><span>Parent Selection</span><small>Reuse promising states</small></div>
+          <div class="loop-node node-evaluation"><b>04</b><span>Evaluation</span><small>Return executable feedback</small></div>
+          <div class="loop-node node-update"><b>05</b><span>Population Update</span><small>Preserve search progress</small></div>
+          <div class="visual-caption">POPULATION → SELECT → GENERATE → EVALUATE → UPDATE</div>
+        </div>
+      </div>
+
+      <div class="metrics shell reveal" data-delay="2">
+        <div><strong data-stat="citedWorks">—</strong><small>Cited references</small></div>
+        <div><strong data-stat="frameworks">—</strong><small>Open-source frameworks</small></div>
+        <div><strong data-stat="benchmarks">—</strong><small>Public benchmarks</small></div>
+        <div><strong data-stat="applicationDomains">—</strong><small>Core application domains</small></div>
+        <div><strong data-stat="systemLayers">—</strong><small>System design layers</small></div>
+      </div>
+    </header>
+
+    <section class="section overview" id="overview">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="section-index">01 · THE PARADIGM COMPARISON</p>
+          <h2><span>From hand-coded variation</span><br>to semantic evolution</h2>
+          <p>LLM-ES combines the persistent state and selection pressure of evolutionary search with the semantic generation capabilities of foundation models.</p>
+        </div>
+
+        <div class="comparison-grid">
+          <article class="comparison-card reveal">
+            <div class="comparison-topline"><span>SHORT-HORIZON GENERATION</span></div>
+            <small class="comparison-expansion">Large language model</small>
+            <div class="sampling-visual" aria-hidden="true">
+              <div class="sampling-row"><span>Prompt A</span><i data-lucide="arrow-right"></i><b>Response A</b></div>
+              <div class="sampling-row"><span>Prompt B</span><i data-lucide="arrow-right"></i><b>Response B</b></div>
+              <div class="sampling-row"><span>Prompt C</span><i data-lucide="arrow-right"></i><b>Response C</b></div>
+            </div>
+            <h3>Independent sampling</h3>
+            <p>Ordinary repeated generation can produce diverse answers, but usually lacks persistent population state and evolutionary pressure.</p>
+            <ul>
+              <li>Limited cross-iteration memory</li>
+              <li>No explicit archive or genealogy</li>
+              <li>Weak long-horizon search control</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card reveal" data-delay="1">
+            <div class="comparison-topline"><span>CLASSICAL SEARCH</span></div>
+            <small class="comparison-expansion">Evolutionary computation</small>
+            <div class="workflow-frame"><img src="assets/traditional-workflow-cropped.png?v=workflow-pdf-600dpi-cropped" alt="Traditional evolutionary computation workflow"></div>
+            <h3>Hand-designed operators</h3>
+            <p>Vectors, discrete encodings, and symbolic trees are evolved through fixed mutation and crossover mechanisms.</p>
+            <ul>
+              <li>Low-level search representations</li>
+              <li>Explicit operator design</li>
+              <li>Fitness-driven selection</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card comparison-card-featured reveal" data-delay="2">
+            <div class="comparison-topline"><span>SEMANTIC SEARCH</span></div>
+            <small class="comparison-expansion">LLM-guided evolutionary search</small>
+            <div class="workflow-frame"><img src="assets/llm-workflow-cropped.png?v=workflow-pdf-600dpi-cropped" alt="LLM-guided evolutionary search workflow"></div>
+            <h3>Prompt-conditioned variation</h3>
+            <p>Language models rewrite, patch, critique, and fuse structured artifacts under iterative evaluator feedback.</p>
+            <ul>
+              <li>Code, algorithms, prompts, and workflows</li>
+              <li>Population and archive memory</li>
+              <li>Long-horizon verified improvement</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section system" id="system-map">
+      <div class="system-glow" aria-hidden="true"></div>
+      <div class="shell">
+        <div class="section-heading section-heading-dark reveal">
+          <p class="section-index">02 · THE SYSTEM MAP</p>
+          <h2>Nine layers<br><span>One evolving loop</span></h2>
+          <p>Eight components shape the search loop; a cross-cutting control balances exploration and exploitation across them.</p>
+        </div>
+
+        <div class="map-grid reveal" role="list" aria-label="LLM-ES system layers">
+          <a class="map-node map-node-link layer-sector" href="layer.html?id=problem-formulation" data-layer-link="problem-formulation" data-number="01" aria-label="Open Problem Formulation detail page">
+            <span class="sector-copy"><b>01</b><strong>Problem<br>Formulation</strong><small>What is optimized, and in what space?</small></span>
+          </a>
+          <a class="map-node map-node-link layer-sector" href="layer.html?id=population" data-layer-link="population" data-number="02" aria-label="Open Population and Archives detail page">
+            <span class="sector-copy"><b>02</b><strong>Population &<br>Archives</strong><small>How are populations and archives structured?</small></span>
+          </a>
+          <a class="map-node map-node-link layer-sector" href="layer.html?id=parent-selection" data-layer-link="parent-selection" data-number="03" aria-label="Open Parent Selection detail page">
+            <span class="sector-copy"><b>03</b><strong>Parent<br>Selection</strong><small>Which parents or references are reused?</small></span>
+          </a>
+          <a class="map-node map-node-link layer-sector" href="layer.html?id=candidate-generation" data-layer-link="candidate-generation" data-number="04" aria-label="Open Candidate Generation detail page">
+            <span class="sector-copy"><b>04</b><strong>Candidate<br>Generation</strong><small>How is an offspring formed?</small></span>
+          </a>
+          <a class="map-node map-node-link layer-sector" href="layer.html?id=prompt-builder" data-layer-link="prompt-builder" data-number="05" aria-label="Open Prompt Builder detail page">
+            <span class="sector-copy"><b>05</b><strong>Prompt<br>Builder</strong><small>What context guides generation?</small></span>
+          </a>
+          <a class="map-node map-node-link layer-sector" href="layer.html?id=foundation-models" data-layer-link="foundation-models" data-number="06" aria-label="Open Foundation Models detail page">
+            <span class="sector-copy"><b>06</b><strong>Foundation<br>Models</strong><small>How are model roles assigned?</small></span>
+          </a>
+          <a class="map-node map-node-link layer-sector" href="layer.html?id=candidate-evaluation" data-layer-link="candidate-evaluation" data-number="07" aria-label="Open Candidate Evaluation detail page">
+            <span class="sector-copy"><b>07</b><strong>Candidate<br>Evaluation</strong><small>What signals reveal candidate quality?</small></span>
+          </a>
+          <a class="map-node map-node-link layer-sector" href="layer.html?id=population-update" data-layer-link="population-update" data-number="08" aria-label="Open Population Update detail page">
+            <span class="sector-copy"><b>08</b><strong>Population<br>Update</strong><small>How are candidates retained or replaced?</small></span>
+          </a>
+          <a class="map-node map-node-link map-node-crosscutting" href="layer.html?id=exploration-exploitation" data-layer-link="exploration-exploitation" data-number="09" aria-label="Open Exploration and Exploitation Control detail page">
+            <span class="sector-copy"><b>09</b><strong>Explore–Exploit Control</strong><small>How is search pressure balanced?</small></span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section timeline-section" id="timeline">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="section-index">03 · THE RESEARCH TIMELINE</p>
+          <h2><span>From FunSearch and AlphaEvolve to</span><br>a growing ecosystem</h2>
+          <p>Milestones, architectural improvements, applications, and open-source releases are rapidly expanding the field.</p>
+        </div>
+
+        <div class="timeline-legend reveal">
+          <span><i class="legend-blue"></i> Milestone</span>
+          <span><i class="legend-orange"></i> Architecture</span>
+          <span><i class="legend-green"></i> Application</span>
+          <span><i class="legend-dot"></i> Open source</span>
+        </div>
+
+        <figure class="timeline-frame reveal" data-delay="1">
+          <img src="assets/research-timeline-hires.png?v=timeline-pdf-1" alt="Timeline of LLM-guided evolutionary search research">
+          <figcaption>Selected milestones across LLM-guided evolutionary search.</figcaption>
+        </figure>
+
+        <div class="milestone-strip reveal" id="timeline-list" data-delay="2" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section applications" id="applications">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="section-index">04 · APPLICATION FRONTIERS</p>
+          <h2><span>Search that crosses</span><br>scientific boundaries</h2>
+          <p>LLM-ES is most compelling when candidate solutions are hard to design manually but can still be executed, simulated, or verified.</p>
+        </div>
+
+        <div class="domain-grid">
+          <article class="domain-card domain-math reveal"><div class="domain-icon"><i data-lucide="sigma" aria-hidden="true"></i></div><small>01</small><h3>Mathematics</h3><p>Open problems, heuristic discovery, symbolic regression, and theory formation.</p><small class="claim-kicker">Representative result</small><b data-claim-value="matrixMultiplication">—</b><span data-claim-label="matrixMultiplication">Loading claim</span></article>
+          <article class="domain-card domain-cs reveal" data-delay="1"><div class="domain-icon"><i data-lucide="code-2" aria-hidden="true"></i></div><small>02</small><h3>Computer Science</h3><p>Architecture, compilers, GPU kernels, scheduling, and infrastructure optimization.</p><small class="claim-kicker">Representative result</small><b data-claim-value="kernelSpeedup">—</b><span data-claim-label="kernelSpeedup">Loading claim</span></article>
+          <article class="domain-card domain-ai reveal" data-delay="2"><div class="domain-icon"><i data-lucide="bot" aria-hidden="true"></i></div><small>03</small><h3>Artificial Intelligence</h3><p>Agents, prompts, workflows, reasoning, rewards, and model-system design.</p><small class="claim-kicker">Representative result</small><b data-claim-value="aiWorkflow">—</b><span data-claim-label="aiWorkflow">Loading claim</span></article>
+          <article class="domain-card domain-science reveal"><div class="domain-icon"><i data-lucide="flask-conical" aria-hidden="true"></i></div><small>04</small><h3>Natural Science</h3><p>Equations, quantum simulation, behavioral models, biology, and molecules.</p><small class="claim-kicker">Representative result</small><b data-claim-value="quantumError">—</b><span data-claim-label="quantumError">Loading claim</span></article>
+          <article class="domain-card domain-control reveal" data-delay="1"><div class="domain-icon"><i data-lucide="factory" aria-hidden="true"></i></div><small>05</small><h3>Control & Engineering</h3><p>Manufacturing, energy, logistics, traffic control, and robot planning.</p><small class="claim-kicker">Representative result</small><b data-claim-value="schedulingImprovement">—</b><span data-claim-label="schedulingImprovement">Loading claim</span></article>
+        </div>
+
+        <figure class="application-figure reveal">
+          <div class="figure-meta"><span>APPLICATION LANDSCAPE</span><span>REPRESENTATIVE RESULTS</span></div>
+          <img src="assets/application-landscape.png" alt="Application landscape and representative results of LLM-guided evolutionary search">
+          <figcaption>Examples of reported gains across scientific and engineering tasks.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section resources" id="resources">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="section-index">05 · RESEARCH RESOURCES</p>
+          <h2>Build, evaluate, and reproduce</h2>
+          <p>Open-source systems and benchmarks for LLM-guided evolutionary search.</p>
+        </div>
+
+        <div class="resource-tabs reveal" role="tablist" aria-label="Research resource type">
+          <button class="resource-tab active" type="button" data-panel="frameworks" role="tab" aria-selected="true">Open-source Frameworks <span data-count="frameworks">—</span></button>
+          <button class="resource-tab" type="button" data-panel="benchmarks" role="tab" aria-selected="false">Public Benchmarks <span data-count="benchmarks">—</span></button>
+        </div>
+
+        <div class="resource-panel active reveal" id="frameworks" role="tabpanel">
+          <div class="resource-list-head"><span>Framework</span><span>Focus</span><span>Representative contribution</span><span>Access</span></div>
+          <div class="resource-items" data-resource-list="frameworks"><p class="data-status">Loading framework data…</p></div>
+        </div>
+
+        <div class="resource-panel benchmark-panel reveal" id="benchmarks" role="tabpanel" hidden>
+          <div class="resource-list-head"><span>Benchmark</span><span>Domain</span><span>Representative use</span><span>Scale</span><span>Access</span></div>
+          <div class="resource-items" data-resource-list="benchmarks"><p class="data-status">Loading benchmark data…</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section papers-section" id="papers">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="section-index">06 · PAPER EXPLORER</p>
+          <h2>Trace the field,<br><span>paper by paper</span></h2>
+        </div>
+        <div class="paper-controls reveal" data-delay="1">
+          <label class="paper-search"><span>Search papers</span><input id="paper-search" type="search" placeholder="Try “evolution”, “agent”, or an author" autocomplete="off"></label>
+          <label><span>From year</span><input id="paper-year-from" type="number" inputmode="numeric" placeholder="YYYY" aria-label="From year"></label>
+          <label><span>To year</span><input id="paper-year-to" type="number" inputmode="numeric" placeholder="YYYY" aria-label="To year"></label>
+        </div>
+        <div class="paper-filter-groups reveal" data-delay="1">
+          <fieldset class="paper-filter-group">
+            <legend>Include tags</legend>
+            <div class="paper-filter-options" id="paper-include-tags"></div>
+          </fieldset>
+          <fieldset class="paper-filter-group">
+            <legend>Exclude tags</legend>
+            <div class="paper-filter-options" id="paper-exclude-tags"></div>
+          </fieldset>
+        </div>
+        <div class="paper-summary"><strong id="paper-count">Loading paper records…</strong></div>
+        <div class="paper-grid" id="paper-grid"><p class="data-status">Loading paper records…</p></div>
+        <div class="paper-pagination" id="paper-pagination" hidden>
+          <button class="pager-button" id="paper-prev" type="button"><i class="button-icon" data-lucide="arrow-left" aria-hidden="true"></i> Previous</button>
+          <span id="paper-page">Page 1</span>
+          <button class="pager-button" id="paper-next" type="button">Next <i class="button-icon" data-lucide="arrow-right" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section challenges" id="challenges">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="section-index">06 · OPEN QUESTIONS</p>
+          <h2>The next search space<br><span>is the field itself</span></h2>
+        </div>
+        <div class="challenge-grid">
+          <article class="challenge-card reveal"><span>01</span><h3>Model–Search Alignment</h3><p>Adapt foundation models for iterative revision, evaluator-conditioned improvement, and long-horizon collaboration.</p></article>
+          <article class="challenge-card reveal" data-delay="1"><span>02</span><h3>Beyond Zeroth-Order</h3><p>Move from pure trial-and-error toward structured update signals, surrogate models, and optimization-aware state.</p></article>
+          <article class="challenge-card reveal" data-delay="2"><span>03</span><h3>Human-in-the-Loop</h3><p>Let experts reshape objectives, inject domain knowledge, and redirect search when evaluators remain incomplete.</p></article>
+          <article class="challenge-card reveal"><span>04</span><h3>Formal Discovery</h3><p>Connect semantic evolution with symbolic theorem proving, verifier-guided search, and formal reasoning.</p></article>
+          <article class="challenge-card reveal" data-delay="1"><span>05</span><h3>High-Value Systems</h3><p>Meet stronger demands for reliability, interpretability, and efficiency in consequential real-world applications.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="survey-section" id="survey">
+      <div class="shell">
+        <div class="survey-card reveal">
+          <div class="survey-noise" aria-hidden="true"></div>
+          <div class="survey-copy">
+            <p class="section-index">THE SURVEY PAPER</p>
+            <h2>A Comprehensive Survey on<br><span>LLM-Guided Evolutionary Search</span></h2>
+            <p>Problem formulation, evolutionary system design, applications, frameworks, benchmarks, and future research directions.</p>
+            <div class="hero-actions">
+              <a class="button button-primary survey-action" href="https://www.preprints.org/manuscript/202610.1122/v1" target="_blank" rel="noreferrer">Read Paper <i class="button-icon" data-lucide="book-open" aria-hidden="true"></i></a>
+              <a class="button button-primary survey-action" href="assets/llm-guided-evolutionary-search-survey.pdf" target="_blank" rel="noreferrer">Download PDF <i class="button-icon" data-lucide="download" aria-hidden="true"></i></a>
+              <button class="button button-primary survey-action survey-bibtex" id="copy-survey-bibtex" type="button" data-bibtex="@article{202610.1122,&#10;  doi = {10.20944/preprints202610.1122.v1},&#10;  url = {https://doi.org/10.20944/preprints202610.1122.v1},&#10;  year = {2026},&#10;  month = {October},&#10;  publisher = {Preprints},&#10;  author = {Dongbin Zhao and Sicheng Li and Xiaobing Yang and Kaixuan Xu and Zhongyue Zhao and Binbin Zuo and Mingfei Wang and Zijie Zhao and Yuanheng Zhu},&#10;  title = {A Comprehensive Survey on LLM-Guided Evolutionary Search},&#10;  journal = {Preprints}&#10;}">Copy BibTeX <i class="button-icon" data-lucide="copy" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div class="survey-meta">
+            <div><small>AUTHORS</small><strong>Dongbin Zhao<br>Sicheng Li<br>Xiaobing Yang<br>+6 authors</strong></div>
+            <div><small>AFFILIATION</small><strong>Institute of Automation<br>Chinese Academy of Sciences</strong></div>
+            <div><small>KEYWORDS</small><strong>LLMs · Evolutionary Computation · Code Evolution</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-grid">
+      <a class="brand" href="#top"><span class="brand-mark">E</span><span class="brand-copy"><strong>Awesome LLM-ES</strong><small>Research Atlas</small></span></a>
+      <p>LLM-guided evolutionary search across methods, applications, and tools.</p>
+    </div>
+  </footer>
+
+  <script src="assets/lucide.min.js"></script>
+  <script src="app.js?v=task-profile-2"></script>
+</body>
+</html>

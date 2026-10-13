@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "key": "lu2024ai",
+  "paperKey": "lu2024ai",
+  "bibliographyKey": "lu2024ai",
+  "title": "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery",
+  "authors": [
+    "Chris Lu",
+    "Cong Lu",
+    "Robert Tjarko Lange",
+    "Jakob Foerster",
+    "Jeff Clune",
+    "David Ha"
+  ],
+  "year": 2024,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": "10.48550/arXiv.2408.06292",
+    "eprint": "2408.06292"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "From-Scratch Generation"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "End-to-end automated scientific idea generation, experimentation, paper writing, and reviewing",
+    "population": "flat_multi",
+    "populationDetail": "Research ideas and completed findings are kept in an incrementally growing archive; the paper specifies no island partition or genealogy tree.",
+    "archive": "unclear",
+    "archiveDetail": "A growing idea/findings archive with reviewer scores is explicit, but the archive's admission/removal rule is not specified as strict elite-only retention.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "The maintained objects are scientific ideas/findings rather than code solutions. The archive is described as growing; whether every idea or only completed/reviewed ideas persist is not completely specified.",
+    "generation": "from_scratch",
+    "generationDetail": "Each new research idea is generated anew conditional on the archive; previous ideas are contextual references, not selected editable parents or fused source candidates.",
+    "trueParentCount": "0",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Idea ratings include interestingness, novelty, and feasibility; experimental metrics feed later experiments; reviewer scores and feedback can be added to the findings archive and inform future ideas.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "none_new_idea_conditioned_on_archive",
+    "parentSelectionDetail": "The idea prompt includes prior ideas as reference context but does not edit a selected parent idea. Aider later edits the experiment template for implementation; this is a different stage/artifact.",
+    "outOfTaxonomy": "An end-to-end autonomous research pipeline that generates ideas, runs experiments, writes papers, and performs simulated peer review."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/downloaded_a/ai_scientist.md",
+    "sourcePdf": "annotation/incoming_pdfs/AI_Scientist.pdf",
+    "citationWarning": "The archive's retention rule is not explicit enough to call it a strict elite archive. Keep archive-conditioned idea generation distinct from downstream Aider code editing. Model count varies across runs because the generation model is replaceable and the reviewer may share GPT-4o; the workflow is role-specialized but not same-idea multi-model generation."
+  }
+}

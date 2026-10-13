@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "key": "scalinglaws",
+  "paperKey": "scalinglaws",
+  "bibliographyKey": "scalinglaws",
+  "title": "Can Language Models Discover Scaling Laws?",
+  "authors": [
+    "Haowei Lin",
+    "Haotian Ye",
+    "Wenzheng Feng",
+    "Quzhe Huang",
+    "Yujun Li",
+    "Hubert Lim",
+    "Zhengrui Li",
+    "Xiangyu Wang",
+    "Jianzhu Ma",
+    "Yitao Liang",
+    "James Zou"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": "10.48550/arXiv.2507.21184",
+    "eprint": "2507.21184"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Quality-Diversity Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Evolutionary discovery of scaling laws for foundation-model behavior",
+    "population": "island",
+    "populationDetail": "Five persistent islands each maintain a population of 100 candidate programs, with migration every 25 generations.",
+    "archive": "qd_archive",
+    "archiveDetail": "The MAP-Elites database bins candidates by score, complexity, and diversity metrics.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "The same evolutionary database provides island population memory and MAP-Elites quality-diversity organization; exact cell admission and eviction details are not exposed.",
+    "generation": "large_scale_modification",
+    "generationDetail": "The LLM modifies one selected parent program pair, potentially changing the law form, optimizer, or global variables; other programs are contextual inspirations.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "no",
+    "feedbackDetail": "Score is the primary objective signal, not additional evaluator metadata; complexity and diversity serve as archive descriptors.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "fixed_70_20_10_mixture",
+    "parentSelectionDetail": "Parent is selected from the database under fixed high-score/diversity/elite proportions; inspiration programs are additional context only.",
+    "outOfTaxonomy": "The evolved individual is a coupled pair comprising a symbolic scaling-law expression and a parameter-fitting optimization routine."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/scalinglaws.md",
+    "sourcePdf": "papers/CAN LANGUAGE MODELS DISCOVER SCALING LAWS？.pdf",
+    "citationWarning": "The current manuscript calls EvoSLD's explore/exploit balance implicit, but Section 3 and Appendix D specify fixed 70/20/10 exploitation, exploration, and elitism proportions. QD archive admission/replacement and exact parent-sampling scope are incompletely specified."
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "key": "cheng2026harnessing",
+  "paperKey": "cheng2026harnessing",
+  "bibliographyKey": "cheng2026harnessing",
+  "title": "Harnessing AI to Build Virtual Cells",
+  "authors": [
+    "Xingyi Cheng",
+    "Pan Li",
+    "Han Guo",
+    "Youwei Liang",
+    "Jing Gong",
+    "William de Vazelhes",
+    "Changjiang Gou",
+    "Pengtao Xie",
+    "Le Song",
+    "Eric Xing"
+  ],
+  "year": 2026,
+  "venue": "bioRxiv",
+  "publication": {
+    "venue": "bioRxiv",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.64898/2026.04.11.717183",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Tree-Structured Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Global tree-node selection by UCB; one parent program per expansion"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Autonomous construction of gene perturbation-response prediction pipelines",
+    "population": "tree",
+    "populationDetail": "MCTS maintains a shared search tree of executable ML pipeline programs, with DAG-like reuse of successful ancestors and motifs in practice.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is described; candidate programs and statistics remain in the MCTS tree, while structured memory stores feedback summaries.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "New program nodes are inserted into the shared search tree and node statistics are updated; no tree pruning or survivor replacement policy is specified.",
+    "generation": "large_scale_modification",
+    "generationDetail": "The coding agent edits one selected parent program to alter pipeline architecture and/or training configuration; changes are iterative but are not restricted to a small code region.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Validation scores, runtime, cost, failures, successful motifs, and implementation details feed both MCTS statistics and coding-agent feedback memory.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "UCB",
+    "parentSelectionDetail": "The selected node/program is the direct parent for child expansion; DAG-like ancestry reuse is also supported.",
+    "outOfTaxonomy": "Autonomous search spans whole trainable biological ML pipelines with pretrained encoders, distributed training, and persistent structured feedback memory."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium-high",
+    "evidenceFile": "annotation/evidence/local_a/vcharness.md",
+    "sourcePdf": "additional_papers/202604/Harnessing AI to Build Virtual Cells.pdf",
+    "citationWarning": "Distinguish Claude coding-agent model routing from multiple biological foundation encoders in generated artifacts; edit locality is not constrained to small changes."
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "key": "policysmith",
+  "paperKey": "policysmith",
+  "bibliographyKey": "policysmith",
+  "title": "Man-Made Heuristics Are Dead. Long Live Code Generators!",
+  "authors": [
+    "Rohit Dwivedula",
+    "Divyanshu Saxena",
+    "Aditya Akella",
+    "Swarat Chaudhuri",
+    "Daehyeok Kim"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2510.08803"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Rank-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Context-specific cache eviction and Linux TCP congestion-control heuristic synthesis",
+    "population": "flat_multi",
+    "populationDetail": "Each round generates a batch of 25 independent heuristics; top candidates are drawn from the undivided history, with no islands or tree structure.",
+    "archive": "multi_elite",
+    "archiveDetail": "The two highest-performing heuristics across all previous caching rounds are retained as examples for the next round.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "The top-two reusable example set is explicit, but the paper does not specify the persistent storage or retention of non-elite candidates; congestion control reports 100 candidate attempts without a separate update policy.",
+    "generation": "from_scratch",
+    "generationDetail": "The LLM synthesizes the heuristic body within a fixed template/interface; prior high-performing heuristics are examples rather than code explicitly edited as parents.",
+    "trueParentCount": "0",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Numeric miss-rate/performance scores guide ranking; compiler stderr and verifier pass/fail are provided to the Generator for correction after invalid output.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "none",
+    "parentSelectionDetail": "No true editable parent is selected. The global top two prior cache policies are selected by performance rank as contextual examples; the rule for selecting the initial LRU/LFU seed examples is fixed.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/codelive.md",
+    "sourcePdf": "papers/Man-Made Heuristics Are Dead. Long Live CodeGenerators!.pdf",
+    "citationWarning": "The current survey cites PolicySmith under Rank-Based Selection. In the described prompt workflow the top-two ranked programs are contextual examples, not true editable parents; retain or revise that citation with this distinction made clear. The paper also merits coverage in population, multi-elite archive, replacement, candidate-prompt/from-scratch generation, single-model, metadata, staged-evaluation, and implicit-control discussions, where it is currently not cited."
+  }
+}

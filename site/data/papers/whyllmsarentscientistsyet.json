@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "key": "whyllmsarentscientistsyet",
+  "paperKey": "whyllmsarentscientistsyet",
+  "bibliographyKey": "whyllmsarentscientistsyet",
+  "title": "Why LLMs Aren't Scientists Yet: Lessons from Four Autonomous Research Attempts",
+  "authors": [
+    "Dhruv Trehan",
+    "Paras Chopra"
+  ],
+  "year": 2026,
+  "venue": "CoRR",
+  "publication": {
+    "venue": "CoRR",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.48550/ARXIV.2601.03315",
+    "eprint": "2601.03315"
+  },
+  "tags": [
+    "Foundation models"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback"
+      ],
+      "ch7": [],
+      "parentSelection": []
+    }
+  },
+  "mechanism": {
+    "domainTask": "Case study of four LLM-driven autonomous machine-learning research attempts and their workflow failures",
+    "population": "none_clear",
+    "populationDetail": "The system routes research artifacts through workflow stages but does not maintain an evolutionary candidate population.",
+    "archive": "none",
+    "archiveDetail": "No elite solution archive is described; research papers and shared project files are not evolutionary archives.",
+    "replacement": "unclear",
+    "replacementDetail": "A funnel shortlists research ideas and advances four selected attempts; this is workflow orchestration, not population replacement.",
+    "generation": "unclear",
+    "generationDetail": "Agents generate research ideas, hypotheses, plans, and outlines, but the paper does not define an evolutionary parent-offspring relation among candidate solutions.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "unclear",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Workflow-level checks assess hypothesis implementation fidelity, statistical validity, and readiness to write; feedback can route revisions, although most failed attempts were terminated by humans.",
+    "explorationExploitation": "unclear",
+    "parentSelection": "other",
+    "parentSelectionDetail": "No evolutionary parents are selected. The two papers combined for idea generation are literature inputs and must not be counted as true candidate parents.",
+    "outOfTaxonomy": "The central subject is orchestration and empirical failure analysis of autonomous scientific workflows, including human intervention and research-validity judgments, rather than evolutionary search mechanisms."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/llmscientistsyet.md",
+    "sourcePdf": "papers/Why LLMs Aren't Scientists Yet Lessons from Four Autonomous Research Attempts.pdf",
+    "citationWarning": "Current Survey/reference.bib and Survey/sections contain no matching key or citation. The occurrence cache lists alias whyllmsarentscientistsyet and prompt-builder/conclusion placements, but appears stale relative to current manuscript. Confirm/add the citation before considering coverage complete."
+  }
+}

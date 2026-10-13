@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "key": "gepa",
+  "paperKey": "gepa",
+  "bibliographyKey": "gepa",
+  "title": "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning",
+  "authors": [
+    "Lakshya A Agrawal",
+    "Shangyin Tan",
+    "Dilara Soylu",
+    "Noah Ziems",
+    "Rishi Khare",
+    "Krista Opsahl-Ong",
+    "Arnav Singhvi",
+    "Herumb Shandilya",
+    "Michael J Ryan",
+    "Meng Jiang",
+    "Christopher Potts",
+    "Koushik Sen",
+    "Alexandros G. Dimakis",
+    "Ion Stoica",
+    "Dan Klein",
+    "Matei Zaharia",
+    "Omar Khattab"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2507.19457"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification",
+        "Multi-Parent Fusion",
+        "Adaptive Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Reflective prompt optimization for modular compound-AI systems, with code-optimization and adversarial-search extensions",
+    "population": "flat_multi",
+    "populationDetail": "The candidate pool starts with the base system and adds minibatch-improving prompt variants; ancestry is recorded but selection uses a flat pool and Pareto frontier, not a maintained tree population.",
+    "archive": "multi_elite",
+    "archiveDetail": "The selection frontier retains candidates that are best on at least one validation instance and removes dominated candidates; there are no descriptor-defined behavior cells.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "A candidate is admitted only if it improves on its parent on the sampled minibatch; Pareto filtering separately prunes dominated candidates from the selection frontier.",
+    "generation": "hybrid",
+    "generationDetail": "Base GEPA performs one-parent reflective prompt mutation; optional GEPA+Merge combines complementary module prompts from two descendants sharing a common ancestor.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "vector_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Scalar task scores are tracked per validation instance for Pareto selection; trace text is supplied to the reflection model for targeted prompt updates.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "pareto_front_sampling_weighted_by_instance_leads",
+    "parentSelectionDetail": "Reflective mutation chooses one candidate from the Pareto frontier; optional Merge chooses two compatible descendants with a shared ancestor. The field count is unclear because the two mechanisms differ.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/gepa.md",
+    "sourcePdf": "papers/GEPA Reflective Prompt Evolution Can Outperform Reinforcement Learning.pdf",
+    "citationWarning": "The GEPA+Merge variant has two parents while reflective mutation has one; exact generation-operator allocation is not specified. Pareto objectives are per-instance task scores (vector for selection), not pairwise preferences. Survey cites GEPA in prompt, feedback, staged evaluation, model-setting, application and framework discussions, but not currently in Population, generation mechanism/selection, or explore-exploit subsections. Reflection-LM identity is not separately itemized."
+  }
+}

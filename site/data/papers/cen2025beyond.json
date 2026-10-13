@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "key": "cen2025beyond",
+  "paperKey": "cen2025beyond",
+  "bibliographyKey": "cen2025beyond",
+  "title": "Beyond Algorithm Evolution: An LLM-Driven Framework for the Co-Evolution of Swarm Intelligence Optimization Algorithms and Prompts",
+  "authors": [
+    "Shipeng Cen",
+    "Ying Tan"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2512.09209"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Localized Modification",
+        "Multi-Parent Fusion"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Co-evolution of swarm-intelligence optimization algorithms and prompts",
+    "population": "flat_multi",
+    "populationDetail": "The framework selects among multiple candidate algorithms in one pool; no island partition or maintained search tree is described.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is specified; retaining top-performing algorithms is discussed as a possible greedy update strategy.",
+    "replacement": "unclear",
+    "replacementDetail": "The paper gives a generic top-performing retention strategy but does not fully specify the implemented algorithm-pool survivor/update rule.",
+    "generation": "hybrid",
+    "generationDetail": "Mutation locally replaces one operator in one parent algorithm, while crossover combines operator content from two parent algorithms.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The candidate's scalar task score and source code condition later generation and contribute to prompt-template performance assessment.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "rank_based|greedy",
+    "parentSelectionDetail": "Mutation selects one algorithm; crossover selects two. The paper describes rank-based probability or greedy parent selection without fixing one universal rule.",
+    "outOfTaxonomy": "Coupled co-evolution of algorithm candidates and distinct mutation/crossover prompt-template pools, where prompt utility is measured by downstream algorithm performance change."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/beyondalgorithmevolution.md",
+    "sourcePdf": "papers/Beyond Algorithm Evolution An LLM-Driven Framework for the Co-Evolution of Swarm Intelligence Optimization Algorithms and Prompts.pdf",
+    "citationWarning": "Replacement/update details are generic; generation-operator selection is not specified; multi-model count reflects separate experimental backbones rather than within-run collaboration. Do not code generic parallel/time-constrained evaluation suggestions as implemented procedure."
+  }
+}

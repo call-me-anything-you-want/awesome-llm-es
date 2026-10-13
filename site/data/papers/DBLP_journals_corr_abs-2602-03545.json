@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "key": "DBLP:journals/corr/abs-2602-03545",
+  "paperKey": "DBLP:journals/corr/abs-2602-03545",
+  "bibliographyKey": "DBLP:journals/corr/abs-2602-03545",
+  "title": "Persona Generators: Generating Diverse Synthetic Personas at Scale",
+  "authors": [
+    "Davide Paglieri",
+    "Logan Cross",
+    "William A. Cunningham",
+    "Joel Z. Leibo",
+    "Alexander Sasha Vezhnevets"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.03545"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Multi-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Approximate Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": []
+    }
+  },
+  "mechanism": {
+    "domainTask": "Evolutionary optimization of LLM-based synthetic persona generators for behavioral diversity coverage",
+    "population": "island",
+    "populationDetail": "AlphaEvolve runs ten independent islands seeded round-robin from three initial Persona Generator implementations.",
+    "archive": "multi_elite",
+    "archiveDetail": "Each island tracks separate elite generator code for each of six diversity metrics, up to 60 metric-specific elites overall; these are not descriptor-cell QD elites.",
+    "replacement": "hybrid",
+    "replacementDetail": "Metric-specific elite generators are retained; approximately every eight hours/100 iterations, poorly performing islands are reset using solutions copied from better-performing islands. The standard within-island AlphaEvolve survivor update is not detailed.",
+    "generation": "large_scale_modification",
+    "generationDetail": "AlphaEvolve mutates an existing Persona Generator codebase, potentially changing logic in either internal stage while preserving the two-stage architecture and ordering.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "vector_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The mutation operator receives a random subset of persona profiles paired with questionnaire-response scores; six population diversity metrics form the fitness vector and per-metric elite criteria.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "The paper describes island seeding, per-metric elite tracking, and periodic reset sources, but not the exact parent-selection rule for each mutation. Avoid asserting score-based or top-k sampling as the universal rule.",
+    "outOfTaxonomy": "The optimized candidate is a reusable generator function with an inner two-stage population synthesis architecture: autoregressive population-level diversity positioning followed by parallel persona expansion. This nested generator design is distinct from the outer evolutionary parent-offspring mechanism."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/personagenerators.md",
+    "sourcePdf": "papers/Persona Generators Generating Diverse Synthetic Personas at Scale.pdf",
+    "citationWarning": "The paper is cited in the application/social-simulation discussion but not yet in mechanism-taxonomy prose. Per-metric elites and scheduled island resets support multi-elite/island labels, but standard within-island AlphaEvolve replacement and parent selection are not specified. Monte Carlo approximation applies specifically to the coverage metric."
+  }
+}

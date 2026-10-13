@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "key": "quantevolve",
+  "paperKey": "quantevolve",
+  "bibliographyKey": "quantevolve",
+  "title": "QuantEvolve: Automating Quantitative Strategy Discovery through Multi-Agent Evolutionary Framework",
+  "authors": [
+    "Junhyeog Yun",
+    "Hyoun Jun Lee",
+    "Insu Jeon"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2510.18569"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Quality-Diversity Archives",
+        "Incremental Insertion",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "From-Scratch Generation",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "Uniform Selection",
+        "Structure-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Evolutionary discovery of quantitative trading strategies",
+    "population": "island",
+    "populationDetail": "Multiple island-local strategy populations evolve with a shared QD feature map and periodic top-10% migration to neighboring islands.",
+    "archive": "qd_archive",
+    "archiveDetail": "A MAP-Elites-style multidimensional feature map preserves the best-performing strategy per behavioral cell; a separate archive also retains rejected candidates.",
+    "replacement": "hybrid",
+    "replacementDetail": "The QD feature map and rejected-candidate archive form a shared evolutionary database alongside island-local populations; the paper does not fully specify island-pool survivor replacement.",
+    "generation": "hybrid",
+    "generationDetail": "Initialization generates seed strategies from category/schema descriptions; evolutionary steps form hypotheses from one parent and contextual cousins, then the Coding Team broadly revises the current program or may try a new approach.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Backtest metrics and strategy analyses feed the Evaluation Team; its extracted insights are included in future Research Agent prompts and curated every 50 generations.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "fixed_probability_mixture: alpha-weighted uniform sampling from local QD elites and (1-alpha)-weighted uniform sampling from the selected island population; alpha=0.5.",
+    "parentSelectionDetail": "The island is selected randomly first; best-parent and diverse-parent are two branches of the same fixed alpha mixture. Cousins are contextual references, not additional true parents.",
+    "outOfTaxonomy": "A periodically curated, island-specific insight repository provides accumulated natural-language institutional memory across generations; current taxonomy captures feedback reuse but not this persistent knowledge-store structure."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/quantevolve.md",
+    "sourcePdf": "papers/QuantEvolve Automating Quantitative Strategy Discovery through Multi-Agent Evolutionary Framework.pdf",
+    "citationWarning": "The current survey cites QuantEvolve for from-scratch generation, static role-based model assignment, QD search, and structural references. The paper also directly supports islands, a QD archive, hybrid archive updates, evaluation feedback, and fixed explicit exploration-exploitation control. Verify the static model-role claim: the paper names a two-model ensemble but does not expose per-agent assignment. Generation-mode selection is also underspecified."
+  }
+}

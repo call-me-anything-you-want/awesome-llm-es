@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "key": "barbariansgate",
+  "paperKey": "barbariansgate",
+  "bibliographyKey": "barbariansgate",
+  "title": "Let the Barbarians In: How AI Can Accelerate Systems Performance Research",
+  "authors": [
+    "Audrey Cheng",
+    "Shu Liu",
+    "Melissa Z. Pan",
+    "Zhifei Li",
+    "Shubham Agarwal",
+    "Mert Cemri",
+    "Bowen Wang",
+    "Alexander Krentsel",
+    "Tian Xia",
+    "Jongseok Park",
+    "Shuo Yang",
+    "Jeff Chen",
+    "Lakshya A. Agrawal",
+    "Ashwin Naren",
+    "Shulu Li",
+    "Ruiying Ma",
+    "Aditya Desai",
+    "Jiarong Xing",
+    "Koushik Sen",
+    "Matei Zaharia",
+    "Ion Stoica"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2512.14806"
+  },
+  "tags": [
+    "Population & archives",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [],
+      "parentSelection": [
+        "Score-Based Selection",
+        "Rank-Based Selection",
+        "Evaluator-Metadata-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Empirical evaluation of AI-driven research frameworks on systems-performance optimization tasks",
+    "population": "island",
+    "populationDetail": "Table 1 states all three evaluated ADRS frameworks use island-based populations, although each uses different within-island archives and search procedures.",
+    "archive": "unclear",
+    "archiveDetail": "OpenEvolve archive internals are not specified; GEPA uses per-instance Pareto frontiers and ShinkaEvolve weighted Pareto archives. MAP-Elites is attributed to AlphaEvolve, not the evaluated frameworks collectively.",
+    "replacement": "unclear",
+    "replacementDetail": "This empirical report compares existing framework configurations and does not define one aggregate survivor/replacement protocol.",
+    "generation": "unclear",
+    "generationDetail": "The paper describes generic solution generation/refinement and compares frameworks with different operators, but does not specify a single shared parent-offspring relation across its case studies.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Structured and qualitative feedback are analyzed across heterogeneous systems; exact fields and reuse differ by case study and framework.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "mixed_across_frameworks",
+    "parentSelectionDetail": "OpenEvolve samples one parent per island with exploration/archive/random modes; GEPA samples from per-instance Pareto frontiers; ShinkaEvolve weights Pareto-archive sampling by score, novelty, and children. These belong to the evaluated systems, not a new selector proposed by this report.",
+    "outOfTaxonomy": "The paper is a cross-framework empirical systems-research study and design-guidance report, rather than a single evolutionary method; mechanism fields are heterogeneous and framework-attributed."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/barbariansgate_extended.md",
+    "sourcePdf": "papers/Let the Barbarians In How AI Can Accelerate Systems Performance Research.pdf",
+    "citationWarning": "Canonical key barbariansgate refers to the earlier title/eprint, while this extended v4 PDF is titled Let the Barbarians In. Do not attribute AlphaEvolve MAP-Elites to OpenEvolve or the report. Existing parent-selection citation is comparative; evaluator context and parent-selection rule are distinct."
+  }
+}

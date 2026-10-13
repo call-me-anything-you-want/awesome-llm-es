@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "key": "loongflow",
+  "paperKey": "loongflow",
+  "bibliographyKey": "loongflow",
+  "title": "LoongFlow: Directed Evolutionary Search via a Cognitive Plan-Execute-Summarize Paradigm",
+  "authors": [
+    "Chunhui Wan",
+    "Xunan Dai",
+    "Zhuo Wang",
+    "Minglei Li",
+    "Yanpeng Wang",
+    "Yinan Mao",
+    "Yu Lan",
+    "Zhiwen Xiao"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2512.24077"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Quality-Diversity Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Directed evolutionary search for algorithm discovery and machine-learning pipeline optimization",
+    "population": "island",
+    "populationDetail": "K local MAP-Elites archives evolve independently in a ring topology and exchange elites when neighboring diversity difference crosses a threshold.",
+    "archive": "qd_archive",
+    "archiveDetail": "Each island's MAP-Elites grid retains the best-scoring solution per behavioral descriptor cell, such as code complexity and memory usage.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "Periodic diversity-triggered ring migration copies top-k% elites to neighboring islands; this is separate from within-cell archive replacement.",
+    "generation": "large_scale_modification",
+    "generationDetail": "The Planner creates a blueprint conditioned on one archive-selected parent and lineage memory; the Executor rewrites/optimizes that parent's code into one offspring.",
+    "trueParentCount": "1",
+    "modelSetting": "unclear",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Structured execution logs and verification outcomes accompany the scalar score; natural-language summaries are stored in lineage memory for later generation.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "fitness_proportional",
+    "parentSelectionDetail": "One parent is sampled from the selected island's MAP-Elites archive by Boltzmann fitness weights with entropy-controlled temperature; retrieved ancestors and summaries are context only.",
+    "outOfTaxonomy": "Plan-Execute-Summarize couples lineage-based strategic planning and retrospective causal memory with evolutionary generation; current prompt fields do not fully capture this cognitive loop."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/loongflow.md",
+    "sourcePdf": "papers/LOONGFLOW DIRECTED EVOLUTIONARY SEARCH VIA A COGNITIVE PLAN-EXECUTE-SUMMARIZE PARADIGM.pdf",
+    "citationWarning": "Existing survey coverage supports score-based parent selection but appears to omit the paper's island population, QD archive, replacement, PES prompt roles, broad modification, scalar evaluation, feedback, staged verification, and adaptive entropy control. Model-setting placement is a boundary case: multiple model alternatives are reported, but concurrent use/routing is not established. Do not treat lineage context or Chat/ReAct/Fuse selection as extra parents or generation-mechanism selection."
+  }
+}

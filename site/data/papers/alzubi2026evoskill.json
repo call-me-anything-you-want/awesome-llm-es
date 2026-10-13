@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "key": "alzubi2026evoskill",
+  "paperKey": "alzubi2026evoskill",
+  "bibliographyKey": "alzubi2026evoskill",
+  "title": "EvoSkill: Automated Skill Discovery for Agents",
+  "authors": [
+    "Alzubi, Salaheddin",
+    "Provenzano, Noah",
+    "Bingham, Jaydon",
+    "Calvo, Christian Alexander",
+    "Chen, Weiyuan",
+    "Tyagi, Himanshu",
+    "Huang, Dastin",
+    "Vu, Tu"
+  ],
+  "year": 2026,
+  "venue": "First Workshop on Agent Skills",
+  "publication": {
+    "venue": "First Workshop on Agent Skills",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": "2603.02766",
+    "url": "https://openreview.net/forum?id=i4b4As7RFX"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Localized Modification",
+        "From-Scratch Generation",
+        "Adaptive Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Automated reusable agent skill discovery",
+    "population": "flat_multi",
+    "populationDetail": "A score-bearing frontier of skill-containing agent programs is retained; the notes do not report islands or a tree.",
+    "archive": "multi_elite",
+    "archiveDetail": "The validation frontier retains multiple skill-bearing programs when held-out performance improves; no niche descriptor is reported.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "Frontier admission is based on held-out validation improvement; exact capacity/pruning policy is not stated in the note.",
+    "generation": "hybrid",
+    "generationDetail": "Failure analysis can propose a new structured skill or edit an existing skill folder.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "none",
+    "explorationExploitation": "implicit",
+    "parentSelection": "fitness_based",
+    "parentSelectionDetail": "none",
+    "outOfTaxonomy": "Evolution and retention operate over structured reusable skill folders embedded in agent programs."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium-high",
+    "evidenceFile": "annotation/evidence/incoming_b/evoskill.md",
+    "sourcePdf": "additional_papers/202603/EvoSkill Automated Skill Discovery for Agents.pdf",
+    "citationWarning": "Frontier capacity and exact parent/operator rules are not specified; multi-elite and hybrid add/edit mappings follow the evidence note and remain provisional."
+  }
+}

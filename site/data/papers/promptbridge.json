@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "key": "promptbridge",
+  "paperKey": "promptbridge",
+  "bibliographyKey": "promptbridge",
+  "title": "PromptBridge: Cross-Model Prompt Transfer for Large Language Models",
+  "authors": [
+    "Yaxuan Wang",
+    "Quan Liu",
+    "Zhenting Wang",
+    "Zichao Li",
+    "Wei Wei",
+    "Yang Liu",
+    "Yujia Bao"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2512.01420"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Single-Elite Archives",
+        "Incremental Insertion",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "Structure-Based Selection",
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Cross-model prompt transfer for coding, agentic, planning, and reasoning tasks",
+    "population": "island",
+    "populationDetail": "MAP-RPE maintains a prompt database partitioned into three evolutionary islands with periodic migration.",
+    "archive": "single_elite",
+    "archiveDetail": "A global best prompt p* is explicitly retained according to the combined performance-and-behavior score; per-island variants belong to the evolving population database.",
+    "replacement": "hybrid",
+    "replacementDetail": "Rewritten prompts are inserted into island databases and a global best prompt is updated elitistically; the policy for evicting entries when the fixed 1000-record archive fills is not specified.",
+    "generation": "large_scale_modification",
+    "generationDetail": "The reflection model broadly rewrites a selected parent prompt using evaluation feedback and same-island inspirations; the unseen-task adapter also transforms a source prompt using learned transfer guidance.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "MAP-RPE combines task performance with a behavioral score covering syntax, entry-point validity, safety patterns, and undesirable constructs; textual reflection summaries also guide the next prompt candidate.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "mixed_fixed_ratio_sampling",
+    "parentSelectionDetail": "The current island supplies one parent and additional inspirations. Configured exploitation/exploration/elite-selection proportions are explicit, but the exact sampling implementation for each mode is underspecified; global p* is a separate best-so-far prompt.",
+    "outOfTaxonomy": "A learned cross-model transfer mapping converts calibrated prompt pairs into meta-guidance and applies it zero-shot to unseen source prompts, a prompt-migration workflow not fully represented by ordinary evolutionary parent-offspring fields."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/promptbridge.md",
+    "sourcePdf": "papers/PromptBridge Cross-Model Prompt Transfer for Large Language Models.pdf",
+    "citationWarning": "Existing placements cover workflow/search-space framing, repeated experiments, island-based reference selection, and static role-based models. Consider missing island population, prompt-structure, broad prompt-rewriting, feedback, and fixed explore-exploit coverage. Do not overstate archive eviction or exact parent-sampling rules."
+  }
+}

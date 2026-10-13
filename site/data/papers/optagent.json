@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "key": "optagent",
+  "paperKey": "optagent",
+  "bibliographyKey": "optagent",
+  "title": "OptAgent: Optimizing Query Rewriting for E-commerce via Multi-Agent Simulation",
+  "authors": [
+    "Divij Handa",
+    "David Blincoe",
+    "Orson Adams",
+    "Yinlin Fu"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2510.03771"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "From-Scratch Generation",
+        "Localized Modification",
+        "Multi-Parent Fusion",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Rank-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "E-commerce query rewriting optimized with simulated-shopping relevance and purchase behavior",
+    "population": "flat_multi",
+    "populationDetail": "A fixed-size pool of N query rewrites is evolved as generations; no island partition or maintained genealogy tree is described.",
+    "archive": "none",
+    "archiveDetail": "No separate archive is described; top alpha-N candidates survive inside each newly formed generation, and the best overall query is returned.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "Each next generation retains the top M=alpha*N candidates from the current generation and fills remaining slots with offspring; this is generational replacement with elitist carryover.",
+    "generation": "hybrid",
+    "generationDetail": "Initial rewrites are generated from the user's query; later offspring use true two-parent semantic crossover and one-parent small query mutations, sometimes applying mutation after crossover.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Five per-product semantic labels are averaged, then combined with top-10/all-product relevance and normalized purchase value into scalar F(q); the summarized-feedback generation step is not fully detailed.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "rank_based",
+    "parentSelectionDetail": "Top M = alpha × N candidates are admitted to the next-generation parent pool by fitness rank. For offspring generation Algorithm 1 calls SELECT(\\(P_g\\)) for one or two parents but does not specify the sampling distribution; count varies with crossover.",
+    "outOfTaxonomy": "A multi-agent simulated-shopping evaluator combines product retrieval, per-product semantic judgments, and agentic purchase decisions into query fitness; current evaluation fields capture its scalar and feedback properties but not the simulated-customer mechanism itself."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/optagent.md",
+    "sourcePdf": "papers/OPTAGENT Optimizing Query Rewriting for ECommerce via Multi-Agent Simulation.pdf",
+    "citationWarning": "The existing rank-based-selection citation is supported for the top-M survivor/parent-pool rule, but Algorithm 1 does not specify SELECT(P_g)'s mating-parent sampling distribution and uses one or two parents depending on crossover. Do not call the five temperature-varied evaluator instances a multi-model system or label the scalar fitness as pairwise preference evaluation."
+  }
+}

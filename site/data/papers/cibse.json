@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "key": "cibse",
+  "paperKey": "cibse",
+  "bibliographyKey": "cibse",
+  "title": "ArchiGenMS: A Neuro-Symbolic Evolutionary Framework for Greenfield Microservice Design",
+  "authors": [
+    "Daniel Narváez",
+    "Nicolás Battaglia",
+    "Alejandro Fernández",
+    "Gustavo Rossi"
+  ],
+  "year": 2026,
+  "venue": "Anais do XXIX Congresso Ibero-Americano em Engenharia de Software",
+  "publication": {
+    "venue": "Anais do XXIX Congresso Ibero-Americano em Engenharia de Software",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.5753/cibse.2026.42461",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation",
+        "Large-Scale Modification",
+        "Scheduled Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Greenfield microservice decomposition from user stories",
+    "population": "flat_multi",
+    "populationDetail": "A single pool of 10 candidate decompositions is maintained; no persistent islands or genealogy tree is described.",
+    "archive": "multi_elite",
+    "archiveDetail": "Five elite candidates are retained per generation; no descriptor-based quality-diversity archive is described.",
+    "replacement": "unclear",
+    "replacementDetail": "The paper reports five generations and per-generation population and elite sizes, but does not specify how survivors are carried forward or whether the previous population is replaced.",
+    "generation": "hybrid",
+    "generationDetail": "Generation 0 is from-scratch from user stories; later offspring broadly revise one selected valid parent using LLM semantic variation.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Lean validity and architecture proxy metrics determine candidate fitness and elite retention.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "One valid parent is selected, but the precise rule for choosing it is not reported; inspiration candidates are context only.",
+    "outOfTaxonomy": "A Lean 4 validation kernel imposes formal structural invariants in the loop; these checks cover only the paper's chosen abstraction, not complete architectural correctness."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/local_b/archigenms.md",
+    "sourcePdf": "additional_papers/202605/ArchiGenMS A Neuro-Symbolic Evolutionary Framework for Greenfield Microservice Design.pdf",
+    "citationWarning": "The paper omits full replacement and parent-selection pseudocode. Treat the Lean-validity and cohesion improvements as internal proxy outcomes, not comprehensive architecture certification."
+  }
+}

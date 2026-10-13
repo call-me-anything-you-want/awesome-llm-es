@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "key": "MakingDatabasesFaster",
+  "paperKey": "MakingDatabasesFaster",
+  "bibliographyKey": "MakingDatabasesFaster",
+  "title": "Making Databases Faster with LLM Evolutionary Sampling",
+  "authors": [
+    "Mehmet Hamza Erol",
+    "Xiangpeng Hao",
+    "Federico Bianchi",
+    "Ciro Greco",
+    "Jacopo Tagliabue",
+    "James Zou"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.10387"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Single-Individual Populations",
+        "Flat Multi-Individual Populations",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Score-Based Selection",
+        "Structure-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Physical query-plan optimization for DataFusion OLAP workloads",
+    "population": "hybrid",
+    "populationDetail": "PST-Evol maintains K independent single-plan threads; BoL-Evol maintains one current-best plan and samples K proposals per step. These are alternative search modes, not simultaneous subpopulations.",
+    "archive": "none",
+    "archiveDetail": "No separate persistent elite archive is described. BoL-Evol's current-best plan is its main search state; PST-Evol retains only each thread's current plan.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "At each step PST-Evol advances each thread to its valid patched successor (retaining the parent on invalidity); BoL-Evol broadcasts the lowest-runtime valid successor among K trials as the next single plan, or keeps the prior plan if none are valid.",
+    "generation": "localized_modification",
+    "generationDetail": "Each GPT-5 call receives one previous physical plan and returns localized JSON Patch edits, typically join-side swaps or join reordering; full-plan rewriting and multi-parent fusion are not used.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Plan validity, baseline-output equivalence, and measured latency determine whether PST retains a child or BoL selects and broadcasts it. Runtime is the scalar fitness; validity/errors are structured gates.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "score_based|structure_based",
+    "parentSelectionDetail": "PST lineage continuation is structure-based and does not compare plans across threads; BoL's next parent is the best-valid plan selected by measured runtime.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/makedatabasesfaster.md",
+    "sourcePdf": "papers/Making Databases Faster with LLM Evolutionary Sampling.pdf",
+    "citationWarning": "The survey currently cites this work in Repeated Evaluation, a supported Chapter 6 placement (R=50 independent sandbox timings, minimum as the estimate). Other supported placements include localized JSON-Patch generation, hybrid PST/BoL population modes, staged correctness/runtime evaluation, and single-model use. LLM cardinality estimates are generation guidance, not approximate candidate evaluation."
+  }
+}

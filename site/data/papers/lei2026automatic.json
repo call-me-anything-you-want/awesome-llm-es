@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "key": "lei2026automatic",
+  "paperKey": "lei2026automatic",
+  "bibliographyKey": "lei2026automatic",
+  "title": "Automatic generation of heuristic dispatching rules for dynamic hybrid flow shop scheduling via personalized multi-island reflective evolution",
+  "authors": [
+    "Yuning Lei",
+    "Jin Huang",
+    "Xinyu Li",
+    "Qihao Liu",
+    "Liang Gao"
+  ],
+  "year": 2026,
+  "venue": "Tsinghua Science and Technology",
+  "publication": {
+    "venue": "Tsinghua Science and Technology",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.26599/tst.2026.9010050",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Single-Elite Archives",
+        "Generational Replacement",
+        "Incremental Insertion",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Multi-Parent Fusion",
+        "Large-Scale Modification",
+        "Scheduled Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "Island-local random pairing with equal-fitness exclusion"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM evolution of dispatching-rule code for dynamic hybrid flow-shop scheduling",
+    "population": "island",
+    "populationDetail": "Three parallel islands each maintain 20 heuristic-code individuals in the experiments, with island-local selection and periodic ring migration.",
+    "archive": "single_elite",
+    "archiveDetail": "Each island separately preserves its best-so-far heuristic and includes it in local parent selection.",
+    "replacement": "hybrid",
+    "replacementDetail": "Crossover replaces the island population generation-wise; mutation offspring are inserted incrementally; migration replaces recipient worst individuals with source best individuals.",
+    "generation": "hybrid",
+    "generationDetail": "Crossover synthesizes two selected parent rules using verbal reflection; mutation edits the current island elite using long-term reflection and its personality.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Long-term reflection aggregates prior short-term reflections and guides subsequent elite mutation.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "uniform_random_pairing",
+    "parentSelectionDetail": "Randomly samples pairs from the island population plus its elite while rejecting pairs with equal objective values.",
+    "outOfTaxonomy": "LLM-generated persistent island personalities condition search operators and create differentiated exploration policies across parallel populations."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/local_a/multi_island_reevo.md",
+    "sourcePdf": "additional_papers/202604/Automatic generation of heuristic dispatching rules for dynamic hybrid flow.pdf",
+    "citationWarning": "Full prompt templates are in supplementary material; describe model setting per run, not by counting separate benchmark variants as a simultaneous model pool."
+  }
+}

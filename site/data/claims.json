@@ -1,0 +1,10 @@
+[
+  {"id":"matrixMultiplication","domain":"Mathematics","value":"49 → 48","label":"4×4 matrix multiplications","source":"AlphaEvolve","verificationStatus":"Verified against local paper text"},
+  {"id":"kernelSpeedup","domain":"Computer Science","value":"3.12×","label":"Reported average kernel speedup","source":"CUDA-L1","secondaryValue":"120× peak speedup","verificationStatus":"Verified against local paper text"},
+  {"id":"aiWorkflow","domain":"Artificial Intelligence","value":"Search","label":"Without parameter updates","source":"GEPA and related systems","verificationStatus":"Qualitative survey synthesis"},
+  {"id":"quantumError","domain":"Natural Science","value":"10.4% → 0.82%","label":"Mean simulation error","source":"QuantumEvolve","verificationStatus":"Verified against local paper text"},
+  {"id":"schedulingImprovement","domain":"Control & Engineering","value":"42.86%","label":"Best-case relative improvement","source":"EvoDR","verificationStatus":"Verified against local paper text; configuration-specific"},
+  {"id":"scientificEquation","domain":"Natural Science","value":"6%–35%","label":"Absolute margin over baselines","source":"SR-SCIENTIST","verificationStatus":"Verified against local paper text"},
+  {"id":"architectureSpeedup","domain":"Computer Science","value":"5.3%","label":"IPC speedup over prior SOTA","source":"ArchAgent","verificationStatus":"Verified against local paper text"},
+  {"id":"trafficImprovement","domain":"Control & Engineering","value":"20.1% / 47.1%","label":"Reductions in average delay / stops","source":"EvolveSignal","verificationStatus":"Verified against local paper text"}
+]

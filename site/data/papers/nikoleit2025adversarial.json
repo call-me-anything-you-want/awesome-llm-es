@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "key": "nikoleit2025adversarial",
+  "paperKey": "nikoleit2025adversarial",
+  "bibliographyKey": "nikoleit2025adversarial",
+  "title": "Adversarial examples for heuristics in combinatorial optimization: An LLM based approach",
+  "authors": [
+    "Nikoleit, Henri",
+    "Anand, Ankit",
+    "Naredla, Anurag Murty",
+    "R\\\"oglin, Heiko"
+  ],
+  "year": 2025,
+  "venue": "Preprint / manuscript",
+  "publication": {
+    "venue": null,
+    "archive": null,
+    "status": "unspecified",
+    "doi": null,
+    "eprint": null,
+    "url": "https://openreview.net/forum?id=fasU6t3hL4"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Adversarial-instance generation for combinatorial optimization heuristics",
+    "population": "flat_multi",
+    "populationDetail": "A global undivided database of executable Python programs, each representing an adversarial instance generator.",
+    "archive": "multi_elite",
+    "archiveDetail": "The scored database contains all valid programs while high-scoring programs are emphasized as best programs; no separate bounded archive is specified.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "The database grows when executable programs are added; Co-FunSearch also reinjects manually simplified programs.",
+    "generation": "large_scale_modification",
+    "generationDetail": "One sampled program is supplied as the editable source and the LLM requests a similar program with improved score.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Executable validity and problem-specific score metadata are stored and reused for database sampling and best-program inspection.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "probabilistic_database_sampling",
+    "parentSelectionDetail": "The database sampling distribution and exact score-to-probability rule are delegated to FunSearch and not exposed; high-score programs are emphasized.",
+    "outOfTaxonomy": "Human-in-the-loop simplification and reinjection of high-scoring programs is outside the current automated taxonomy; implicit high-score archive status is a boundary case."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/nikoleit2025adversarial.md",
+    "sourcePdf": "papers/ADVERSARIAL EXAMPLES FOR HEURISTICS IN COMBINATORIAL OPTIMIZATION AN LLM BASED APPROACH.pdf",
+    "citationWarning": "Current survey placement emphasizes adversarial-instance applications and human collaboration, but does not clearly cite all matching mechanism sections; exact archive semantics, prompt text, and database sampling probabilities are only partly exposed."
+  }
+}

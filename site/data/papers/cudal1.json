@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "key": "cudal1",
+  "paperKey": "cudal1",
+  "bibliographyKey": "cudal1",
+  "title": "CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning",
+  "authors": [
+    "Xiaoya Li",
+    "Xiaofei Sun",
+    "Albert Wang",
+    "Jiwei Li",
+    "Chris Shum"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2507.14111"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation"
+      ],
+      "ch5": [
+        "Static Assignment",
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "CUDA kernel optimization on KernelBench",
+    "population": "flat_multi",
+    "populationDetail": "A single performance-indexed database holds all successful RL-generated code samples in score buckets.",
+    "archive": "none",
+    "archiveDetail": "Score buckets organize all successful codes for prompt sampling, without elite-only admission or niche incumbents.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "Successful code samples accumulate in an exemplar database; GRPO also updates model weights, outside candidate replacement taxonomy.",
+    "generation": "from_scratch",
+    "generationDetail": "The model emits a complete optimized implementation conditioned on a reference task and scored prior examples, without an editable selected parent.",
+    "trueParentCount": "0",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Speed scores enter future contrastive prompts and GRPO rewards; executable/correct flags gate samples.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "none",
+    "parentSelectionDetail": "The two sampled codes are contextual exemplars, not true editable parents.",
+    "outOfTaxonomy": "Gradient-based policy updates jointly optimize with a growing scored-code exemplar database, unlike fixed-model evolutionary population search."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/cudal1.md",
+    "sourcePdf": "papers/CUDA-L1 Improving CUDA Optimization via Contrastive Reinforcement Learning.pdf",
+    "citationWarning": "Currently cited only in a DeepSeek model-family table; six offline SFT generators plus a reward checker complicate model-count classification. Bucket exemplars are references, not parents; island sampling is only an ablation."
+  }
+}

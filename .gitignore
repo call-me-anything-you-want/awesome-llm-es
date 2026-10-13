@@ -1,0 +1,31 @@
+# Local project notes and source material are not part of the public site repo.
+/annotation/
+/design/
+/scripts/
+/tmp/
+/00_*.md
+/01_*.md
+/02_*.md
+/03_*.md
+/04_*.md
+/05_*.md
+/06_*.md
+/07_*.md
+/08_*.md
+/09_*.md
+/10_*.md
+/11_*.md
+/12_*.md
+/13_*.md
+/14_*.md
+/README.md
+/tmp_archigenms.txt
+
+# Superseded assets kept locally for reference, but excluded from the public site.
+/site/assets/candidate-generation.png
+/site/assets/llm-workflow-hires.png
+/site/assets/llm-workflow.png
+/site/assets/research-timeline.png
+/site/assets/system-map-source.png
+/site/assets/traditional-workflow-hires.png
+/site/assets/traditional-workflow.png

@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "key": "bioacoustic",
+  "paperKey": "bioacoustic",
+  "bibliographyKey": "bioacoustic",
+  "title": "Agentic Discovery of Multi-Channel Bioacoustic Association Algorithms",
+  "authors": [
+    "Mohapatra, Paramjyoti",
+    "Tolkova, Irina",
+    "Sarkar, Akanksha",
+    "Sehgal, Atharva",
+    "Salisbury, Daniel P.",
+    "Von Duyke, Andrew L.",
+    "Bouffaut, L\\'ea",
+    "Klinck, Holger",
+    "Sun, Jennifer J."
+  ],
+  "year": 2026,
+  "venue": "ICLR Workshop on Foundation Models for Science: Real-World Impact and Science-First Design",
+  "publication": {
+    "venue": "ICLR Workshop on Foundation Models for Science: Real-World Impact and Science-First Design",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": null,
+    "url": "https://openreview.net/forum?id=JzKBhjoHad"
+  },
+  "tags": [
+    "Population & archives",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Tree-Structured Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Search-Statistic-Based Selection",
+        "Structure-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Multi-channel whale-call association via agentic program synthesis",
+    "population": "tree",
+    "populationDetail": "UCT/MCTS maintains candidate programs as nodes with edit-operation edges; explicit parent-child search tree.",
+    "archive": "none",
+    "archiveDetail": "Algorithm and pruned databases appear as post-search corpora; no separately specified in-loop elite archive admission rule.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "Tree expansion inserts child programs; held-out pruning and warm-start carryover are later pipeline stages.",
+    "generation": "unclear",
+    "generationDetail": "The selected UCT node is the single editable parent; the paper does not expose enough of the edit prompt/protocol to distinguish broad from localized modification.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Diagnostics and weighted F1 guide subsequent UCT selection and code edits.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "uct_statistics",
+    "parentSelectionDetail": "UCT selects one node from the global search tree; Appendix B adds a 0.4-probability branch selecting a debuggable leaf. At regime transitions, the prior-regime best also seeds the next search, but is not shown as an additional simultaneous parent.",
+    "outOfTaxonomy": "Regime-scheduled simulator curriculum plus UCT/warm-start orchestration is not represented by one current taxonomy field."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/bioacoustic.md",
+    "sourcePdf": "papers/AGENTIC DISCOVERY OF MULTI-CHANNEL BIOACOUSTIC ASSOCIATION ALGORITHMS.pdf",
+    "citationWarning": "The survey cites this work in tree-population, prompt-constraints, Gemini model, verbalized-feedback, adaptive-control/UCT parent-selection, and application contexts. Consider cross-listing under Metadata Feedback and Staged Evaluation; generation-mechanism placement is withheld because edit scope is unspecified. No separate in-loop elite archive is supported."
+  }
+}

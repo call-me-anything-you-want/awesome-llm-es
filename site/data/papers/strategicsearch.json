@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "key": "strategicsearch",
+  "paperKey": "strategicsearch",
+  "bibliographyKey": "strategicsearch",
+  "title": "Automated Design Optimization via Strategic Search with Large Language Models",
+  "authors": [
+    "Anthony Carreon",
+    "Vansh Sharma",
+    "Venkat Raman"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2511.22651"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "From-Scratch Generation",
+        "Large-Scale Modification",
+        "Multi-Parent Fusion",
+        "Adaptive Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control",
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Rank-Based Selection",
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "GPU code optimization for chemical kinetics and dense matrix multiplication",
+    "population": "flat_multi",
+    "populationDetail": "All valid and invalid designs are added to a growing global history database; a P-best/Q-worst/R-recent subset is curated for context, with no islands or maintained genealogy.",
+    "archive": "none",
+    "archiveDetail": "The paper curates high-scoring designs from the accumulated database for Strategist context and reports the best result, but defines no separate persistent elite archive.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "The context subset is refreshed from the growing design history; ranking affects reuse/context rather than deleting historical designs.",
+    "generation": "hybrid",
+    "generationDetail": "Innovate is from-scratch, refine modifies an existing design, and combine is intended to synthesize complementary designs; concrete parent-child protocols are not fully exposed.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Detailed per-input timings and validation outcomes are retained for context. Repair-facing diagnostics are operational error feedback, not a natural-language interpretation of objective quality.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "rank_based|score_based|recency_based",
+    "parentSelectionDetail": "Treat curated designs as references for the Strategist unless a direct parent relation is established; do not infer a fixed number of true parents from the combine label.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/strategicsearch.md",
+    "sourcePdf": "papers/Automated Design Optimization via Strategic Search with Large Language Models.pdf",
+    "citationWarning": "The survey's current Approximate Evaluation grouping appears unsupported: the paper reports fixed benchmark input sets and compares search decisions with Bayesian optimization, but does not specify a proxy/surrogate candidate evaluator. The combine mode suggests fusion but lacks a concrete multi-parent prompt/protocol; prompt blocks are only partly exposed. Current survey coverage also omits several supported placements such as flat population, single model, and chapter-4 prompt/generation sections."
+  }
+}

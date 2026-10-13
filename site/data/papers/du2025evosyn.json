@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "key": "du2025evosyn",
+  "paperKey": "du2025evosyn",
+  "bibliographyKey": "du2025evosyn",
+  "title": "EvoSyn: Generalizable Evolutionary Data Synthesis for Verifiable Learning",
+  "authors": [
+    "He Du",
+    "Bowen Li",
+    "Aijun Yang",
+    "Siyang He",
+    "Qipeng Guo",
+    "Dacheng Tao"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2510.17928"
+  },
+  "tags": [
+    "Population & archives",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Quality-Diversity Archives"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Evolutionary optimization of data-filtering strategies for synthesizing executable, verifiable training data",
+    "population": "island",
+    "populationDetail": "The implementation explicitly combines MAP-Elites with island-based population models, but island count, migration, and concrete population layout are not reported.",
+    "archive": "qd_archive",
+    "archiveDetail": "MAP-Elites is combined with user-defined feature dimensions to maintain diversity; exact descriptors and archive admission/eviction rules are unspecified.",
+    "replacement": "unclear",
+    "replacementDetail": "The paper names both island-based population models and MAP-Elites but gives no concrete population/archive update algorithm.",
+    "generation": "unclear",
+    "generationDetail": "The paper says an initial filtering strategy is iteratively improved but does not describe whether each new strategy edits a selected parent, is generated from scratch, or fuses multiple parents.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "unclear",
+    "feedbackDetail": "Per-seed-instance criterion checks are aggregated into one consistency score; the paper explicitly says the aggregate guides later evolution but does not say per-instance outcomes are retained or exposed to the LLM.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "Although search starts from an initial strategy, no later parent sampling source, number, or rule is specified.",
+    "outOfTaxonomy": "The evolved object is an executable scoring/filtering function over sets of candidate solutions and tests, rather than an ordinary task solution artifact."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/evosyn.md",
+    "sourcePdf": "papers/EVOSYN GENERALIZABLE EVOLUTIONARY DATA SYNTHESIS FOR VERIFIABLE LEARNING.pdf",
+    "citationWarning": "The survey cites EvoSyn for QD, metadata, and application context. QD is directly supported. Metadata is plausible as per-instance checks, but the paper only explicitly says the aggregate score guides evolution; qualify any claim that raw checks are preserved/reused. Add island-population and implicit explore/exploit coverage. The generation prompt and parent-offspring protocol are not disclosed; the suggested candidate-prompt placement captures its existence only."
+  }
+}

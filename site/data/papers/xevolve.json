@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "key": "xevolve",
+  "paperKey": "xevolve",
+  "bibliographyKey": "xevolve",
+  "title": "\\(X\\)-evolve: Solution space evolution powered by large language models",
+  "authors": [
+    "Yi Zhai",
+    "Zhiqiang Wei",
+    "Ruohan Li",
+    "Keyu Pan",
+    "Shuo Liu",
+    "Lu Zhang",
+    "Jianmin Ji",
+    "Wuyang Zhang",
+    "Yu Zhang",
+    "Yanyong Zhang"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2508.07932"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Dynamic Assignment"
+      ],
+      "ch6": [
+        "Metadata"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Score-Based Selection",
+        "Rank-Based Selection",
+        "Object-Specific Selection-Mechanism Control"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-generated tunable solution-space evolution for combinatorial optimization and online bin packing",
+    "population": "flat_multi",
+    "populationDetail": "The global program database accumulates valid compacted tunable programs without explicit islands or maintained genealogy; score clusters are sampling partitions. \\(K_{\\mathrm{search}}\\) parallel processes are restarted by adaptive halving, not migration-based islands.",
+    "archive": "none",
+    "archiveDetail": "The database partitions top-score entries into a separate cluster for sampling, but no distinct persistent elite archive/storage separate from the accumulated database is described.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "After inner X-search, the tunable program is compacted to decisions present in top-K evaluated combinations and the valid compacted program is appended with its maximum score; invalid and timeout programs are excluded. No database capacity cleanup is specified.",
+    "generation": "from_scratch",
+    "generationDetail": "The LLM synthesizes a new tunable priority function/program conditioned on multiple database references; inner search then samples combinations of its tunable decisions.",
+    "trueParentCount": "0",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Each sampled program receives a scalar objective score; X-search attributes that score to every decision in the sampled combination and retains the maximum per decision. Invalid/timeout programs are excluded or yield no score. These decision-level scores guide later sampling.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "reference_retrieval|rank_based|score_based",
+    "parentSelectionDetail": "No true editable parent is identified. The \\(K_{\\mathrm{ref}}\\) programs are auxiliary references; do not equate their count with the number of true parents. Inner X-search separately samples one value per tunable decision with softmax probabilities and tracks visited combinations.",
+    "outOfTaxonomy": "The main contribution evolves a tunable program-defined Cartesian solution space, then searches and compacts its individual decision options using per-decision score attribution. This two-level representation/search mechanism is not fully captured by parent-relative offspring categories."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/xevolve.md",
+    "sourcePdf": "papers/X-evolve Solution space evolution powered by large language models.pdf",
+    "citationWarning": "The survey's Large-Scale Modification grouping appears unsupported as a direct parent-edit label: X-evolve generates a tunable function from score-selected reference implementations, without one identified editable parent. K_ref references are not confirmed true parents. The top-score cluster is a sampling partition in the same database, not a clearly separate archive. Batch evaluation is not evidence of parallel evaluator execution. Multi-model use is mostly separate-model experiments, with random per-call routing only in one ablation."
+  }
+}

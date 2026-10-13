@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "key": "MCCE",
+  "paperKey": "MCCE",
+  "bibliographyKey": "MCCE",
+  "title": "MCCE: A Framework for Multi-LLM Collaborative Co-Evolution",
+  "authors": [
+    "Nian Ran",
+    "Zhongzheng Li",
+    "Yue Wang",
+    "Qingsong Ran",
+    "Xiaoyuan Zhang",
+    "Shikun Feng",
+    "Richard Allmendinger",
+    "Xiaoguang Zhao"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2510.06270"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Multi-Parent Fusion"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata"
+      ],
+      "ch7": [],
+      "parentSelection": [
+        "Score-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Multi-objective molecular drug design",
+    "population": "flat_multi",
+    "populationDetail": "Section 4.1 maintains a pool \\(P_t\\) of molecules and forms \\(P_{t+1}\\) through Pareto-front survivor selection; no islands or maintained genealogy tree are described.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is described; the Pareto-selected next-generation population is not a distinct archive.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "A separate trajectory dataset stores successful prompt-parent-candidate-score records for local-model training; it is experience memory, not an elite candidate archive.",
+    "generation": "multi_parent_fusion",
+    "generationDetail": "Two selected molecule parents are supplied together to the LLM operator, which produces two offspring candidates.",
+    "trueParentCount": "2",
+    "modelSetting": "multi_model",
+    "evaluation": "vector_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Successful prompt-parent-candidate-score trajectories are stored and later synthesized into DPO training pairs for local-model adaptation.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "tournament_or_fitness_proportional",
+    "parentSelectionDetail": "Section 4.1 gives tournament or fitness-proportional selection as examples but does not specify one fixed rule across runs.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/mcce.md",
+    "sourcePdf": "papers/MCCE A Framework for Multi-LLM Collaborative Co-evolution.pdf",
+    "citationWarning": "Current multi-model prose can imply joint same-step generation, but MCCE describes alternating model invocations with indirect co-evolution. DPO preference pairs are training supervision, not preference-based primary evaluation. Exploration/exploitation roles are explicit but the operational alternation schedule is under-specified."
+  }
+}

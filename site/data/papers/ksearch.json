@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "key": "ksearch",
+  "paperKey": "ksearch",
+  "bibliographyKey": "ksearch",
+  "title": "K-Search: LLM Kernel Generation via Co-Evolving Intrinsic World Model",
+  "authors": [
+    "Shiyi Cao",
+    "Ziming Mao",
+    "Joseph E. Gonzalez",
+    "Ion Stoica"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.19128"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Tree-Structured Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Large-Scale Modification"
+      ],
+      "ch5": [],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "GPU kernel optimization through tree-guided planning and repeated LLM code instantiation",
+    "population": "tree",
+    "populationDetail": "The search state is explicitly a tree of closed actions with evaluated programs and open frontier actions carrying parent-program/optimization-intent pairs and priorities.",
+    "archive": "none",
+    "archiveDetail": "No separate archive is described; best programs are attached to closed tree nodes and the best found kernel is returned.",
+    "replacement": "unclear",
+    "replacementDetail": "World Model updates tree state through Insert, Update, and Prune; this action-tree maintenance is not described as population or archive replacement.",
+    "generation": "large_scale_modification",
+    "generationDetail": "The code policy instantiates a high-level optimization intent against one selected parent kernel; the intent may imply structural or local changes, with no constrained patch-only protocol.",
+    "trueParentCount": "1",
+    "modelSetting": "unclear",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Evaluator returns correctness, latency/performance, and compiler/profiler metadata; observations are consumed by World Model updates and inform subsequent code instantiation.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "planner_controlled",
+    "parentSelectionDetail": "Each selected frontier action explicitly contains one parent program and one high-level intent; the World Model selects the action with maximum current priority.",
+    "outOfTaxonomy": "A co-evolving LLM World Model maintains a search tree of high-level optimization intents, separately from the stochastic code policy that instantiates kernels."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/ksearch.md",
+    "sourcePdf": "papers/K-Search LLM Kernel Generation via Co-Evolving Intrinsic World Model.pdf",
+    "citationWarning": "Survey currently calls K-Search a tree-structured population; the paper's maintained structure is specifically an action/hypothesis tree with programs attached to closed nodes, not a conventional candidate tree. Do not attribute baseline MAP-Elites mechanisms to K-Search. Model backbone identity and replacement mapping remain unclear."
+  }
+}

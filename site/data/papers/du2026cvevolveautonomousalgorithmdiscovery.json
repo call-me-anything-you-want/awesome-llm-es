@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "key": "du2026cvevolveautonomousalgorithmdiscovery",
+  "paperKey": "du2026cvevolveautonomousalgorithmdiscovery",
+  "bibliographyKey": "du2026cvevolveautonomousalgorithmdiscovery",
+  "title": "CVEvolve: Autonomous Algorithm Discovery for Unstructured Scientific Data Processing",
+  "authors": [
+    "Ming Du",
+    "Xiangyu Yin",
+    "Yanqi Luo",
+    "Dishant Beniwal",
+    "Songyuan Tang",
+    "Hemant Sharma",
+    "Mathew J. Cherukara"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": "10.48550/arXiv.2605.11359",
+    "eprint": "2605.11359"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Tree-Structured Populations",
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "From-Scratch Generation",
+        "Localized Modification",
+        "Multi-Parent Fusion"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Score-Based Selection",
+        "Diversity-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Autonomous development of scientific data-processing algorithms for unstructured imaging tasks",
+    "population": "hybrid",
+    "populationDetail": "A persistent candidate pool is grouped by lineage; candidates store parent IDs, and two-parent crossover creates a lineage ancestry graph rather than a strict tree.",
+    "archive": "multi_elite",
+    "archiveDetail": "The search retains a persistent candidate pool and samples among performance-ranked candidates across lineages; no separate bounded descriptor-cell archive is specified.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "SQL-backed candidate history with multi-parent lineage tracking; not a conventional fixed-size generation replacement scheme.",
+    "generation": "hybrid",
+    "generationDetail": "Generate is from-scratch; Tune makes fine-grained unary edits; Evolve fuses two parent algorithms, falling back to unary mutation if only one candidate exists.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Development metric, holdout metric, candidate analysis, failure records, and lineage are stored in the SQL search-state database.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "score_based_sampling",
+    "parentSelectionDetail": "Tune samples one parent; Evolve samples two with a same-lineage penalty. Sampling is Gibbs over performance rank, with deterministic top-k fallback.",
+    "outOfTaxonomy": "Agent-managed workspace/evaluator construction, scientific-image visualization, and a separate holdout-testing agent for underspecified scientific data workflows."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/local_b/cvevolve.md",
+    "sourcePdf": "additional_papers/202605/CVEvolve Autonomous Algorithm Discovery for Unstructured Scientific Data Processing.pdf",
+    "citationWarning": "Although lineage-aware sampling is MAP-Elites-inspired, the paper does not specify descriptor-cell admission for a QD archive. The policy selecting Generate/Tune/Evolve is not explicit enough for a stable taxonomy label."
+  }
+}

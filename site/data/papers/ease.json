@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "key": "ease",
+  "paperKey": "ease",
+  "bibliographyKey": "ease",
+  "title": "Solve it with EASE",
+  "authors": [
+    "Adam Viktorin",
+    "Tomas Kadavy",
+    "Jozef Kov\\'ac",
+    "Michal Pluhacek",
+    "Roman Senkerik"
+  ],
+  "year": 2025,
+  "venue": "CoRR",
+  "publication": {
+    "venue": "CoRR",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.48550/ARXIV.2509.18108",
+    "eprint": "2509.18108"
+  },
+  "tags": [
+    "Foundation models",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Static Assignment"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Modular framework for iterative generation, testing, analysis, and evaluation of algorithmic, text, and image solutions",
+    "population": "none_clear",
+    "populationDetail": "EASE retains conversational context and iteration history and can summarize a best solution, but specifies no stable candidate population; history is used for refinement/reporting.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive or archive admission rule is specified; the statistics module may summarize a final/best solution.",
+    "replacement": "unclear",
+    "replacementDetail": "The framework stores solution and iteration records in conversational memory/history, but does not define whether or how a candidate replaces a maintained incumbent.",
+    "generation": "unclear",
+    "generationDetail": "EASE is generator-agnostic and configurable; examples iteratively regenerate or refine artifacts with feedback, but no universal parent artifact, edit scope, or offspring relation is specified.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "unclear",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Evaluator output, test failures, and optional analysis metadata can be injected into subsequent prompts; task-specific cases include scalar scores, multi-metric evaluation, and qualitative LLM judgment.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "other",
+    "parentSelectionDetail": "The current candidate and feedback may remain in conversation context, but EASE does not define a discrete parent-selection or historical failure/counterexample retrieval module.",
+    "outOfTaxonomy": "A configurable modular workflow that connects user-defined generators, tests, analyzers, evaluators, stopping conditions, and frontend/deployment modules rather than prescribing a fixed search algorithm."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium-high",
+    "evidenceFile": "annotation/evidence/ease.md",
+    "sourcePdf": "papers/Solve it with EASE.pdf",
+    "citationWarning": "The current Survey/reference.bib key `ease` points to an unrelated 2026 astronomy paper (arXiv:2602.11736), not this EASE paper (arXiv:2509.18108); correct-key source exists in bibtex/066 - Solve it with EASE.bib. The parent_selection.tex claim that EASE selectively resurfaces historical evaluator-derived failures/diagnostics/counterexamples is unsupported: the paper describes current test/evaluator feedback and optional conversation history, not selective historical retrieval. Framework-wide generation and model counts remain configuration-dependent."
+  }
+}

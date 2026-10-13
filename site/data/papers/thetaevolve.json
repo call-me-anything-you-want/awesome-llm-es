@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "key": "thetaevolve",
+  "paperKey": "thetaevolve",
+  "bibliographyKey": "thetaevolve",
+  "title": "ThetaEvolve: Test-time Learning on Open Problems",
+  "authors": [
+    "Yiping Wang",
+    "Shao-Rong Su",
+    "Zhiyuan Zeng",
+    "Eva Xu",
+    "Liliang Ren",
+    "Xinyu Yang",
+    "Zeyi Huang",
+    "Xuehai He",
+    "Luyao Ma",
+    "Baolin Peng",
+    "Hao Cheng",
+    "Pengcheng He",
+    "Weizhu Chen",
+    "Shuohang Wang",
+    "Simon Shaolei Du",
+    "Yelong Shen"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2511.23473"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Multi-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Database-based single-parent sampling; exact archive/population sampling rule unclear"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Program evolution for open mathematical optimization and test-time RL",
+    "population": "island",
+    "populationDetail": "The inherited OpenEvolve database assigns candidates to persistent island subpopulations and organizes candidates within each island by MAP-Elites feature cells.",
+    "archive": "multi_elite",
+    "archiveDetail": "A separate global archive tracks multiple top-performing programs across all islands for exploitation-based sampling; MAP-Elites cell incumbents are the diversity-preserving population structure.",
+    "replacement": "hybrid",
+    "replacementDetail": "A child inherits its parent's island absent an island switch, competes with the incumbent in its feature cell, and may later be removed by global capacity cleanup; the global elite archive is maintained separately.",
+    "generation": "localized_modification",
+    "generationDetail": "The model emits SEARCH/REPLACE diff blocks that the parser applies to one selected parent program to form a child.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Parent programs are accompanied by evaluation results in prompts, and scores/validity outcomes are used by database ranking and sampling. Task-specific reward shaping transforms scalar scores during RL training.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "retrieval_based|rank_based",
+    "parentSelectionDetail": "Each of B independently sampled parent programs seeds its own prompt; B is batch size, while each child has one parent. The paper does not specify whether a selected parent was drawn from the global elite archive or another island/database structure, nor the exact selection distribution.",
+    "outOfTaxonomy": "The dynamic evolutionary environment is coupled with online GRPO training of the LLM at test time, so model parameters learn from programs generated in the evolving database; this model-training/search coupling is not represented by the current taxonomy fields."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/thetaevolve.md",
+    "sourcePdf": "papers/ThetaEvolve Test-time Learning on Open Problems.pdf",
+    "citationWarning": "The survey currently places ThetaEvolve under flat populations and large-scale modification. The paper describes persistent islands with within-island MAP-Elites cells and a global elite archive; it applies SEARCH/REPLACE diffs to one parent. Database sampling is described through inherited OpenEvolve behavior, but exact parent-selection probabilities and any adaptive explore-exploit controller are not provided. Supplied paper copy is labeled preprint."
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "key": "madevolve",
+  "paperKey": "madevolve",
+  "bibliographyKey": "madevolve",
+  "title": "MadEvolve: Evolutionary Optimization of Cosmological Algorithms with Large Language Models",
+  "authors": [
+    "Tianyi Li",
+    "Shihui Zang",
+    "Moritz Münchmeyer"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.15951"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Quality-Diversity Archives",
+        "Multi-Elite Archives",
+        "Incremental Insertion",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Localized Modification",
+        "Large-Scale Modification",
+        "Multi-Parent Fusion",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Dynamic Assignment"
+      ],
+      "ch6": [
+        "Metadata",
+        "Approximate Evaluation",
+        "Parallel Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control",
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Evolutionary optimization of cosmological reconstruction and prediction algorithms with tunable code and physics-based simulation metrics",
+    "population": "hybrid",
+    "populationDetail": "The program database combines a three-descriptor MAP-Elites grid with five semi-isolated island subpopulations connected by fixed-interval ring migration; the grid archive is distinct from the island organization.",
+    "archive": "hybrid",
+    "archiveDetail": "The system maintains a MAP-Elites quality-diversity archive with one fitness-best program per complexity/diversity/performance cell, plus a fixed-capacity global multi-elite archive containing top programs by fitness.",
+    "replacement": "hybrid",
+    "replacementDetail": "At every five generations, 10% of each island's best members migrate to a neighbor in a ring; island elitism is not enforced, while MAP-Elites cells and the global elite archive apply separate elitist admission rules.",
+    "generation": "hybrid",
+    "generationDetail": "The ensemble supports localized differential patches, complete full rewrites for broad exploration, and synthesis that combines ideas from multiple reference programs; mode usage varies across these operators.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Prompts include parent performance metrics and areas for improvement. Task evaluators expose decomposed per-scale or per-simulation measurements; the task-specific scalar fitness may include a penalty (e.g. BAO combined score). MAP-Elites uses complexity and embedding-diversity as archive descriptors, not competing objective scores.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "fitness_based",
+    "parentSelectionDetail": "The main parent is sampled from the population with a stated balance toward high-fitness solutions; inspiration retrieval separately draws the global best, recent top performers, and structurally diverse MAP-Elites neighbors. Exact focal-parent sampling probabilities are not specified, and synthesis can use multiple reference programs as true sources.",
+    "outOfTaxonomy": "Every candidate's numerical algorithm parameters are separately optimized by a budgeted derivative-free or autodiff/Adam inner loop before fitness is recorded; this nested program-structure/continuous-parameter optimization is not directly represented by the Chapters 3-7 mechanism labels."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/madevolve.md",
+    "sourcePdf": "papers/MadEvolve Evolutionary Optimization of Cosmological Algorithms with Large Language Models.pdf",
+    "citationWarning": "Survey already cites MadEvolve for islands/migration, QD and multi-elite archives, fixed generation modes, adaptive model selection, approximate evaluation, and scalar objective search. Its current explore-exploit subsection emphasizes fixed diff/rewrite ratios but should also account for UCB1 adaptive model routing. Generation-mode and model-selection controllers are separate. Synthesis is available but its default weight is unspecified."
+  }
+}

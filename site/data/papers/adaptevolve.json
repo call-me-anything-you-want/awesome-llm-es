@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "key": "adaptevolve",
+  "paperKey": "adaptevolve",
+  "bibliographyKey": "adaptevolve",
+  "title": "AdaptEvolve: Improving Efficiency of Evolutionary AI Agents through Adaptive Model Selection",
+  "authors": [
+    "Pretam Ray",
+    "Pratik Prabhanjan Brahma",
+    "Zicheng Liu",
+    "Emad Barsoum"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.11931"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Quality-Diversity Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Dynamic Assignment"
+      ],
+      "ch6": [
+        "Metadata",
+        "Parallel Evaluation"
+      ],
+      "ch7": [],
+      "parentSelection": []
+    }
+  },
+  "mechanism": {
+    "domainTask": "Evolutionary code refinement with adaptive LLM routing",
+    "population": "island",
+    "populationDetail": "Two persistent islands are configured; candidates are refined within an OpenEvolve-style population and a MAP-Elites-style archive, with migration-related configuration.",
+    "archive": "qd_archive",
+    "archiveDetail": "The paper explicitly calls the archive MAP-Elites style and gives descriptor dimensions pass rate and complexity; prior high-scoring generations are reused as exemplars.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "Population and archive mechanics are inherited from the base framework and are less fully specified than the routing mechanism.",
+    "generation": "large_scale_modification",
+    "generationDetail": "A candidate \\(x_i\\) from \\(P_t\\) is passed to a mutation call and rewritten into the next code generation; no localized patch protocol is described.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Pass-rate outcomes and confidence features are used to train or update the router and determine whether to stay with the small model or escalate.",
+    "explorationExploitation": "unclear",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "The parent-selection rule for \\(x_i\\) is not exposed clearly; MAP-Elites archive entries are contextual references rather than additional true parents.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/adaptevolve.md",
+    "sourcePdf": "papers/AdaptEvolve Improving Efficiency of Evolutionary AI Agents through Adaptive Model Selection.pdf",
+    "citationWarning": "The paper's core contribution is confidence-driven adaptive routing between two models. The survey also cites it as a multi-objective example, although the per-candidate benchmark signal is primarily scalar/binary; population, parent-selection, and prompt details are partly inherited from OpenEvolve."
+  }
+}

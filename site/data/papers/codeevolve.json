@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "key": "codeevolve",
+  "paperKey": "codeevolve",
+  "bibliographyKey": "codeevolve",
+  "title": "CodeEvolve: an open source evolutionary coding agent for algorithmic discovery and optimization",
+  "authors": [
+    "Henrique Assumpção",
+    "Diego Ferreira",
+    "Leandro Campos",
+    "Fabricio Murai"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2510.14150"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Tree-Structured Populations",
+        "Quality-Diversity Archives",
+        "Incremental Insertion",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Localized Modification",
+        "Adaptive Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Static Assignment"
+      ],
+      "ch6": [
+        "Metadata",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Rank-Based Selection",
+        "Uniform Selection",
+        "Structure-Based Selection",
+        "Object-Specific Selection-Mechanism Control"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Open-source evolutionary framework for algorithmic discovery and executable program optimization",
+    "population": "hybrid",
+    "populationDetail": "Island solution and prompt populations evolve independently with migration; solution ancestry is explicitly represented as rooted trees, while each island also has a separate MAP-Elites archive.",
+    "archive": "qd_archive",
+    "archiveDetail": "Each island maintains a MAP-Elites/CVT-MAP-Elites archive with the highest-fitness solution per user-defined feature cell.",
+    "replacement": "hybrid",
+    "replacementDetail": "Successful solutions are added to island pools; per-cell archive elites use fitter-than-incumbent replacement, and top solutions migrate between islands. Global population pruning is not specified.",
+    "generation": "hybrid",
+    "generationDetail": "One target solution is edited through SEARCH/REPLACE with its prompt and, for exploitation, ancestors; multiple inspiration solutions provide contextual patterns that the paper calls semantic crossover, while exploration first meta-prompts the instructions.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "h returns a vector of task metrics, but fsol is a scalar fitness used for selection; failed executions receive zero fitness and logs are stored for later prompt context.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "inverse_rank_for_exploitation|uniform_for_exploration",
+    "parentSelectionDetail": "One target solution is directly edited; ancestor lineage context and multiple inspirations are separate inputs. The exact population/archive sampling mix depends on configuration.",
+    "outOfTaxonomy": "Joint evolution of prompt and solution populations with ancestry, per-island QD archives, inspiration-based semantic crossover, and adaptive operator scheduling."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/codeevolve.md",
+    "sourcePdf": "papers/CODEEVOLVE an open-source evolutionary framework for algorithmic discovery and optimization.pdf",
+    "citationWarning": "Hybrid population contains island organization and explicit tree lineages alongside a separate QD archive. The paper calls multiple inspiration inputs semantic crossover, but only one target solution is directly edited; record the boundary instead of treating inspiration count as true parent count. Model ensemble count and archive/pool sampling mix are configuration-dependent."
+  }
+}

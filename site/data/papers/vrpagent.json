@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "key": "vrpagent",
+  "paperKey": "vrpagent",
+  "bibliographyKey": "vrpagent",
+  "title": "VRPAgent: LLM-Driven Discovery of Heuristic Operators for Vehicle Routing Problems",
+  "authors": [
+    "André Hottung",
+    "Federico Berto",
+    "Chuanbo Hua",
+    "Nayeli Gast Zepeda",
+    "Daniel Wetzel",
+    "Michael Römer",
+    "Haoran Ye",
+    "Davide Zago",
+    "Michael Poli",
+    "Stefano Massaroli",
+    "Jinkyoo Park",
+    "Kevin Tierney"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2510.07073"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Generational Replacement",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation",
+        "Multi-Parent Fusion",
+        "Localized Modification",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-driven discovery of destroy and ordering heuristic operators for CVRP, VRPTW, and PCVRP",
+    "population": "flat_multi",
+    "populationDetail": "The discovery GA maintains one unpartitioned population of operator-pair implementations; it initializes 100 individuals and subsequent generations comprise 10 elites plus 30 crossover children.",
+    "archive": "multi_elite",
+    "archiveDetail": "The top 10 individuals form an elite subset retained into the next generation and used for crossover and mutation; the subset is integrated into the population rather than described as a separate external store.",
+    "replacement": "hybrid",
+    "replacementDetail": "Each individual is a paired implementation of the removal and ordering operators. The population update is generational with elite preservation, and improved mutations can replace individual elites before reassignment.",
+    "generation": "hybrid",
+    "generationDetail": "The system initializes operator pairs from scratch, creates offspring by LLM-mediated fusion of one elite and one non-elite parent, and locally mutates each elite using a randomly selected mutation prompt.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Scalar fitness (average routing objective plus code-length penalty) determines elite rank and is conveyed as better/worse parent status for crossover.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "other",
+    "parentSelectionDetail": "Each crossover pairs one uniformly sampled elite with one uniformly sampled non-elite; mutation uses one elite parent. The elite/non-elite content bias in crossover (80/20) is not a parent-selection probability.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/vrpagent.md",
+    "sourcePdf": "papers/VRPAGENT LLM-DRIVEN DISCOVERY OF HEURISTIC OPERATORS FOR VEHICLE ROUTING PROBLEMS.pdf",
+    "citationWarning": "The survey's multi-elite/archive placement is broadly supported, but the top-k elite subset is integrated into the GA population rather than a separate external archive. Crossover correctly has two true parents; elite mutation has one. Six foundation models are compared across separate runs, not used as a concurrent multi-model architecture. The current survey does not directly cite VRPAgent under prompt structure, replacement mechanisms, foundation-model settings, evaluation feedback, or exploration-exploitation; the paper may support some of these placements, especially its fixed crossover/mutation exploration-exploitation design. Generation-mechanism placement should retain both crossover fusion and elite mutation, with initial generation-from-scratch as initialization."
+  }
+}

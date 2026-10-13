@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "key": "reevo",
+  "paperKey": "reevo",
+  "bibliographyKey": "reevo",
+  "title": "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution",
+  "authors": [
+    "Haoran Ye",
+    "Jiarui Wang",
+    "Zihan Cao",
+    "Federico Berto",
+    "Chuanbo Hua",
+    "Hyunwoo Kim",
+    "Jinkyoo Park",
+    "Guojie Song"
+  ],
+  "year": 2024,
+  "venue": "Advances in Neural Information Processing Systems",
+  "publication": {
+    "venue": "Advances in Neural Information Processing Systems",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.52202/079017-1381",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Single-Elite Archives"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "From-Scratch Generation",
+        "Multi-Parent Fusion",
+        "Localized Modification",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Repeated Evaluation",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Reflective LLM hyper-heuristics for combinatorial optimization",
+    "population": "flat_multi",
+    "populationDetail": "Maintains a population of heuristic-code individuals under a genetic-programming loop; no island or explicit tree organization is described.",
+    "archive": "single_elite",
+    "archiveDetail": "The current best heuristic is explicitly treated as the elite and serves as the base of elitist mutation, though separate archive storage/admission is not fully specified.",
+    "replacement": "unclear",
+    "replacementDetail": "The paper specifies a heuristic population and elite-guided mutation, but not the complete post-crossover/post-mutation population survivor update.",
+    "generation": "hybrid",
+    "generationDetail": "Initialization generates heuristics from task context; crossover synthesizes from two parent heuristics; elitist mutation modifies one current-best heuristic using accumulated reflection.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Relative parent performance and aggregated objective values condition crossover reflection and elite mutation; long-term verbal memory persists across iterations.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "random_successful_distinct_fitness_pair|current_best_elite",
+    "parentSelectionDetail": "Crossover samples two successfully executed heuristics at random while avoiding equal objective values; mutation uses the current best elite as one parent. Overall parent count varies by stage.",
+    "outOfTaxonomy": "Short-term comparative verbal gradients and accumulated long-term reflection memory are coupled to crossover and elite mutation as persistent natural-language guidance."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium-high",
+    "evidenceFile": "annotation/evidence/downloaded_c/reevo.md",
+    "sourcePdf": "annotation/incoming_pdfs/ReEvo.pdf",
+    "citationWarning": "Do not infer a replacement policy from the term elitist mutation; population survivor updates are not fully specified. The best heuristic is used as a mutation parent, but separate archive storage is unclear. Parent arity varies between two-parent crossover and one-parent elite mutation. E/E behaviors exist as crossover and elite refinement, but no explicit controller is described."
+  }
+}

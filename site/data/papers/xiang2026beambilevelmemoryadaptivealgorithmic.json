@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "key": "xiang2026beambilevelmemoryadaptivealgorithmic",
+  "paperKey": "xiang2026beambilevelmemoryadaptivealgorithmic",
+  "bibliographyKey": "xiang2026beambilevelmemoryadaptivealgorithmic",
+  "title": "BEAM: Bi-level Memory-adaptive Algorithmic Evolution for LLM-Powered Heuristic Design",
+  "authors": [
+    "Chuyang Xiang",
+    "Yichen Wei",
+    "Jiale Ma",
+    "Handing Wang",
+    "Junchi Yan"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": "10.48550/arXiv.2604.12898",
+    "eprint": "2604.12898"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Multi-Parent Fusion",
+        "Large-Scale Modification",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control",
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Adjacent rank-based crossover; elitist mutation with best-individual guidance"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Bi-level LLM design of complete heuristic algorithms and low-level function implementations",
+    "population": "flat_multi",
+    "populationDetail": "The exterior GA evolves a ranked population of complete algorithm individuals; no islands or maintained search tree are described.",
+    "archive": "none",
+    "archiveDetail": "No separate archive of complete candidate algorithms is specified; AM stores reusable functions extracted from elite individuals, not whole solutions.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "Next-generation individuals are selected/educated from parents plus crossover and mutation offspring; the worst are eliminated at the configured population limit. AM separately inserts/replaces/evicts function components.",
+    "generation": "hybrid",
+    "generationDetail": "The exterior layer crosses two adjacent quality-ranked structures and mutates one structure using the best individual as guidance; MCTS separately searches function realizations within each structure.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "AM uses function fitness, novelty, usage, age, and recent improvement statistics for admission, replacement, eviction, and pruning.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "rank_based",
+    "parentSelectionDetail": "Crossover pairs consecutive quality-ranked individuals; mutation applies to a current individual and is guided by the best heuristic.",
+    "outOfTaxonomy": "Bi-level search separates complete-algorithm structural evolution from MCTS-based function realization and maintains an adaptive memory of reusable function components."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/local_a/beam.md",
+    "sourcePdf": "additional_papers/202604/BEAM Bi-level Memory-adaptive Algorithmic Evolution for LLM-Powered Heuristic Design.pdf",
+    "citationWarning": "Do not classify Adaptive Memory as a candidate-solution elite archive; model count is per experimental configuration, with different backbones reported as separate variants."
+  }
+}

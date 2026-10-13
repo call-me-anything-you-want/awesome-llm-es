@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "key": "phyloevolve",
+  "paperKey": "phyloevolve",
+  "bibliographyKey": "phyloevolve",
+  "title": "Large Language Model-Powered Evolutionary Code Optimization on a Phylogenetic Tree",
+  "authors": [
+    "Leyi Zhao",
+    "Weijie Huang",
+    "Yitong Guo",
+    "Jiang Bian",
+    "Chenghong Wang",
+    "Xuhong Zhang"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2601.14523"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Tree-Structured Populations",
+        "Island-Structured Populations",
+        "Multi-Elite Archives",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "Localized Modification",
+        "Large-Scale Modification",
+        "Adaptive Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Static Assignment"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Trajectory-conditioned GPU code optimization for scientific-computing algorithms across hardware backends",
+    "population": "hybrid",
+    "populationDetail": "A forest partitions search into multiple semi-isolated lineages, each represented by an operational phylogenetic tree whose nodes store candidate algorithms and whose edges encode modifications/rewards.",
+    "archive": "multi_elite",
+    "archiveDetail": "A global Elite Pool retains top-k trajectories across trees and high-value modifications for cross-lineage reuse; it is distinct from the tree population.",
+    "replacement": "hybrid",
+    "replacementDetail": "Positive-reward offspring are inserted as child nodes; hopeless branches and low-potential nodes/trees are pruned while informative failures may be retained; elite trajectories/modifications are updated separately.",
+    "generation": "hybrid",
+    "generationDetail": "NextStepper/ModifyAgent make localized minimal-diff changes to one selected parent node, while Designer can make holistic architectural or algorithmic redesigns from an elite node to seed a new tree.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Successful execution returns a scalar runtime score; failures return structured success/failure and a reason, with traces used for debugging and future context. Correctness is a gate as well as metadata.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "adaptive_weighted_reward_momentum_depth_temperature",
+    "parentSelectionDetail": "One focal node is sampled within a selected tree using reward, recent improvement, depth and temperature; forest-level tree choice also uses performance, potential and diversity. Designer separately starts from an elite-pool node.",
+    "outOfTaxonomy": "Trajectory-conditioned in-context reinforcement learning / algorithm distillation treats full modification-state-reward trajectories as reusable learning signals, beyond conventional prompt-conditioned mutation labels."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/phyloevolve.md",
+    "sourcePdf": "papers/LARGE LANGUAGE MODEL-POWERED EVOLUTIONARY CODE OPTIMIZATION ON A PHYLOGENETIC TREE.pdf",
+    "citationWarning": "Tree is a maintained candidate/search structure, not only lineage visualization. Survey already cites it in tree population and structure-based parent-selection discussions, but not yet in Elite Archive, generation, model assignment, evaluation-feedback, or adaptive explore-exploit subsections. Replacement label combines positive-reward insertion and pruning; debug retries are repairs rather than repeated measurement."
+  }
+}

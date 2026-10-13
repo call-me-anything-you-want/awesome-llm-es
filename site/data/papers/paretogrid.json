@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "key": "paretogrid",
+  "paperKey": "paretogrid",
+  "bibliographyKey": "paretogrid",
+  "title": "Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization",
+  "authors": [
+    "Hieu, Ha Minh",
+    "Phan, Hung",
+    "Doan, Tung Duy",
+    "Dao, Tung",
+    "Tran, Cong Dao",
+    "Binh, Huynh Thi Thanh"
+  ],
+  "year": 2026,
+  "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+  "publication": {
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.1609/aaai.v40i43.41024",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification",
+        "Multi-Parent Fusion",
+        "Fixed Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Static Assignment"
+      ],
+      "ch6": [],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-based heuristic design for multi-objective combinatorial optimization",
+    "population": "flat_multi",
+    "populationDetail": "The heuristic population is an undivided set; Algorithm 3 appends offspring to the accumulated population and filters to a non-dominated final output, although Section 4.5 describes non-dominated PFG representatives as the next generation.",
+    "archive": "multi_elite",
+    "archiveDetail": "Each iteration derives a reusable elite set from non-dominated representatives in occupied PFG objective cells; it is multi-elite but not a separate persistent archive or behavior-descriptor QD archive.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "Algorithm 3 recomputes PFG elites from the accumulated population each iteration and appends offspring until final non-dominated filtering; Section 4.5 instead describes the elite representatives as the next generation, so population pruning is inconsistently specified.",
+    "generation": "hybrid",
+    "generationDetail": "Mutation broadly modifies one selected heuristic, while crossover uses two heuristics from different semantic clusters as true parents and synthesizes a new algorithm, optionally guided by reflection.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "vector_objective",
+    "feedbackReused": "no",
+    "feedbackDetail": "The objective vector (average negative hypervolume and runtime) is the primary fitness signal, not auxiliary metadata. Reflection suggestions are generated from parent implementations rather than returned by the evaluator.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "uniform_sampling_within_random_grid_and_semantic_cluster; global_uniform_sample_from_elite_set",
+    "parentSelectionDetail": "The local pool is a randomly sampled PFG cell plus neighboring cells; mutation samples one heuristic from a cluster, while crossover samples a second from another cluster. The alternative global branch samples two from E(t). No additional inspiration/reference set is retrieved.",
+    "outOfTaxonomy": "LLM semantic clustering of objective-selected heuristics explicitly controls within-cluster mutation versus cross-cluster parent mating; this combined PFG-plus-semantic mating policy is not directly represented by a current dedicated taxonomy category."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/paretogrid.md",
+    "sourcePdf": "papers/Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization.pdf",
+    "citationWarning": "Coverage gaps: the survey currently omits MPaGE from flat multi-individual populations, multi-elite archives, incremental insertion, prompt structures, model static assignment, state-independent exploration-exploitation control, and parent-selection discussion. Do not label the objective-grid PFG as a behavior-descriptor QD archive; it is a derived elite parent pool. Parent count varies by mutation/crossover path. Population update is inconsistent between Section 4.5 and Algorithm 3; this draft follows the pseudocode and flags the ambiguity."
+  }
+}

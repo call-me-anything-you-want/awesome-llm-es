@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "key": "textbfgs",
+  "paperKey": "textbfgs",
+  "bibliographyKey": "textbfgs",
+  "title": "TextBFGS: A Case-Based Reasoning Approach to Code Optimization via Error-Operator Retrieval",
+  "authors": [
+    "Zizheng Zhang",
+    "Yuyang Liao",
+    "Chen Chen",
+    "Jian He",
+    "Dun Wu",
+    "Qianjin Yu",
+    "Yanqin Gao",
+    "Jin Yang",
+    "Kailai Zhang",
+    "Eng Siong Chng",
+    "Xionghu Zhong"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": "10.48550/arXiv.2602.00059",
+    "eprint": "2602.00059"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Single-Individual Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Case-based LLM optimization of executable code using error-operator retrieval",
+    "population": "single",
+    "populationDetail": "The search iteratively updates one current code variable; a separate case base stores error/operator trajectories rather than candidate code individuals.",
+    "archive": "none",
+    "archiveDetail": "The Hessian-Proxy Case Base stores error descriptions and abstract correction operators, not elite solution code.",
+    "replacement": "hybrid",
+    "replacementDetail": "The current code variable advances through sequential updates while successful error/operator cases are appended to separate trajectory memory; the paper does not specify incumbent acceptance/tracking fully.",
+    "generation": "large_scale_modification",
+    "generationDetail": "One current code variable is revised using the current error diagnosis and retrieved abstract operators; the full code artifact is editable and no localized edit boundary is specified.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Execution results condition the current update; successful `(gradient, operator)` pairs are appended to memory and later retrieved by gradient similarity.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "current_iterate",
+    "parentSelectionDetail": "The current code is the only true parent. Top-k retrieved cases are memory references keyed by gradient/error similarity, not parent solutions.",
+    "outOfTaxonomy": "A semantic quasi-Newton/case-based update retrieves abstract correction operators by error-gradient similarity and retains successful error-to-operator trajectories."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium-high",
+    "evidenceFile": "annotation/evidence/downloaded_c/textbfgs.md",
+    "sourcePdf": "annotation/incoming_pdfs/TextBFGS.pdf",
+    "citationWarning": "Do not classify the case base as a candidate or elite archive: it stores error/operator cases, not solutions. Replacement of the current code and best-state handling are underspecified, while successful cases are append-only. The retrieved top-k cases are references, not true parents."
+  }
+}

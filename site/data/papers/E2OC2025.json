@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "key": "E2OC2025",
+  "paperKey": "E2OC2025",
+  "bibliographyKey": "E2OC2025",
+  "title": "Evolving Interdependent Operators with Large Language Models for Multi-Objective Combinatorial Optimization",
+  "authors": [
+    "Junhao Qiu",
+    "Xin Chen",
+    "Liang Ge",
+    "Liyong Lin",
+    "Zhichao Lu",
+    "Qingfu Zhang"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2601.17899"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Large-Scale Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Staged Evaluation",
+        "Approximate Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-based co-design of interdependent search operators for multi-objective evolutionary algorithms",
+    "population": "flat_multi",
+    "populationDetail": "Multiple operator candidates are maintained in operator-specific collections; the MCTS tree stores partial design-thought strategies, not candidate-solution lineages, so it is not a second population structure.",
+    "archive": "multi_elite",
+    "archiveDetail": "Warm-start explicitly ranks and filters elite operators, which are analyzed and reused as code templates and design-thought material; precise archive size/retention is not given.",
+    "replacement": "unclear",
+    "replacementDetail": "Operator rotation replaces one slot in the current multi-operator combination with the highest-fitness candidate; this does not specify survivor replacement in the maintained candidate operator populations.",
+    "generation": "hybrid",
+    "generationDetail": "The LLM broadly redesigns one operator slot at a time using its prompt and current combination context, while MCTS composes thoughts across operator domains into a joint strategy; this is not multi-parent code fusion.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Aggregated multi-objective performance fitness updates MCTS statistics and guides operator replacement; textual design thoughts extracted from elite operators guide later generation.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "UCB recursively selects a child strategy node from the current MCTS tree; code-level source-parent selection is not otherwise specified.",
+    "parentSelectionDetail": "MCTS parent-child refers to search-tree strategy states. During operator rotation, one current operator slot is replaced; do not interpret the strategy tree as a genealogy tree of executable candidates.",
+    "outOfTaxonomy": "Joint semantic co-design of interdependent operator-thought tuples followed by sequential operator-slot rotation is not fully captured by single-candidate modification labels."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/e2oc2025.md",
+    "sourcePdf": "papers/Evolving Interdependent Operators with Large Language Models for Multi-Objective Combinatorial Optimization.pdf",
+    "citationWarning": "The MCTS tree stores partial design-thought tuples rather than executable candidate lineages; Chapter 3 tree placement needs this qualification. Candidate-pool replacement and ordinary code-parent selection are underspecified. Multi-thought strategy composition is not code-level multi-parent fusion."
+  }
+}

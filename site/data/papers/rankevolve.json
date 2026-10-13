@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "key": "rankevolve",
+  "paperKey": "rankevolve",
+  "bibliographyKey": "rankevolve",
+  "title": "RankEvolve: Automating the Discovery of Retrieval Algorithms via LLM-Driven Evolution",
+  "authors": [
+    "Jinming Nian",
+    "Fangchen Li",
+    "Dae Hoon Park",
+    "Yi Fang"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.16932"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Quality-Diversity Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata"
+      ],
+      "ch7": [
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "Uniform Selection",
+        "Score-Based Selection",
+        "Structure-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Evolutionary discovery of lexical information-retrieval ranking algorithms",
+    "population": "island",
+    "populationDetail": "K independently evolving islands each maintain a MAP-Elites grid over code complexity and edit-distance diversity, with periodic migration.",
+    "archive": "qd_archive",
+    "archiveDetail": "Each island preserves the best program per MAP-Elites cell defined by complexity and population-relative edit distance.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "A candidate enters an empty descriptor cell or replaces its incumbent only when its optimization score is higher; top-fraction migration is a separate island-communication operation.",
+    "generation": "localized_modification",
+    "generationDetail": "The LLM edits one selected parent program through a SEARCH/REPLACE diff constrained to evolvable code regions.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Per-dataset Recall@100 and nDCG@10, combined scalar fitness, and latency are stored and supplied with the parent/reference programs; latency is visible but not optimized.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "mode_mixture_sampling",
+    "parentSelectionDetail": "The selected mode chooses uniform island sampling, elite-archive sampling, or performance-proportional island sampling. Additionally T=4 best and S=4 random same-island programs are prompt references; they are not extra true parents. Mode probabilities are unspecified.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/rankevolve.md",
+    "sourcePdf": "papers/RankEvolve Automating the Discovery of Retrieval Algorithms via LLM-Driven Evolution.pdf",
+    "citationWarning": "Current survey placements for islands/QD archive/replacement and prompt structure appear missing; RankEvolve is already covered for localized modification and fixed explore-exploit control. Its top-4 inspiration set is rank-selected context, not a set of true parents; validate the existing RankEvolve citation under Rank-Based parent selection. Exact p_e/p_x values and archive capacity eviction are not specified."
+  }
+}

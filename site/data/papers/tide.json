@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "key": "tide",
+  "paperKey": "tide",
+  "bibliographyKey": "tide",
+  "title": "TIDE: Tuning-Integrated Dynamic Evolution for LLM-Based Automated Heuristic Design",
+  "authors": [
+    "Chentong Chen",
+    "Mengyuan Zhong",
+    "Ye Fan",
+    "Jialong Shi",
+    "Jianyong Sun"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2601.21239"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations",
+        "Multi-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation",
+        "Localized Modification",
+        "Multi-Parent Fusion",
+        "Adaptive Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Parallel Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Score-Based Selection",
+        "Structure-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-based automated heuristic design for combinatorial optimization with joint logic and parameter search",
+    "population": "island",
+    "populationDetail": "Six independent islands each maintain a population of eight heuristics; TSED topology mediates migration and reset.",
+    "archive": "multi_elite",
+    "archiveDetail": "A global elite population preserves top-performing algorithm backbones and optimized constants; exact capacity is not specified.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "Within each island valid offspring are merged and the pool is rank-sorted and truncated to top performers; global elites also retain tuned constants. TSED controls adaptive code/insight migration and fusion resets.",
+    "generation": "hybrid",
+    "generationDetail": "Structural LLM generation includes exploratory synthesis, backbone consensus, topology/scoring/parsimony mutations, plus a fusion reset combining global elite and local incumbent; numeric parameters are separately optimized by DE.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Heuristic objective cost/fitness and relative fitness improvement drive survival and UCB reward updates; TSED and stagnation statistics guide migration and reset.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "tournament|elite_based|global_elite_fusion",
+    "parentSelectionDetail": "Crossover uses tournament selection from the local island; mutation prioritizes the incumbent elite; reset combines global elite and local incumbent. A single parent count does not describe all operations.",
+    "outOfTaxonomy": "The nested separation of symbolic heuristic structure generation from continuous parameter refinement via differential evolution, and TSED-based dual-mode code/insight migration, are distinctive coupled mechanisms not fully expressed by the current generation/population categories."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/tide.md",
+    "sourcePdf": "papers/TIDE Tuning-Integrated Dynamic Evolution for LLM-Based Automated Heuristic Design.pdf",
+    "citationWarning": "Do not conflate DE's numeric parameter mutation/crossover with LLM prompt-generation mechanisms; it is a separate inner optimizer. Parent count varies by prompt operation, and full prompt templates are not exposed."
+  }
+}

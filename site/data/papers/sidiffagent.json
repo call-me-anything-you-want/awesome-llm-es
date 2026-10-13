@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "key": "sidiffagent",
+  "paperKey": "sidiffagent",
+  "bibliographyKey": "sidiffagent",
+  "title": "SIDiffAgent: Self-Improving Diffusion Agent",
+  "authors": [
+    "Shivank Garg",
+    "Ayush Singh",
+    "Gaurav Kumar Nayak"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2602.02051"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Incremental Insertion"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "From-Scratch Generation",
+        "Localized Modification",
+        "Adaptive Selection"
+      ],
+      "ch5": [
+        "Multi-Model Setting",
+        "Dynamic Assignment"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Semantic-Similarity-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Self-improving text-to-image generation with trajectory memory, evaluation, and targeted image editing",
+    "population": "none_clear",
+    "populationDetail": "The persistent knowledge base stores compressed workflow trajectories, not a maintained pool of candidate images or programs.",
+    "archive": "none",
+    "archiveDetail": "No separate quality-ranked elite archive is described; all trajectories are accumulated as compressed experience records.",
+    "replacement": "incremental_insertion",
+    "replacementDetail": "The append-only knowledge base is trajectory memory rather than a conventional solution population; each trajectory is compressed into decision-node successes and pitfalls.",
+    "generation": "hybrid",
+    "generationDetail": "Initial images are generated from scratch with Qwen-Image; when quality is below threshold and localized correction is indicated, Qwen-Image-Edit modifies the current image using evaluator suggestions.",
+    "trueParentCount": "unclear",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "The 0-10 aesthetic and text-image alignment subscores form an averaged scalar decision score; subscore decomposition, artifact/missing-element findings, and textual suggestions are fed to the edit loop and summarized into trajectory memory.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "other",
+    "parentSelectionDetail": "A current image is the sole editable parent during a localized edit; initial generation has no image parent. Retrieved trajectories serve as auxiliary guidance, not true parents. For each new prompt, top-k=5 similar trajectories are retrieved.",
+    "outOfTaxonomy": "A training-free agentic diffusion workflow improves the generation process through persistent, model-specific memory of compressed trajectory outcomes and inter-agent workflow guidance, rather than evolving a conventional candidate population."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/sidiffagent.md",
+    "sourcePdf": "papers/SIDiffAgent Self-Improving Diffusion Agent.pdf",
+    "citationWarning": "The existing population and parent-selection mentions are supported, but the paper also has substantial candidate-generation, reflective/meta-guidance, multi-model routing, adaptive generation, and evaluator-feedback mechanisms that are not currently cited in their corresponding survey sections. Avoid calling the creativity-level heuristic an explicit explore/exploit controller."
+  }
+}

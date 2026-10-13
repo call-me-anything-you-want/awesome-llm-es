@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "key": "evolve",
+  "paperKey": "evolve",
+  "bibliographyKey": "evolve",
+  "title": "EvolVE: Evolutionary Search for LLM-based Verilog Generation and Optimization",
+  "authors": [
+    "Wei-Po Hsin",
+    "Ren-Hao Deng",
+    "Yao-Ting Hsieh",
+    "En-Ming Huang",
+    "Shih-Hao Hung"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2601.18067"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Tree-Structured Populations",
+        "Incremental Insertion",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "From-Scratch Generation",
+        "Localized Modification",
+        "Large-Scale Modification",
+        "Scheduled Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Additional Evaluation Feedback",
+        "Verbalized Evaluation Feedback",
+        "Approximate Evaluation"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies",
+        "State-Independent Exploration-Exploitation Control"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Verilog functional generation and hardware PPA optimization",
+    "population": "hybrid",
+    "populationDetail": "MCTS maintains a candidate tree, while IGR maintains multiple independent refinement chains within a growing node set.",
+    "archive": "unclear",
+    "archiveDetail": "Algorithm 1 updates an archive of best solutions on score improvement but gives no archive size or precise admission rule.",
+    "replacement": "hybrid",
+    "replacementDetail": "Every evaluated child is added to the node set; MCTS also inserts it into the tree, while an improvement-based best archive is updated separately.",
+    "generation": "hybrid",
+    "generationDetail": "The initial RTL is generated from scratch; IGR applies differential edits to one chain parent; MCTS improves one selected leaf's code.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "STG yields fine-grained test-vector pass fractions; PPA guidance combines diagnosis with a fast area-latency proxy.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "UCT_for_MCTS|immediate_chain_predecessor_for_IGR",
+    "parentSelectionDetail": "IGR ideas and retrieved papers are guidance, not true code parents; MCTS chooses a tree leaf, IGR uses the chain's latest node.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/evolve_verilog.md",
+    "sourcePdf": "papers/EVOLVE Evolutionary Search for LLM-based Verilog Generation and Optimization.pdf",
+    "citationWarning": "No current Survey/sections citation uses this BibTeX key. Archive size/admission and MCTS edit locality are underspecified; strategy selection is task-configured rather than an online switch."
+  }
+}

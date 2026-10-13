@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "key": "ma2023eureka",
+  "paperKey": "ma2023eureka",
+  "bibliographyKey": "ma2023eureka",
+  "title": "Eureka: Human-Level Reward Design via Coding Large Language Models",
+  "authors": [
+    "Yecheng Jason Ma",
+    "William Liang",
+    "Guanzhi Wang",
+    "De-An Huang",
+    "Osbert Bastani",
+    "Dinesh Jayaraman",
+    "Yuke Zhu",
+    "Linxi Fan",
+    "Anima Anandkumar"
+  ],
+  "year": 2024,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": "10.48550/arXiv.2310.12931",
+    "eprint": "2310.12931"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Single-Individual Populations",
+        "Single-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "From-Scratch Generation",
+        "Large-Scale Modification",
+        "Scheduled Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Verbalized Evaluation Feedback",
+        "Parallel Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-based reward-function design for reinforcement-learning tasks",
+    "population": "single",
+    "populationDetail": "Each iteration has a temporary batch of K sampled rewards, but only one global best reward is carried forward as the search state.",
+    "archive": "single_elite",
+    "archiveDetail": "A single best-so-far reward is retained and updated only when an iteration's best score exceeds it.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "Temporary candidate batches are evaluated per iteration; the paper does not describe a persistent population pool.",
+    "generation": "hybrid",
+    "generationDetail": "The first batch is sampled independently from task/environment context; subsequent offspring broadly modify one best reward using its reflection.",
+    "trueParentCount": "1",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Component values and policy metrics are structured feedback; the reward reflection is a textual interpretation of them.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "fitness_based",
+    "parentSelectionDetail": "The best reward of the previous iteration is the parent after initialization; the initial batch has no parent.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/downloaded_b/Eureka.md",
+    "sourcePdf": "annotation/incoming_pdfs/Eureka.pdf",
+    "citationWarning": "Population/archive labels map a single best-so-far incumbent onto the survey taxonomy; repeated evaluation is final-only, not per-candidate."
+  }
+}

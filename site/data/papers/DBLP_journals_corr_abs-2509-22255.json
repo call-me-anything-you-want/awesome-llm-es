@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "key": "DBLP:journals/corr/abs-2509-22255",
+  "paperKey": "DBLP:journals/corr/abs-2509-22255",
+  "bibliographyKey": "DBLP:journals/corr/abs-2509-22255",
+  "title": "Evaluating LLMs for Combinatorial Optimization: One-Phase and Two-Phase Heuristics for 2D Bin-Packing",
+  "authors": [
+    "Syed Mahbubul Huq",
+    "Daniel Brito-Pacheco",
+    "Daniel Sikar",
+    "RAJESH MOJUMDER"
+  ],
+  "year": 2025,
+  "venue": "NeurIPS Workshop on Evaluating the Evolving LLM Lifecycle: Benchmarks, Emergent Abilities, and Scaling",
+  "publication": {
+    "venue": "NeurIPS Workshop on Evaluating the Evolving LLM Lifecycle: Benchmarks, Emergent Abilities, and Scaling",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": "2509.22255"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Island-Structured Populations"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-generated Python heuristics for two-dimensional bin packing",
+    "population": "island",
+    "populationDetail": "High-performing scripts are grouped by logic and performance into islands after each scoring round; independent island-local breeding or migration is not specified.",
+    "archive": "unclear",
+    "archiveDetail": "Top-performing islands supply examples, but no separately maintained elite archive or archive admission rule is described.",
+    "replacement": "unclear",
+    "replacementDetail": "The paper reports batches of scripts over six rounds without a precise old-to-new population survivor rule.",
+    "generation": "from_scratch",
+    "generationDetail": "The model writes a new heuristic function from the task specification and, after round one, three example scripts; no one script is designated as editable parent.",
+    "trueParentCount": "0",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Performance scores determine which islands/examples enter later prompts; explicit numeric score or validator-error text in the prompt is not shown.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "none",
+    "parentSelectionDetail": "The three selected scripts are in-context examples, not identified as true edited parents; Section 3 loosely calls them top performers while Appendix B.10 states random selection within the top three islands.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/binpacking_llm.md",
+    "sourcePdf": "papers/Evaluating LLMs for Combinatorial Optimization One-Phase and Two-Phase Heuristics for 2D Bin-Packing.pdf",
+    "citationWarning": "Currently cited only in the application section. Island persistence, archive/replacement rule and the exact use of evaluator metrics in prompts are underspecified; the specific appendix says random example selection within top three islands. Treat these three scripts as contextual references, not proven true parents."
+  }
+}

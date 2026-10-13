@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "key": "evorisk",
+  "paperKey": "evorisk",
+  "bibliographyKey": "evorisk",
+  "title": "EvoRisk: Autonomously Discovered Regime-Adaptive Resilience-Aware Financial Metric",
+  "authors": [
+    "Kamer Ali Yuksel",
+    "Hassan Sawaf"
+  ],
+  "year": 2025,
+  "venue": "Available at SSRN 5791002",
+  "publication": {
+    "venue": "Available at SSRN 5791002",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": "10.2139/ssrn.5791002",
+    "eprint": null
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "From-Scratch Generation",
+        "Multi-Parent Fusion"
+      ],
+      "ch5": [],
+      "ch6": [],
+      "ch7": [],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Autonomous discovery of a volatility-, tail-, and drawdown-aware financial performance metric for asset selection and portfolio allocation",
+    "population": "flat_multi",
+    "populationDetail": "The described AlphaSharpe loop retains a top-performing cohort to seed the next generation, implying multiple candidates; no explicit population data structure or size is given.",
+    "archive": "none",
+    "archiveDetail": "No separate elite archive is described; a top-performing cohort seeds the next generation within the described loop.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "The cohort and pruning description is high-level AlphaSharpe lineage context, not a specified EvoRisk population implementation.",
+    "generation": "hybrid",
+    "generationDetail": "The AlphaSharpe discovery loop combines LLM generation of metric formulations with mutation/perturbation and crossover/recombination; the paper does not specify edit scope or recombination arity.",
+    "trueParentCount": "unclear",
+    "modelSetting": "unclear",
+    "evaluation": "unclear",
+    "feedbackReused": "unclear",
+    "feedbackDetail": "Statistical fitness rankings and previous success/failure hypotheses guide evolution, but the exact feedback passed to the LLM is not described; no auxiliary evaluator metadata is specified.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "Crossover and mutation are mentioned, but parent sampling, scope, and arity are not stated.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/evorisk.md",
+    "sourcePdf": "papers/EVORISK Autonomously Discovered Regime-Adaptive Resilience-Aware Financial Metric.pdf",
+    "citationWarning": "Current survey citation is application-only (quantitative finance, application.tex). Potential Ch3/Ch4 placements rely on high-level AlphaSharpe lineage details, not a complete EvoRisk-specific system description; exact population protocol, prompt blocks, parent arity and operator selection are not disclosed. Do not infer model or evaluation-procedure categories from absent details."
+  }
+}

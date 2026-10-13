@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "key": "evolvesignal",
+  "paperKey": "evolvesignal",
+  "bibliographyKey": "evolvesignal",
+  "title": "EvolveSignal: A Large Language Model Powered Coding Agent for Discovering Traffic Signal Control Strategies",
+  "authors": [
+    "Leizhen Wang",
+    "Peibo Duan",
+    "Hao Wang",
+    "Yue Wang",
+    "Jian Xu",
+    "Nan Zheng",
+    "Zhenliang Ma"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2509.03335"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Quality-Diversity Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Large-Scale Modification",
+        "Localized Modification"
+      ],
+      "ch5": [
+        "Multi-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Repeated Evaluation"
+      ],
+      "ch7": [],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Fixed-time traffic signal control algorithm discovery in SUMO",
+    "population": "flat_multi",
+    "populationDetail": "One Program Database retains multiple candidate programs with MAP-Elites diversity organization; no persistent island partition is reported.",
+    "archive": "qd_archive",
+    "archiveDetail": "The MAP-Elites program database preserves diverse high-performing candidates, though descriptors and cell admission are not specified.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "The Program Database functions as both the maintained population and quality-diversity archive; its precise cell update is not exposed.",
+    "generation": "hybrid",
+    "generationDetail": "One selected parent can receive localized code modifications or a full rewrite; separate inspiration programs provide context.",
+    "trueParentCount": "1",
+    "modelSetting": "multi_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Delay and stops are normalized then combined into the scalar optimization score; program metrics are stored and included in later prompts.",
+    "explorationExploitation": "unclear",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "Algorithm 1 samples one parent from the Program Database and selects inspirations separately by top-k/diversity; parent-sampling distribution is unspecified.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/evolvesignal.md",
+    "sourcePdf": "papers/EvolveSignal A Large Language Model Powered Coding Agent for Discovering Traffic Signal Control Algorithms.pdf",
+    "citationWarning": "Exact MAP-Elites cell replacement, parent-sampling rule, and local-edit/full-rewrite selection are unspecified. Manuscript cites only broad rewrite, while Appendix A also permits local edits. Bibliographic title/year differ between PDF and Survey/reference.bib."
+  }
+}

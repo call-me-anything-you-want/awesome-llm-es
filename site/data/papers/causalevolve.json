@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "key": "causalevolve",
+  "paperKey": "causalevolve",
+  "bibliographyKey": "causalevolve",
+  "title": "CausalEvolve: Towards Open-Ended Discovery with Causal Scratchpad",
+  "authors": [
+    "Yongqiang Chen",
+    "Chenxi Liu",
+    "Zhenhao Chen",
+    "Tongliang Liu",
+    "Bo Han",
+    "Kun Zhang"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2603.14575"
+  },
+  "tags": [
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [
+        "Reflective and Meta-Guidance Prompt Structures"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Additional Evaluation Feedback"
+      ],
+      "ch7": [
+        "Adaptive Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-guided evolutionary coding for open-ended scientific discovery",
+    "population": "unclear",
+    "populationDetail": "CausalEvolve is evaluated on an evolutionary coding scaffold, but its maintained population layout is not specified.",
+    "archive": "unclear",
+    "archiveDetail": "The paper does not describe an elite archive or its admission rule.",
+    "replacement": "unclear",
+    "replacementDetail": "ShinkaEvolve is the main baseline; its population details cannot be assumed to transfer to this method.",
+    "generation": "unclear",
+    "generationDetail": "The child uses a parent and selected inspiration programs, but edit scope and whether inspirations are genealogical parents are not specified.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Factor descriptors and approximate treatment-effect estimates are scratchpad signals; they are not all direct evaluator-return fields.",
+    "explorationExploitation": "explicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "Paper describes a parent plus inspiration programs but not the parent-selection source or policy.",
+    "outOfTaxonomy": "Causal scratchpad discovers outcome/procedure factors, estimates treatment effects and abductively revises hypotheses to guide reference selection."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/causalevolve.md",
+    "sourcePdf": "papers/CAUSALEVOLVE TOWARDS OPEN-ENDED DISCOVERY WITH CAUSAL SCRATCHPAD.pdf",
+    "citationWarning": "module_exists_but_prompt_not_exposed|paper_describes_behavior_but_not_structure|current_taxonomy_may_be_incomplete|chapter6_feedback_is_scratchpad_derived"
+  }
+}

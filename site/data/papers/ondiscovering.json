@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "key": "ondiscovering",
+  "paperKey": "ondiscovering",
+  "bibliographyKey": "ondiscovering",
+  "title": "On Discovering Algorithms for Adversarial Imitation Learning",
+  "authors": [
+    "Shashank Reddy Chirra",
+    "Jayden Teoh",
+    "Praveen Paruchuri",
+    "Pradeep Varakantham"
+  ],
+  "year": 2026,
+  "venue": "The Fourteenth International Conference on Learning Representations",
+  "publication": {
+    "venue": "The Fourteenth International Conference on Learning Representations",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": null,
+    "url": "https://openreview.net/forum?id=hPz3doftL4"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Multi-Parent Fusion"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Parallel Evaluation",
+        "Repeated Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Uniform Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-guided evolutionary discovery of reward-assignment functions for adversarial imitation learning",
+    "population": "flat_multi",
+    "populationDetail": "A common pool of reward-assignment functions is updated generation by generation; no island or tree structure is described.",
+    "archive": "none",
+    "archiveDetail": "No separate archive is described; the top-K survivors constitute the next population.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "Each generation selects top K from the union of the old population and newly generated crossover candidates.",
+    "generation": "multi_parent_fusion",
+    "generationDetail": "The LLM is prompted with two parent reward-function programs and their scores to synthesize one new function semantically.",
+    "trueParentCount": "2",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Parent fitness is included as scalar performance scores in the crossover prompt; lower Wasserstein divergence is better, represented as a higher-is-better score in the example.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "uniform_population_sampling",
+    "parentSelectionDetail": "Algorithm 2 says to randomly sample parent pairs from the current population; it does not state whether sampling is with replacement. Do not confuse this with the separate top-K survivor-selection step.",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/adversarialimitation.md",
+    "sourcePdf": "papers/ON DISCOVERING ALGORITHMS FOR ADVERSARIAL IMITATION LEARNING.pdf",
+    "citationWarning": "Existing survey citations place DAIL under multi-parent fusion and parent selection. Also consider flat-population and generational-replacement coverage. Parent pairs are randomly sampled; top-K fitness ranking selects survivors, not parents. The score in the prompt is a sign-converted scalar fitness derived from lower-is-better Wasserstein distance."
+  }
+}

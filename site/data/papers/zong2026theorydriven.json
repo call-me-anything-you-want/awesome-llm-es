@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "key": "zong2026theorydriven",
+  "paperKey": "zong2026theorydriven",
+  "bibliographyKey": "zong2026theorydriven",
+  "title": "Theory-Driven Modeling and LLM-Guided Evolution for Power System Scheduling",
+  "authors": [
+    "Wushuaijun Zhang",
+    "Yikun Zong",
+    "Yishuang Yue",
+    "Kun Yuan"
+  ],
+  "year": 2026,
+  "venue": "ICLR Workshop on AI with Recursive Self-Improvement",
+  "publication": {
+    "venue": "ICLR Workshop on AI with Recursive Self-Improvement",
+    "archive": null,
+    "status": "venue-listed",
+    "doi": null,
+    "eprint": null,
+    "url": "https://openreview.net/forum?id=djdSNvWpJ7"
+  },
+  "tags": [
+    "Evaluation & feedback",
+    "Exploration–exploitation"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [],
+      "ch4": [
+        "Candidate-Generation Prompt Structures"
+      ],
+      "ch5": [],
+      "ch6": [
+        "Metadata"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-guided power-system scheduling evolution",
+    "population": "none_clear",
+    "populationDetail": "An iterative candidate loop is reported, but the evidence note does not establish a persistent population topology.",
+    "archive": "unclear",
+    "archiveDetail": "Archive semantics are not specified in the available note.",
+    "replacement": "unclear",
+    "replacementDetail": "Evolutionary loop is clear, but candidate retention and survivor rules need method-section evidence.",
+    "generation": "unclear",
+    "generationDetail": "LLM iteratively evolves scheduling formulations, but the direct parent-offspring operation is unspecified.",
+    "trueParentCount": "unclear",
+    "modelSetting": "unclear",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Scheduling objective and constraint/feasibility outcomes inform subsequent iterations.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "unclear",
+    "parentSelectionDetail": "Parent selection and archive structure require algorithm-section verification.",
+    "outOfTaxonomy": "Explicit domain-theory and power-system constraint guidance conditions LLM evolution, a domain-guided modeling mechanism not captured by current generic operator labels."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium",
+    "evidenceFile": "annotation/evidence/incoming_b/theory_driven_modeling.md",
+    "sourcePdf": "additional_papers/202603/Theory-Driven Modeling and LLM-Guided Evolution for Power System Scheduling.pdf",
+    "citationWarning": "Available Markdown/evidence supports domain-guided iterative generation and objective/feasibility feedback only; do not assign parent-selection or population categories without algorithm details."
+  }
+}

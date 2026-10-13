@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "key": "cognitivealpha",
+  "paperKey": "cognitivealpha",
+  "bibliographyKey": "cognitivealpha",
+  "title": "Cognitive Alpha Mining via LLM-Driven Code-Based Evolution",
+  "authors": [
+    "Fengyuan Liu",
+    "Yi Huang",
+    "Sichun Luo",
+    "Yuqi Wang",
+    "Yazheng Yang",
+    "Xinye Li",
+    "Zefa Hu",
+    "Junlan Feng",
+    "Qi Liu"
+  ],
+  "year": 2026,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2511.18850"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Generational Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Reflective and Meta-Guidance Prompt Structures",
+        "Localized Modification",
+        "Multi-Parent Fusion"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Additional Evaluation Feedback",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "record_only_pending_taxonomy"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "LLM-driven evolutionary mining of interpretable quantitative alpha factors",
+    "population": "flat_multi",
+    "populationDetail": "Each generation filters candidates into a parent pool of at most 32 qualified alphas; no island or maintained genealogy/tree is described.",
+    "archive": "multi_elite",
+    "archiveDetail": "Elite alphas are preserved in a final candidate pool, and the top two from the previous generation are carried forward; no descriptor niches are stated.",
+    "replacement": "generational_replacement",
+    "replacementDetail": "A separate elite/final candidate pool exists alongside the qualified parent pool, but its retention capacity and admission semantics are not fully specified.",
+    "generation": "hybrid",
+    "generationDetail": "Initial factors are generated from task guidance; thinking evolution uses unary slight mutation and binary crossover, including crossover followed by mutation.",
+    "trueParentCount": "unclear",
+    "modelSetting": "single_model",
+    "evaluation": "vector_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Quality-checker outcomes and leakage-unit-test result precede the five-metric fitness vector; selected metric results and verbal summaries are reused in generation prompts.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "fitness_based",
+    "parentSelectionDetail": "Qualified parent pool is formed by threshold filtering and is capped at 32, but exact per-child parent sampling/count is not described; guidance samples should not automatically be treated as true parents.",
+    "outOfTaxonomy": "Seven-level finance-domain agent specialization and multi-agent code-quality/logic checking before predictive fitness evaluation."
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "medium-high",
+    "evidenceFile": "annotation/evidence/cognitivealpha.md",
+    "sourcePdf": "papers/Cognitive Alpha Mining via LLM-Driven Code-Based Evolution.pdf",
+    "citationWarning": "current_ch7_citation_unsupported_or_key_mismatch|operator_selection_rule_unclear|per_child_parent_sampling_unspecified|elite_pool_semantics_partly_unspecified|module_prompts_not_fully_exposed"
+  }
+}

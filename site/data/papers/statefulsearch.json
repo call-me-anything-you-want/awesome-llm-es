@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "key": "statefulsearch",
+  "paperKey": "statefulsearch",
+  "bibliographyKey": "statefulsearch",
+  "title": "A Multi-Agent Framework for Stateful Inference-Time Search",
+  "authors": [
+    "Arshika Lalan",
+    "Rajat Ghosh",
+    "Aditya Kolsur",
+    "Debojyoti Dutta"
+  ],
+  "year": 2025,
+  "venue": "arXiv",
+  "publication": {
+    "venue": null,
+    "archive": "arXiv",
+    "status": "preprint",
+    "doi": null,
+    "eprint": "2510.07147"
+  },
+  "tags": [
+    "Population & archives",
+    "Candidate generation",
+    "Foundation models",
+    "Evaluation & feedback",
+    "Exploration–exploitation",
+    "Parent selection"
+  ],
+  "surveyPlacement": {
+    "chapters": {
+      "ch3": [
+        "Flat Multi-Individual Populations",
+        "Multi-Elite Archives",
+        "Elitist Replacement"
+      ],
+      "ch4": [
+        "Candidate-Generation Prompt Structures",
+        "Coordination-Oriented Prompting",
+        "From-Scratch Generation",
+        "Scheduled Selection"
+      ],
+      "ch5": [
+        "Single-Model Setting"
+      ],
+      "ch6": [
+        "Metadata",
+        "Staged Evaluation"
+      ],
+      "ch7": [
+        "Implicit Exploration-Exploitation Strategies"
+      ],
+      "parentSelection": [
+        "Evaluator-Metadata-Based Selection"
+      ]
+    }
+  },
+  "mechanism": {
+    "domainTask": "Automated unit test generation and edge-case discovery",
+    "population": "flat_multi",
+    "populationDetail": "A bounded flat archive of multiple edge-case candidates is retained across search stages; no islands or genealogy are maintained.",
+    "archive": "multi_elite",
+    "archiveDetail": "The algorithm retains the top-K edge cases ranked by reward across the accumulated candidates.",
+    "replacement": "elitist_replacement",
+    "replacementDetail": "The archive update is an archive-level top-K survivor rule, while the controller also preserves full state history.",
+    "generation": "from_scratch",
+    "generationDetail": "The actor proposes new edge cases from source code and accumulated state; no specific parent candidate is directly edited.",
+    "trueParentCount": "0",
+    "modelSetting": "single_model",
+    "evaluation": "scalar_objective",
+    "feedbackReused": "yes",
+    "feedbackDetail": "Coverage, mutation, and exception signals are fed back into the persistent state and reward-guided archive update.",
+    "explorationExploitation": "implicit",
+    "parentSelection": "other",
+    "parentSelectionDetail": "none_explicit; evaluator metadata and prior edge cases are resurfaced",
+    "outOfTaxonomy": "none"
+  },
+  "provenance": {
+    "evidenceStatus": "verified",
+    "confidence": "high",
+    "evidenceFile": "annotation/evidence/statefulsearch.md",
+    "sourcePdf": "papers/A Multi-Agent Framework for Stateful Inference-Time Search.pdf",
+    "citationWarning": "The paper has no explicit parent candidate; archive/history entries are contextual state rather than true parent candidates. The paper is explicitly cited in the survey for flat multi-population, multi-elite archives, replacement, implicit exploration-exploitation, and evaluator-metadata-based selection. Prompt details are partly exposed in the appendix; model count is per-run rather than across the evaluation suite."
+  }
+}
