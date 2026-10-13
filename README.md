@@ -136,7 +136,3 @@ Then open <http://127.0.0.1:8765/> in a browser. A local HTTP server is recommen
 ## Deployment
 
 The workflow in `.github/workflows/pages.yml` uploads the `site/` directory to GitHub Pages whenever a commit is pushed to `main`. No framework build or package installation is required.
-
-## License
-
-No license is declared yet. Add a license file before treating the repository as a reusable software or data package.
