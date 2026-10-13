@@ -8,7 +8,6 @@ Live site: [call-me-anything-you-want.github.io/awesome-llm-es](https://call-me-
 
 - [Read the manuscript](https://www.preprints.org/manuscript/202610.1122/v1)
 - [Download the PDF](https://call-me-anything-you-want.github.io/awesome-llm-es/assets/llm-guided-evolutionary-search-survey.pdf)
-- [Open the survey section on the website](https://call-me-anything-you-want.github.io/awesome-llm-es/#survey)
 
 BibTeX:
 
@@ -132,7 +131,3 @@ python -m http.server 8765 --directory site
 ```
 
 Then open <http://127.0.0.1:8765/> in a browser. A local HTTP server is recommended because the site loads its JSON data with relative `fetch()` requests.
-
-## Deployment
-
-The workflow in `.github/workflows/pages.yml` uploads the `site/` directory to GitHub Pages whenever a commit is pushed to `main`. No framework build or package installation is required.
